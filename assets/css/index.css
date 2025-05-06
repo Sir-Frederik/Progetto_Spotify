@@ -1,6 +1,7 @@
 /* navbar */
 
-nav {
+nav,
+footer {
   background-color: black;
 }
 
@@ -162,4 +163,14 @@ aside {
 }
 .titleCrea {
   background-color: #1e1e1e;
+}
+#songName {
+  font-size: 15px;
+}
+#songArtist {
+  font-size: 12px;
+}
+
+.songTime {
+  font-size: 11px;
 }
