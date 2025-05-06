@@ -81,7 +81,117 @@
         </div>
       </div>
     </nav>
+    <main class="container-fluid">
+      <div class="row">
+        <!-- aside di sinistra -->
 
+        <aside class="col-3">
+          <!-- intestazione libreria -->
+          <!-- to do: trasformare in col bottstrap, 
+           mettere ricerca in div con hamburger -->
+          <div class="container-fluid">
+            <div class="row justify-content-between align-items-center">
+              <div class="col-7 px-0 d-flex justify-content-start">
+                <h3 class="fs-6">La tua libreria</h3>
+              </div>
+              <div class="col-5 px-0 d-flex justify-content-end">
+                <button class="titleCrea text-white border border-0 rounded-pill fs-6 p-2 d-flex align-items-center">
+                  <i class="bi bi-plus-lg fs-6"></i> Crea
+                </button>
+                <button class="text-white border border-0 bg-transparent"><i class="bi bi-arrows-angle-expand fs-6"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="d-flex p-3 gap-2">
+              <button class="text-white border border-0 bg-transparent">Playlist</button>
+              <button class="text-white border border-0 bg-transparent">Artisti</button>
+              <button class="text-white border border-0 bg-transparent">Album</button>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="d-flex align-items-center ps-3">
+                <span class="text-white mr-1"><i class="bi bi-search"></i></span>
+              </div>
+
+              <span class="text-white border border-0 bg-transparent">Recenti</span>
+              <button class="text-white border border-0 bg-transparent fs-3"><i class="bi bi-list"></i></button>
+            </div>
+          </div>
+
+          <!-- carrelata di immagini -->
+          <div class="container py-3">
+            <ul class="list-group">
+              <li class="list-group-item border-0 p-2 ps-0">
+                <div class="d-flex align-items-center">
+                  <div class="me-3 flex-shrink-0">
+                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-1.jpeg" style="width: 80px; height: 80px; object-fit: cover" />
+                  </div>
+                  <div class="flex-grow-1">
+                    <p class="fw-bold mb-1">Titolo</p>
+                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="list-group-item border-0 p-2 ps-0">
+                <div class="d-flex align-items-center">
+                  <div class="me-3 flex-shrink-0">
+                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-1.jpeg" style="width: 80px; height: 80px; object-fit: cover" />
+                  </div>
+                  <div class="flex-grow-1">
+                    <p class="fw-bold mb-1">Titolo</p>
+                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="list-group-item border-0 p-2 ps-0">
+                <div class="d-flex align-items-center">
+                  <div class="me-3 flex-shrink-0">
+                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-2.jpg" style="width: 80px; height: 80px; object-fit: cover" />
+                  </div>
+                  <div class="flex-grow-1">
+                    <p class="fw-bold mb-1">Titolo</p>
+                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="list-group-item border-0 p-2 ps-0">
+                <div class="d-flex align-items-center">
+                  <div class="me-3 flex-shrink-0">
+                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-1.jpeg" style="width: 80px; height: 80px; object-fit: cover" />
+                  </div>
+                  <div class="flex-grow-1">
+                    <p class="fw-bold mb-1">Titolo</p>
+                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="list-group-item border-0 p-2 ps-0">
+                <div class="d-flex align-items-center">
+                  <div class="me-3 flex-shrink-0">
+                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-4.jpg" style="width: 80px; height: 80px; object-fit: cover" />
+                  </div>
+                  <div class="flex-grow-1">
+                    <p class="fw-bold mb-1">Titolo</p>
+                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </aside>
+
+        <section class="col-7 border border-1 border-danger"></section>
+        <aside class="col-2 border border-1 border-danger"></aside>
+      </div>
+    </main>
     <script src="./assets/js/token.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"

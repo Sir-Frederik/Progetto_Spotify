@@ -135,3 +135,31 @@ nav {
     font-size: 0.7rem;
   }
 }
+
+.bi-pin {
+  color: #1ed760;
+}
+
+.list-group-item {
+  border: 0;
+}
+
+.menuPlaylist {
+  font-size: 14px;
+}
+
+.menuAlbumImage {
+  border-radius: 5px;
+}
+
+.list-group-item {
+  padding: -10px;
+  background-color: #121212;
+}
+
+aside {
+  background-color: #121212;
+}
+.titleCrea {
+  background-color: #1e1e1e;
+}
