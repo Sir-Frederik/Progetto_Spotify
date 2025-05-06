@@ -92,35 +92,39 @@
           <!-- to do: trasformare in col bottstrap, 
            mettere ricerca in div con hamburger -->
           <div class="container-fluid">
-            <div class="row justify-content-between align-items-center">
-              <div class="col-7 px-0 d-flex justify-content-start">
+            <div class="row justify-content-between align-items-center gx-0 mt-3">
+              <div class="col-7 d-flex justify-content-start">
                 <h3 class="fs-6">La tua libreria</h3>
               </div>
-              <div class="col-5 px-0 d-flex justify-content-end">
-                <button class="titleCrea text-white border border-0 rounded-pill fs-6 p-2 d-flex align-items-center">
+              <div class="col-5 d-flex justify-content-end">
+                <button class="titleCrea text-white border border-0 rounded-pill fs-6 px-2 d-flex align-items-center">
                   <i class="bi bi-plus-lg fs-6"></i> Crea
                 </button>
                 <button class="text-white border border-0 bg-transparent"><i class="bi bi-arrows-angle-expand fs-6"></i></button>
               </div>
             </div>
-          </div>
 
-          <div class="row">
-            <div class="d-flex p-3 gap-2">
-              <button class="text-white border border-0 bg-transparent">Playlist</button>
-              <button class="text-white border border-0 bg-transparent">Artisti</button>
-              <button class="text-white border border-0 bg-transparent">Album</button>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="d-flex align-items-center ps-3">
-                <span class="text-white mr-1"><i class="bi bi-search"></i></span>
+            <div class="row justify-content-start align-items-center gx-0 mt-3">
+              <div class="col-3">
+                <button class="titleCrea text-white border border-0 rounded-pill px-3 ms-0 me-2">Playlist</button>
               </div>
+              <div class="col-3">
+                <button class="titleCrea text-white border border-0 rounded-pill px-3 me-2">Artisti</button>
+              </div>
+              <div class="col-3">
+                <button class="titleCrea text-white border border-0 rounded-pill px-3">Album</button>
+              </div>
+              <div class="col-3"></div>
+            </div>
 
-              <span class="text-white border border-0 bg-transparent">Recenti</span>
-              <button class="text-white border border-0 bg-transparent fs-3"><i class="bi bi-list"></i></button>
+            <div class="row justify-content-between align-items-center gx-0">
+              <div class="col-7 d-flex justify-content-start">
+                <button class="text-secondary border border-0 bg-transparent"><i class="bi bi-search"></i></button>
+              </div>
+              <div class="col-5 d-flex justify-content-end align-items-center mt-3">
+                <span class="text-secondary border border-0 bg-transparent">Recenti</span>
+                <button class="text-secondary border border-0 bg-transparent fs-3"><i class="bi bi-list"></i></button>
+              </div>
             </div>
           </div>
 
