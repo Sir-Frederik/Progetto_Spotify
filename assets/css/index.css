@@ -206,6 +206,10 @@ aside ul.list-group {
   padding-bottom: 10rem;
 }
 
+#lastDivRightAside {
+  padding-bottom: 10rem;
+}
+
 main.container-fluid {
   height: 100vh;
   overflow: hidden;
