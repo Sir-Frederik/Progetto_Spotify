@@ -221,3 +221,12 @@ aside.col-2 {
   height: 100vh;
   overflow-y: auto;
 }
+
+.roles {
+  font-size: 13px;
+  color: rgba(245, 245, 245, 0.774);
+}
+
+.bg-gray {
+  background-color: #1f1f1f;
+}
