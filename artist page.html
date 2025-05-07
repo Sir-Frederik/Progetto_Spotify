@@ -261,7 +261,7 @@
           </div>
         </aside>
 
-        <section class="col-7 border border-1 border-danger">
+        <section id="artistSection" class="col-7 border border-1 border-danger">
           <div class="container-fluid">
             <div class="row">
               <div class="col-12">
@@ -270,13 +270,13 @@
                     <h6>
                       <span><i class="bi bi-bullseye"></i></span> Artista verificato
                     </h6>
-                    <h1>Artista</h1>
+                    <h1 class="fs-1 fw-bold">Artista</h1>
                     <h5>68.206.811 ascoltatori mensili</h5>
                   </div>
                 </div>
                 <!-- <img src="https://api.sepsakon.com/uploads/1656232340697-eminem2.jpeg" alt="artist_eminem" /> -->
               </div>
-              <div class="col-12">
+              <div class="col-12 mt-3">
                 <button
                   aria-label="Play"
                   style="
@@ -296,64 +296,65 @@
                     <path d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"></path>
                   </svg>
                 </button>
-                <button></button>
-                <button class="text-white border border-0 rounded-pill px-3">Segui già</button>
+                <button class="albumBtn rounded-3 py-1 mx-2"><i class="bi bi-file-play"></i></button>
+                <button class="text-white rounded-pill px-3 mx-2 border border-1 border-white bg-transparent">Segui già</button>
                 <i class="bi bi-three-dots"></i>
               </div>
-              <h3>Popolari</h3>
+              <h3 class="my-3 fw-bold">Popolari</h3>
 
-              <div id="track" class="col-1">1</div>
+              <div id="track" class="col-1 text-center">1</div>
               <div id="album" class="col-1">
                 <img src="./assets/imgs/main/image-1.jpg" alt="photo" style="width: 80px; height: 80px; object-fit: cover" />
               </div>
-              <div class="col-4">canzone</div>
+              <div class="col-4 align-middle">Canzone</div>
               <div id="ascolti" class="col-4">numeri ascolti</div>
               <div id="timeSong" class="col-2">durata</div>
 
-              <div id="track" class="col-1">1</div>
+              <div id="track" class="col-1 text-center">2</div>
               <div id="album" class="col-1">
                 <img src="./assets/imgs/main/image-1.jpg" alt="photo" style="width: 80px; height: 80px; object-fit: cover" />
               </div>
-              <div class="col-4">canzone</div>
+              <div class="col-4 align-middle">Canzone</div>
               <div id="ascolti" class="col-4">numeri ascolti</div>
               <div id="timeSong" class="col-2">durata</div>
 
-              <div id="track" class="col-1">1</div>
+              <div id="track" class="col-1 text-center">3</div>
               <div id="album" class="col-1">
                 <img src="./assets/imgs/main/image-1.jpg" alt="photo" style="width: 80px; height: 80px; object-fit: cover" />
               </div>
-              <div class="col-4">canzone</div>
+              <div class="col-4 align-middle">Canzone</div>
               <div id="ascolti" class="col-4">numeri ascolti</div>
               <div id="timeSong" class="col-2">durata</div>
 
-              <div id="track" class="col-1">1</div>
+              <div id="track" class="col-1 text-center">4</div>
               <div id="album" class="col-1">
                 <img src="./assets/imgs/main/image-1.jpg" alt="photo" style="width: 80px; height: 80px; object-fit: cover" />
               </div>
-              <div class="col-4">canzone</div>
+              <div class="col-4 align-middle">Canzone</div>
               <div id="ascolti" class="col-4">numeri ascolti</div>
               <div id="timeSong" class="col-2">durata</div>
 
-              <div id="track" class="col-1">1</div>
+              <div id="track" class="col-1 text-center">5</div>
               <div id="album" class="col-1">
                 <img src="./assets/imgs/main/image-1.jpg" alt="photo" style="width: 80px; height: 80px; object-fit: cover" />
               </div>
-              <div class="col-4">canzone</div>
+              <div class="col-4 align-middle">Canzone</div>
               <div id="ascolti" class="col-4">numeri ascolti</div>
               <div id="timeSong" class="col-2">durata</div>
 
-              <div id="track" class="col-1">1</div>
+              <div id="track" class="col-1 text-center">6</div>
               <div id="album" class="col-1">
                 <img src="./assets/imgs/main/image-1.jpg" alt="photo" style="width: 80px; height: 80px; object-fit: cover" />
               </div>
-              <div class="col-4">canzone</div>
+              <div class="col-4 align-middle">Canzone</div>
               <div id="ascolti" class="col-4">numeri ascolti</div>
               <div id="timeSong" class="col-2">durata</div>
             </div>
           </div>
 
-          <button class="text-white border border-0 rounded-pill px-3">Mostra altro</button>
+          <button class="text-white border border-0 rounded-pill bg-transparent my-3">Mostra altro</button>
 
+          <h3>Selezione dell'artista</h3>
           <div class="container-fluid">
             <ul class="list-group">
               <li class="list-group-item border-0 p-2 ps-0">
@@ -362,8 +363,12 @@
                     <img class="img-fluid rounded-3" src="./assets/imgs/main/image-1.jpg" style="width: 80px; height: 80px; object-fit: cover" />
                   </div>
                   <div class="flex-grow-1">
-                    <p class="fw-bold mb-1">Titolo</p>
-                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
+                    <div class="d-flex">
+                      <img src="./assets/imgs/main/image-1.jpg" style="width: 20px; height: 20px; object-fit: cover" alt="" />
+                      <p class="mb-1 text-secondary">Publicato da artista</p>
+                    </div>
+                    <div class="text-white small fw-bold">BEST OF EMINEM</div>
+                    <p class="mb-1 text-secondary">Playlist</p>
                   </div>
                 </div>
               </li>
