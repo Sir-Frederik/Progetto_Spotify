@@ -1,12 +1,16 @@
-const UrlPlaylist = "https://deezerdevs-deezer.p.rapidapi.com/playlist/125";
+const UrlPlaylist = "https://deezerdevs-deezer.p.rapidapi.com/playlist/";
 let query = "";
-const arrayIdPlaylist = [125, 118, 27, 55, 123, 13, 77, 86];
+
+const arrayIdPlaylist = [98, 118, 125, 55, 123, 13, 86, 45];
 const rowPlaylist = document.querySelector(".rowPlaylist ");
 
 const searchPlaylist = () => {
   arrayIdPlaylist.forEach((id) => {
     query = id;
-    fetch(`${UrlPlaylist} ${query}`, {
+    console.log(query);
+    console.log(UrlPlaylist + query);
+
+    fetch(UrlPlaylist + query, {
       headers: {
         "x-rapidapi-key": token,
         "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
