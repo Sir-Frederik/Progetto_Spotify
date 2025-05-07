@@ -1,10 +1,14 @@
 const UrlPlaylist = "https://deezerdevs-deezer.p.rapidapi.com/playlist/";
+const UrlAlbum = "https://deezerdevs-deezer.p.rapidapi.com/playlist/";
+
 let query = "";
 
 const arrayIdPlaylist = [98, 118, 125, 55, 123, 13, 86, 45];
+const arrayIdAlbum = [];
 const rowPlaylist = document.querySelector(".rowPlaylist ");
+const carousel1 = document.querySelector(".carousel1 ");
 
-const searchPlaylist = () => {
+const searchAndShowPlaylist = () => {
   arrayIdPlaylist.forEach((id) => {
     query = id;
     console.log(query);
@@ -48,10 +52,55 @@ const searchPlaylist = () => {
       });
   });
 };
+const searchAndShowAlbum = () => {
+  for (let i = 0; i < 10; i++) {
+    const number = Math.floor(Math.random() * 9000) + 1000;
+    arrayIdAlbum.push(number);
+  }
+  arrayIdAlbum.forEach((id) => {
+    query = id;
+    console.log(query);
+    console.log(UrlAlbum + query);
+
+    fetch(UrlAlbum + query, {
+      headers: {
+        "x-rapidapi-key": token,
+        "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+      },
+    })
+      .then((resp) => {
+        console.log(resp);
+        if (!resp.ok) {
+          if (resp.status >= 500) {
+            throw new Error("Errore lato server");
+          } else {
+            throw new Error("Errore nella fetch");
+          }
+        }
+        return resp.json();
+      })
+      .then((album) => {
+        const card = document.createElement("div");
+        card.className = "carousel-card me-3 text-white";
+        card.innerHTML = `<img src="${album.cover_medium}" class="img-fluid rounded mb-2"  />
+                  <p class="fw-semibold mb-1">${album.title}</p>
+                  <p class="text-muted small mb-0">${album.artist?.name || "Artista sconosciuto"}</p>
+                                                    `;
+        carousel1.appendChild(card);
+      })
+
+      .catch((error) => {
+        console.log(error);
+        alert(error.message);
+      });
+  });
+};
 
 window.onload = function () {
   rowPlaylist.innerHTML = "";
-  searchPlaylist();
+  carousel1.innerHTML = "";
+  searchAndShowPlaylist();
+  searchAndShowAlbum();
 };
 
 const toggleLibreriaBtn = document.getElementById("toggleLibreriaBtn");
