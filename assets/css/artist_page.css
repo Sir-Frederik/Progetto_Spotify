@@ -15,3 +15,10 @@
   background-image: url("../imgs/main/image-10.jpg");
   background-size: cover;
 }
+@media (max-width: 768px) {
+  #carddisco {
+    width: 250px;
+    height: auto;
+    margin-top: 20px;
+  }
+}
