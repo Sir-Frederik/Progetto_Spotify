@@ -24,19 +24,19 @@ const searchPlaylist = () => {
     .then((playlist) => {
       rowPlaylist.innerHTML = "";
 
-      playlist.forEach((onePlaylist) => {
-        const col = document.createElement("div");
-        col.className = "col-3";
-        col.innerHTML = `<div class="rapidAccess d-flex align-items-center">
+      //   playlist.forEach((onePlaylist) => {
+      const col = document.createElement("div");
+      col.className = "col-3";
+      col.innerHTML = `<div class="rapidAccess d-flex align-items-center">
                   <div class="me-3 flex-shrink-0">
-                    <img class="img-fluid rounded-3" src= ${onePlaylist.picture_small} style="width: 80px; height: 80px; object-fit: cover" />
+                    <img class="img-fluid rounded-3" src= ${playlist.picture_small} style="width: 80px; height: 80px; object-fit: cover" />
                   </div>
                   <div class="flex-grow-1">
-                    <p class="fw-bold mb-1 fs-4">${onePlaylist.title}</p>
+                    <p class="fw-bold mb-1 fs-4">${playlist.title}</p>
                   </div>
 `;
-        rowPlaylist.appendChild(col);
-      });
+      rowPlaylist.appendChild(col);
+      //   });
     })
 
     .catch((error) => {
