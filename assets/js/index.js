@@ -1,10 +1,10 @@
 const UrlPlaylist = "https://deezerdevs-deezer.p.rapidapi.com/playlist/125";
-let query = "125";
+let query = "";
+const arrayIdPlaylist = [125, 118, 27, 55, 123, 13, 77, 86];
 const rowPlaylist = document.querySelector(".rowPlaylist ");
 
 const searchPlaylist = () => {
-  fetch(UrlPlaylist, {
-    //   fetch(`${UrlPlaylist} ${query}`, {
+  fetch(`${UrlPlaylist} ${query}`, {
     headers: {
       "x-rapidapi-key": token,
       "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
@@ -22,8 +22,6 @@ const searchPlaylist = () => {
       return resp.json();
     })
     .then((playlist) => {
-      rowPlaylist.innerHTML = "";
-
       //   playlist.forEach((onePlaylist) => {
       const col = document.createElement("div");
       col.className = "col-3";
@@ -32,7 +30,7 @@ const searchPlaylist = () => {
                     <img class="img-fluid rounded-3" src= ${playlist.picture_small} style="width: 80px; height: 80px; object-fit: cover" />
                   </div>
                   <div class="flex-grow-1">
-                    <p class="fw-bold mb-1 fs-4">${playlist.title}</p>
+                    <p class="fw-bold mb-1 fs-6">${playlist.title}</p>
                   </div>
 `;
       rowPlaylist.appendChild(col);
@@ -46,5 +44,6 @@ const searchPlaylist = () => {
 };
 
 window.onload = function () {
+  rowPlaylist.innerHTML = "";
   searchPlaylist();
 };
