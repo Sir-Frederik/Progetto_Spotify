@@ -28,7 +28,6 @@ const searchPlaylist = () => {
         return resp.json();
       })
       .then((playlist) => {
-        //   playlist.forEach((onePlaylist) => {
         const col = document.createElement("div");
         col.className = "col-3";
         col.innerHTML = `<div class="rapidAccess d-flex align-items-center">
@@ -54,12 +53,10 @@ window.onload = function () {
   rowPlaylist.innerHTML = "";
   searchPlaylist();
 };
-// Seleziona il bottone e l'aside
+
 const toggleLibreriaBtn = document.getElementById("toggleLibreriaBtn");
 const libreriaAside = document.querySelector("aside");
 
-// Aggiungi un listener per il click del bottone
 toggleLibreriaBtn.addEventListener("click", () => {
-  // Aggiungi o rimuovi la classe "d-none" (Bootstrap class per nascondere)
   libreriaAside.classList.toggle("d-none");
 });
