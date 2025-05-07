@@ -1,0 +1,54 @@
+/* SEARCH PAGE */
+
+.rotatedImg {
+  max-height: 100px;
+  max-width: 100px;
+  transform: rotate(25deg) translate(0px, -38px);
+}
+.searchSocial {
+  color: white;
+  background-color: #212529;
+}
+
+.information {
+  color: #c2c2c2;
+  margin-bottom: 0.5rem;
+}
+
+.searchPageBtn {
+  background-color: #333333;
+  font-size: 13px;
+  border: none;
+  padding: 4px 16px;
+}
+
+button.searchPageBtn:hover {
+  filter: brightness(1.3);
+}
+
+#rilevantImg {
+  max-width: 92px;
+  max-height: 92px;
+}
+
+#brano::after {
+  content: "•";
+  vertical-align: middle;
+}
+
+#risultatoRilevante {
+  background-color: #181818;
+}
+
+#braniCercati:hover {
+  background-color: #2a2a2a;
+}
+
+#risultatoRilevante:hover {
+  background-color: #282828;
+}
+
+#braniImg {
+  max-width: 50px;
+  max-height: 50px;
+}
