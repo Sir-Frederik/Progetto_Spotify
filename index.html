@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css" />
   </head>
   <body data-bs-theme="dark">
+    <!-- nav -->
     <nav class="navbar navbar-expand-lg sticky-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="#"><i class="bi bi-spotify fs-3"></i></a>
@@ -51,6 +52,7 @@
                   aria-label="text"
                   aria-describedby="basic-addon1"
                 />
+                <div class="vr my-auto" style="height: 60%"></div>
                 <button type="button" href="#" class="navbarSearch input-group-text rounded-end-pill" id="basic-addon1">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" role="img" aria-hidden="true">
                     <path d="M15 15.5c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2z"></path>
@@ -83,52 +85,53 @@
     </nav>
 
     <!-- main -->
-    <main class="container-fluid">
+    <main class="container-fluid px-4" id="libreria">
       <div class="row">
-        <!-- aside di sinistra -->
+        <!-- Bottone per mostrare/nascondere la libreria -->
+        <button id="toggleLibreriaBtn" style="max-height: 2.5rem; max-width: 4rem" class="btn d-block d-md-none">
+          <i class="bi bi-collection"></i>
+        </button>
 
-        <aside class="col-3 overflow-auto">
+        <!-- aside di sinistra -->
+        <aside class="col-12 col-md-5 col-lg-4 col-xxl-3 overflow-auto rounded-3 d-md-block">
           <!-- intestazione libreria -->
-          <!-- to do: trasformare in col bottstrap, 
-           mettere ricerca in div con hamburger -->
           <div class="container-fluid">
             <div class="row justify-content-between align-items-center gx-0 mt-3">
-              <div class="col-7 d-flex justify-content-start">
+              <div class="col-8 d-flex justify-content-start">
                 <h3 class="fs-6">La tua libreria</h3>
               </div>
-              <div class="col-5 d-flex justify-content-end">
-                <button class="titleCrea text-white border border-0 rounded-pill fs-6 px-2 d-flex align-items-center">
+              <div class="col-4 d-flex justify-content-end">
+                <button class="titleCrea text-white border-0 rounded-pill fs-6 px-3 d-flex align-items-center me-2">
                   <i class="bi bi-plus-lg fs-6"></i> Crea
                 </button>
-                <button class="text-white border border-0 bg-transparent"><i class="bi bi-arrows-angle-expand fs-6"></i></button>
+                <button class="text-white border-0 bg-transparent"><i class="bi bi-arrows-angle-expand fs-6"></i></button>
               </div>
             </div>
 
-            <div class="row justify-content-start align-items-center gx-0 mt-3">
-              <div class="col-3">
-                <button class="titleCrea text-white border border-0 rounded-pill px-3 ms-0 me-2">Playlist</button>
+            <div class="row justify-content-evenly align-items-center gx-0 mt-3">
+              <div class="col-4 col-md-3">
+                <button class="titleCrea text-white border-0 rounded-pill px-3 w-100">Playlist</button>
               </div>
-              <div class="col-3">
-                <button class="titleCrea text-white border border-0 rounded-pill px-3 me-2">Artisti</button>
+              <div class="col-4 col-md-3">
+                <button class="titleCrea text-white border-0 rounded-pill px-3 w-100">Artisti</button>
               </div>
-              <div class="col-3">
-                <button class="titleCrea text-white border border-0 rounded-pill px-3">Album</button>
+              <div class="col-4 col-md-3">
+                <button class="titleCrea text-white border-0 rounded-pill px-3 w-100">Album</button>
               </div>
-              <div class="col-3"></div>
             </div>
 
-            <div class="row justify-content-between align-items-center gx-0">
+            <div class="row justify-content-between align-items-center gx-0 mt-3">
               <div class="col-7 d-flex justify-content-start">
-                <button class="text-secondary border border-0 bg-transparent"><i class="bi bi-search"></i></button>
+                <button class="text-secondary border-0 bg-transparent"><i class="bi bi-search"></i></button>
               </div>
-              <div class="col-5 d-flex justify-content-end align-items-center mt-3">
-                <span class="text-secondary border border-0 bg-transparent">Recenti</span>
-                <button class="text-secondary border border-0 bg-transparent fs-3"><i class="bi bi-list"></i></button>
+              <div class="col-5 d-flex justify-content-end align-items-center">
+                <span class="text-secondary">Recenti</span>
+                <button class="text-secondary border-0 bg-transparent fs-3"><i class="bi bi-list"></i></button>
               </div>
             </div>
           </div>
 
-          <!-- carrelata di immagini -->
+          <!-- Carrellata di immagini -->
           <div class="container py-3">
             <ul class="list-group">
               <li class="list-group-item border-0 p-2 ps-0">
@@ -143,6 +146,64 @@
                 </div>
               </li>
 
+              <!-- Altri elementi della lista -->
+              <li class="list-group-item border-0 p-2 ps-0">
+                <div class="d-flex align-items-center">
+                  <div class="me-3 flex-shrink-0">
+                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-1.jpeg" style="width: 80px; height: 80px; object-fit: cover" />
+                  </div>
+                  <div class="flex-grow-1">
+                    <p class="fw-bold mb-1">Titolo</p>
+                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="list-group-item border-0 p-2 ps-0">
+                <div class="d-flex align-items-center">
+                  <div class="me-3 flex-shrink-0">
+                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-1.jpeg" style="width: 80px; height: 80px; object-fit: cover" />
+                  </div>
+                  <div class="flex-grow-1">
+                    <p class="fw-bold mb-1">Titolo</p>
+                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="list-group-item border-0 p-2 ps-0">
+                <div class="d-flex align-items-center">
+                  <div class="me-3 flex-shrink-0">
+                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-1.jpeg" style="width: 80px; height: 80px; object-fit: cover" />
+                  </div>
+                  <div class="flex-grow-1">
+                    <p class="fw-bold mb-1">Titolo</p>
+                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item border-0 p-2 ps-0">
+                <div class="d-flex align-items-center">
+                  <div class="me-3 flex-shrink-0">
+                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-1.jpeg" style="width: 80px; height: 80px; object-fit: cover" />
+                  </div>
+                  <div class="flex-grow-1">
+                    <p class="fw-bold mb-1">Titolo</p>
+                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item border-0 p-2 ps-0">
+                <div class="d-flex align-items-center">
+                  <div class="me-3 flex-shrink-0">
+                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-1.jpeg" style="width: 80px; height: 80px; object-fit: cover" />
+                  </div>
+                  <div class="flex-grow-1">
+                    <p class="fw-bold mb-1">Titolo</p>
+                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
+                  </div>
+                </div>
+              </li>
               <li class="list-group-item border-0 p-2 ps-0">
                 <div class="d-flex align-items-center">
                   <div class="me-3 flex-shrink-0">
@@ -189,85 +250,19 @@
                 </div>
               </li>
 
-              <li class="list-group-item border-0 p-2 ps-0">
-                <div class="d-flex align-items-center">
-                  <div class="me-3 flex-shrink-0">
-                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-1.jpeg" style="width: 80px; height: 80px; object-fit: cover" />
-                  </div>
-                  <div class="flex-grow-1">
-                    <p class="fw-bold mb-1">Titolo</p>
-                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
-                  </div>
-                </div>
-              </li>
-
-              <li class="list-group-item border-0 p-2 ps-0">
-                <div class="d-flex align-items-center">
-                  <div class="me-3 flex-shrink-0">
-                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-4.jpg" style="width: 80px; height: 80px; object-fit: cover" />
-                  </div>
-                  <div class="flex-grow-1">
-                    <p class="fw-bold mb-1">Titolo</p>
-                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
-                  </div>
-                </div>
-              </li>
-              <li class="list-group-item border-0 p-2 ps-0">
-                <div class="d-flex align-items-center">
-                  <div class="me-3 flex-shrink-0">
-                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-4.jpg" style="width: 80px; height: 80px; object-fit: cover" />
-                  </div>
-                  <div class="flex-grow-1">
-                    <p class="fw-bold mb-1">Titolo</p>
-                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
-                  </div>
-                </div>
-              </li>
-              <li class="list-group-item border-0 p-2 ps-0">
-                <div class="d-flex align-items-center">
-                  <div class="me-3 flex-shrink-0">
-                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-4.jpg" style="width: 80px; height: 80px; object-fit: cover" />
-                  </div>
-                  <div class="flex-grow-1">
-                    <p class="fw-bold mb-1">Titolo</p>
-                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
-                  </div>
-                </div>
-              </li>
-              <li class="list-group-item border-0 p-2 ps-0">
-                <div class="d-flex align-items-center">
-                  <div class="me-3 flex-shrink-0">
-                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-4.jpg" style="width: 80px; height: 80px; object-fit: cover" />
-                  </div>
-                  <div class="flex-grow-1">
-                    <p class="fw-bold mb-1">Titolo</p>
-                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
-                  </div>
-                </div>
-              </li>
-              <li class="list-group-item border-0 p-2 ps-0">
-                <div class="d-flex align-items-center">
-                  <div class="me-3 flex-shrink-0">
-                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-4.jpg" style="width: 80px; height: 80px; object-fit: cover" />
-                  </div>
-                  <div class="flex-grow-1">
-                    <p class="fw-bold mb-1">Titolo</p>
-                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
-                  </div>
-                </div>
-              </li>
+              <!-- Continuare con gli altri elementi della lista -->
             </ul>
           </div>
         </aside>
 
-        <section class="col-7 border border-1 border-danger"></section>
+        <section class="col-12 col-md-7 col-lg-8 col-xxl-7"></section>
 
         <!-- aside di destra -->
-        <aside class="col-2 pb-2">
+        <aside class="col-12 col-xxl-2 pb-2 rounded-3 d-block d-md-none d-xxl-block">
           <div class="container">
             <div class="row">
               <div class="col-12 d-flex align-items-center justify-content-between my-3">
-                <p class="mb-0 fw-bold">Not Like Us</p>
+                <p class="mb-0 fw-bold text-center text-md-start">Not Like Us</p>
                 <div>
                   <i class="bi bi-three-dots"></i>
                   <i class="bi bi-arrows-angle-expand ms-3"></i>
@@ -282,8 +277,8 @@
               </div>
               <div class="col-12 d-flex justify-content-between align-items-center my-3">
                 <div>
-                  <p class="mb-0 fw-bold fs-4">Not Like Us</p>
-                  <p class="mb-0">Kendrick Lamar</p>
+                  <p class="mb-0 fw-bold fs-5 text-center text-md-start">Not Like Us</p>
+                  <p class="mb-0 text-center text-md-start">Kendrick Lamar</p>
                 </div>
                 <div>
                   <i class="bi bi-box-arrow-up fs-5"></i>
@@ -411,13 +406,15 @@
                     display: inline-flex;
                     align-items: center;
                     justify-content: center;
+                    padding: 0;
                   "
                   class="d-none d-sm-inline"
                 >
-                  <svg role="img" aria-hidden="true" viewBox="0 0 16 16" style="width: 22px; height: 22px; fill: rgb(20, 18, 18)">
+                  <svg role="img" aria-hidden="true" viewBox="0 0 16 16" style="width: 16px; height: 16px; fill: rgb(20, 18, 18); transform: translateY(-1px)">
                     <path d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"></path>
                   </svg>
                 </button>
+
                 <button style="border-radius: 50%; background-color: black; border: none; margin-inline: 5px">
                   <span aria-hidden="true" class="d-none d-sm-inline" style="display: inline-flex; align-items: center; justify-content: center">
                     <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" style="width: 16px; height: 16px; fill: white">
@@ -573,5 +570,6 @@
       integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
       crossorigin="anonymous"
     ></script>
+    <script src="./assets/js/index.js"></script>
   </body>
 </html>

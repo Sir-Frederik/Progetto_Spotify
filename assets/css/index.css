@@ -2,14 +2,19 @@ html,
 body {
   height: 100%;
   margin: 0;
-  overflow: hidden;
+  body,
+  html {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
   display: flex;
   flex-direction: column;
 }
 
 body {
   min-height: 100vh;
-  font-family: Arial, sans-serif;
+  background-color: black;
 }
 
 nav,
@@ -197,22 +202,55 @@ main > .row {
   align-items: stretch;
 }
 
-aside {
-  max-height: 100vh;
+aside,
+section {
+  max-height: 83vh;
   overflow-y: auto;
 }
 
-aside ul.list-group {
-  padding-bottom: 10rem;
+#lastDivRightAside {
+  padding-bottom: 5rem;
 }
 
-#lastDivRightAside {
-  padding-bottom: 10rem;
+aside::-webkit-scrollbar {
+  width: 4px;
+}
+
+aside::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+aside::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+html::-webkit-scrollbar {
+  width: 4px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+section::-webkit-scrollbar {
+  width: 4px;
+}
+
+section::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+section::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
 }
 
 main.container-fluid {
   height: 100vh;
-  overflow: hidden;
 }
 
 .row.h-100 {
@@ -233,4 +271,9 @@ aside.col-2 {
 
 .bg-gray {
   background-color: #1f1f1f;
+}
+
+#toggleLibreriaBtn {
+  background-color: transparent;
+  border: solid rgba(255, 255, 255, 0.292) 1px;
 }
