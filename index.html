@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css" />
   </head>
   <body data-bs-theme="dark">
+    <!-- nav -->
     <nav class="navbar navbar-expand-lg sticky-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="#"><i class="bi bi-spotify fs-3"></i></a>
@@ -51,6 +52,7 @@
                   aria-label="text"
                   aria-describedby="basic-addon1"
                 />
+                <div class="vr my-auto" style="height: 60%"></div>
                 <button type="button" href="#" class="navbarSearch input-group-text rounded-end-pill" id="basic-addon1">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" role="img" aria-hidden="true">
                     <path d="M15 15.5c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2z"></path>
@@ -81,48 +83,55 @@
         </div>
       </div>
     </nav>
-    <main class="container-fluid">
-      <div class="row vh-100">
-        <!-- aside di sinistra -->
 
-        <aside class="col-3">
+    <!-- main -->
+    <main class="container-fluid px-4" id="libreria">
+      <div class="row">
+        <!-- Bottone per mostrare/nascondere la libreria -->
+        <button id="toggleLibreriaBtn" style="max-height: 2.5rem; max-width: 4rem" class="btn d-block d-md-none">
+          <i class="bi bi-collection"></i>
+        </button>
+
+        <!-- aside di sinistra -->
+        <aside class="col-12 col-md-5 col-lg-4 col-xxl-3 overflow-auto rounded-3 d-md-block">
           <!-- intestazione libreria -->
-          <!-- to do: trasformare in col bottstrap, 
-           mettere ricerca in div con hamburger -->
           <div class="container-fluid">
-            <div class="row justify-content-between align-items-center">
-              <div class="col-7 px-0 d-flex justify-content-start">
+            <div class="row justify-content-between align-items-center gx-0 mt-3">
+              <div class="col-8 d-flex justify-content-start">
                 <h3 class="fs-6">La tua libreria</h3>
               </div>
-              <div class="col-5 px-0 d-flex justify-content-end">
-                <button class="titleCrea text-white border border-0 rounded-pill fs-6 p-2 d-flex align-items-center">
+              <div class="col-4 d-flex justify-content-end">
+                <button class="titleCrea text-white border-0 rounded-pill fs-6 px-3 d-flex align-items-center me-2">
                   <i class="bi bi-plus-lg fs-6"></i> Crea
                 </button>
-                <button class="text-white border border-0 bg-transparent"><i class="bi bi-arrows-angle-expand fs-6"></i></button>
+                <button class="text-white border-0 bg-transparent"><i class="bi bi-arrows-angle-expand fs-6"></i></button>
+              </div>
+            </div>
+
+            <div class="row justify-content-evenly align-items-center gx-0 mt-3">
+              <div class="col-4 col-md-3">
+                <button class="titleCrea text-white border-0 rounded-pill px-3 w-100">Playlist</button>
+              </div>
+              <div class="col-4 col-md-3">
+                <button class="titleCrea text-white border-0 rounded-pill px-3 w-100">Artisti</button>
+              </div>
+              <div class="col-4 col-md-3">
+                <button class="titleCrea text-white border-0 rounded-pill px-3 w-100">Album</button>
+              </div>
+            </div>
+
+            <div class="row justify-content-between align-items-center gx-0 mt-3">
+              <div class="col-7 d-flex justify-content-start">
+                <button class="text-secondary border-0 bg-transparent"><i class="bi bi-search"></i></button>
+              </div>
+              <div class="col-5 d-flex justify-content-end align-items-center">
+                <span class="text-secondary">Recenti</span>
+                <button class="text-secondary border-0 bg-transparent fs-3"><i class="bi bi-list"></i></button>
               </div>
             </div>
           </div>
 
-          <div class="row">
-            <div class="d-flex p-3 gap-2">
-              <button class="text-white border border-0 bg-transparent">Playlist</button>
-              <button class="text-white border border-0 bg-transparent">Artisti</button>
-              <button class="text-white border border-0 bg-transparent">Album</button>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="d-flex align-items-center ps-3">
-                <span class="text-white mr-1"><i class="bi bi-search"></i></span>
-              </div>
-
-              <span class="text-white border border-0 bg-transparent">Recenti</span>
-              <button class="text-white border border-0 bg-transparent fs-3"><i class="bi bi-list"></i></button>
-            </div>
-          </div>
-
-          <!-- carrelata di immagini -->
+          <!-- Carrellata di immagini -->
           <div class="container py-3">
             <ul class="list-group">
               <li class="list-group-item border-0 p-2 ps-0">
@@ -137,6 +146,86 @@
                 </div>
               </li>
 
+              <!-- Altri elementi della lista -->
+              <li class="list-group-item border-0 p-2 ps-0">
+                <div class="d-flex align-items-center">
+                  <div class="me-3 flex-shrink-0">
+                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-1.jpeg" style="width: 80px; height: 80px; object-fit: cover" />
+                  </div>
+                  <div class="flex-grow-1">
+                    <p class="fw-bold mb-1">Titolo</p>
+                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="list-group-item border-0 p-2 ps-0">
+                <div class="d-flex align-items-center">
+                  <div class="me-3 flex-shrink-0">
+                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-1.jpeg" style="width: 80px; height: 80px; object-fit: cover" />
+                  </div>
+                  <div class="flex-grow-1">
+                    <p class="fw-bold mb-1">Titolo</p>
+                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="list-group-item border-0 p-2 ps-0">
+                <div class="d-flex align-items-center">
+                  <div class="me-3 flex-shrink-0">
+                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-1.jpeg" style="width: 80px; height: 80px; object-fit: cover" />
+                  </div>
+                  <div class="flex-grow-1">
+                    <p class="fw-bold mb-1">Titolo</p>
+                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item border-0 p-2 ps-0">
+                <div class="d-flex align-items-center">
+                  <div class="me-3 flex-shrink-0">
+                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-1.jpeg" style="width: 80px; height: 80px; object-fit: cover" />
+                  </div>
+                  <div class="flex-grow-1">
+                    <p class="fw-bold mb-1">Titolo</p>
+                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item border-0 p-2 ps-0">
+                <div class="d-flex align-items-center">
+                  <div class="me-3 flex-shrink-0">
+                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-1.jpeg" style="width: 80px; height: 80px; object-fit: cover" />
+                  </div>
+                  <div class="flex-grow-1">
+                    <p class="fw-bold mb-1">Titolo</p>
+                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item border-0 p-2 ps-0">
+                <div class="d-flex align-items-center">
+                  <div class="me-3 flex-shrink-0">
+                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-1.jpeg" style="width: 80px; height: 80px; object-fit: cover" />
+                  </div>
+                  <div class="flex-grow-1">
+                    <p class="fw-bold mb-1">Titolo</p>
+                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item border-0 p-2 ps-0">
+                <div class="d-flex align-items-center">
+                  <div class="me-3 flex-shrink-0">
+                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-1.jpeg" style="width: 80px; height: 80px; object-fit: cover" />
+                  </div>
+                  <div class="flex-grow-1">
+                    <p class="fw-bold mb-1">Titolo</p>
+                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
+                  </div>
+                </div>
+              </li>
               <li class="list-group-item border-0 p-2 ps-0">
                 <div class="d-flex align-items-center">
                   <div class="me-3 flex-shrink-0">
@@ -161,184 +250,116 @@
                 </div>
               </li>
 
-              <li class="list-group-item border-0 p-2 ps-0">
-                <div class="d-flex align-items-center">
-                  <div class="me-3 flex-shrink-0">
-                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-1.jpeg" style="width: 80px; height: 80px; object-fit: cover" />
-                  </div>
-                  <div class="flex-grow-1">
-                    <p class="fw-bold mb-1">Titolo</p>
-                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
-                  </div>
-                </div>
-              </li>
-
-              <li class="list-group-item border-0 p-2 ps-0">
-                <div class="d-flex align-items-center">
-                  <div class="me-3 flex-shrink-0">
-                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-4.jpg" style="width: 80px; height: 80px; object-fit: cover" />
-                  </div>
-                  <div class="flex-grow-1">
-                    <p class="fw-bold mb-1">Titolo</p>
-                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
-                  </div>
-                </div>
-              </li>
+              <!-- Continuare con gli altri elementi della lista -->
             </ul>
           </div>
         </aside>
-        <!-- Sezione principale -->
-        <section class="col-7 px-4">
-          <div class="container-fluid mt-4">
+
+        <section class="col-12 col-md-7 col-lg-8 col-xxl-7"></section>
+
+        <!-- aside di destra -->
+        <aside class="col-12 col-xxl-2 pb-2 rounded-3 d-block d-md-none d-xxl-block">
+          <div class="container">
             <div class="row">
+              <div class="col-12 d-flex align-items-center justify-content-between my-3">
+                <p class="mb-0 fw-bold text-center text-md-start">Not Like Us</p>
+                <div>
+                  <i class="bi bi-three-dots"></i>
+                  <i class="bi bi-arrows-angle-expand ms-3"></i>
+                </div>
+              </div>
               <div class="col-12">
-                <button class="btn btn-outline-light rounded-pill me-4 fw-semibold whiteButton">Tutto</button>
-                <button class="btn btn-outline-light rounded-pill me-4 fw-semibold blackButton">Musica</button>
-                <button class="btn btn-outline-light rounded-pill me-4 fw-semibold blackButton">Podcast</button>
+                <img
+                  class="img-fluid"
+                  src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bXVzaWMlMjBjb3ZlcnxlbnwwfHwwfHx8MA%3D%3D"
+                  alt="photo"
+                />
               </div>
-            </div>
-            <div class="row mt-4 gy-3 rowPlaylist">
-              <div class="col-3">
-                <div class="rapidAccess d-flex align-items-center">
-                  <div class="me-3 flex-shrink-0">
-                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-6.jpg" style="width: 80px; height: 80px; object-fit: cover" />
-                  </div>
-                  <div class="flex-grow-1">
-                    <p class="fw-bold mb-1 fs-4">Titolo</p>
-                  </div>
+              <div class="col-12 d-flex justify-content-between align-items-center my-3">
+                <div>
+                  <p class="mb-0 fw-bold fs-5 text-center text-md-start">Not Like Us</p>
+                  <p class="mb-0 text-center text-md-start">Kendrick Lamar</p>
+                </div>
+                <div>
+                  <i class="bi bi-box-arrow-up fs-5"></i>
+                  <i class="bi bi-plus-circle fs-5 ms-2"></i>
                 </div>
               </div>
-              <div class="col-3">
-                <div class="rapidAccess d-flex align-items-center">
-                  <div class="me-3 flex-shrink-0">
-                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-7.jpg" style="width: 80px; height: 80px; object-fit: cover" />
-                  </div>
-                  <div class="flex-grow-1">
-                    <p class="fw-bold mb-1 fs-4">Titolo</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="rapidAccess d-flex align-items-center">
-                  <div class="me-3 flex-shrink-0">
-                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-8.jpg" style="width: 80px; height: 80px; object-fit: cover" />
-                  </div>
-                  <div class="flex-grow-1">
-                    <p class="fw-bold mb-1 fs-4">Titolo</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="rapidAccess d-flex align-items-center">
-                  <div class="me-3 flex-shrink-0">
-                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-9.jpg" style="width: 80px; height: 80px; object-fit: cover" />
-                  </div>
-                  <div class="flex-grow-1">
-                    <p class="fw-bold mb-1 fs-4">Titolo</p>
+              <div class="col-12 my-2">
+                <div class="card border-0 bg-gray">
+                  <img
+                    style="height: 200px"
+                    src="https://images.unsplash.com/photo-1585794034386-a80c6ec1f4de?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    class="card-img-top img-fluid object-fit-cover"
+                    alt="Kendrick"
+                  />
+                  <div class="card-body">
+                    <h6 class="card-title">Kendrick Lamar</h6>
+                    <div class="d-flex align-items-center">
+                      <p class="card-text">91.006.584 monthly listeners</p>
+                      <a href="#" class="btn border rounded-pill py-1">Follow</a>
+                    </div>
+                    <p class="my-2 text-truncate">
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas sunt vero eveniet cumque recusandae, ab illo animi nobis fuga provident
+                      velit quaerat asperiores ipsa iure ex esse fugit dolores exercitationem?
+                    </p>
                   </div>
                 </div>
               </div>
-              <div class="col-3">
-                <div class="rapidAccess d-flex align-items-center">
-                  <div class="me-3 flex-shrink-0">
-                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-10.jpg" style="width: 80px; height: 80px; object-fit: cover" />
-                  </div>
-                  <div class="flex-grow-1">
-                    <p class="fw-bold mb-1 fs-4">Titolo</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="rapidAccess d-flex align-items-center">
-                  <div class="me-3 flex-shrink-0">
-                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-11.jpg" style="width: 80px; height: 80px; object-fit: cover" />
-                  </div>
-                  <div class="flex-grow-1">
-                    <p class="fw-bold mb-1 fs-4">Titolo</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="rapidAccess d-flex align-items-center">
-                  <div class="me-3 flex-shrink-0">
-                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-12.jpg" style="width: 80px; height: 80px; object-fit: cover" />
-                  </div>
-                  <div class="flex-grow-1">
-                    <p class="fw-bold mb-1 fs-4">Titolo</p>
+              <div class="col-12 my-2">
+                <div class="card border-0 bg-gray">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between mb-3">
+                      <h6 class="card-title fw-bold mb-0">Credits</h6>
+                      <p class="mb-0 roles fw-bold">Show More</p>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                      <div>
+                        <p class="card-text mb-0 fw-semibold">Kendrick Lamar</p>
+                        <p class="card-text mb-0 roles">Main Artist, Writer</p>
+                      </div>
+                      <a href="#" class="btn border rounded-pill py-1 fw-bold roles">Follow</a>
+                    </div>
+                    <div class="mb-3">
+                      <p class="card-text mb-0 fw-semibold">Sean Momberger</p>
+                      <p class="card-text mb-0 roles">Writer</p>
+                    </div>
+                    <div class="my-1">
+                      <p class="card-text mb-0 fw-semibold">Ray Charles</p>
+                      <p class="card-text mb-0 roles">Writer</p>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="col-3">
-                <div class="rapidAccess d-flex align-items-center">
-                  <div class="me-3 flex-shrink-0">
-                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-13.jpeg" style="width: 80px; height: 80px; object-fit: cover" />
+              <div class="col-12 my-2" id="lastDivRightAside">
+                <div class="card border-0 bg-gray">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between mb-3">
+                      <h6 class="card-title fw-bold mb-0">Next song</h6>
+                      <p class="mb-0 roles fw-bold">Open queue</p>
+                    </div>
+                    <div class="d-flex justify-content-start gap-2 align-items-center">
+                      <img
+                        class="img-fluid object-fit-cover rounded-3"
+                        style="height: 50px; width: 50px"
+                        src="https://images.unsplash.com/photo-1547842462-b552abdeb38a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8a2VuZHJpY2slMjBsYW1hcnxlbnwwfHwwfHx8MA%3D%3D"
+                        alt="photo"
+                      />
+                      <div class="d-flex flex-column overflow-hidden">
+                        <p class="m-0 text-truncate fw-semibold">tv off(feat.lefty gunplay)</p>
+                        <p class="roles m-0 text-truncate fw-bold">Kendrick Lamar, Lefty Gunplay</p>
+                      </div>
+                    </div>
                   </div>
-                  <div class="flex-grow-1">
-                    <p class="fw-bold mb-1 fs-4">Titolo</p>
-                  </div>
                 </div>
-              </div>
-            </div>
-
-            <!-- carosello 1 -->
-
-            <div class="container mt-5">
-              <h4 class="text-white fw-bold mb-3">I tuoi show</h4>
-              <div class="carousel d-flex overflow-auto">
-                <button class="arrow left">&lt;</button>
-
-                <div class="carousel-card me-3 text-white">
-                  <img src="./assets/imgs/main/image-1.jpg" class="img-fluid rounded mb-2" style="width: 160px; height: 160px; object-fit: cover" />
-                  <p class="fw-semibold mb-1">Lorem ipsum dolor</p>
-                  <p class="text-muted small mb-0">Autore</p>
-                </div>
-
-                <div class="carousel-card me-3 text-white">
-                  <img src="./assets/imgs/main/image-2.jpg" class="img-fluid rounded mb-2" style="width: 160px; height: 160px; object-fit: cover" />
-                  <p class="fw-semibold mb-1">Lorem ipsum dolor</p>
-                  <p class="text-muted small mb-0">Autore</p>
-                </div>
-
-                <div class="carousel-card me-3 text-white">
-                  <img src="./assets/imgs/main/image-3.jpg" class="img-fluid rounded mb-2" style="width: 160px; height: 160px; object-fit: cover" />
-                  <p class="fw-semibold mb-1">Lorem ipsum dolor</p>
-                  <p class="text-muted small mb-0">Autore</p>
-                </div>
-                <div class="carousel-card me-3 text-white">
-                  <img src="./assets/imgs/main/image-4.jpg" class="img-fluid rounded mb-2" style="width: 160px; height: 160px; object-fit: cover" />
-                  <p class="fw-semibold mb-1">Lorem ipsum dolor</p>
-                  <p class="text-muted small mb-0">Autore</p>
-                </div>
-                <div class="carousel-card me-3 text-white">
-                  <img src="./assets/imgs/main/image-5.jpg" class="img-fluid rounded mb-2" style="width: 160px; height: 160px; object-fit: cover" />
-                  <p class="fw-semibold mb-1">Lorem ipsum dolor</p>
-                  <p class="text-muted small mb-0">Autore</p>
-                </div>
-                <div class="carousel-card me-3 text-white">
-                  <img src="./assets/imgs/main/image-6.jpg" class="img-fluid rounded mb-2" style="width: 160px; height: 160px; object-fit: cover" />
-                  <p class="fw-semibold mb-1">Lorem ipsum dolor</p>
-                  <p class="text-muted small mb-0">Autore</p>
-                </div>
-                <div class="carousel-card me-3 text-white">
-                  <img src="./assets/imgs/main/image-7.jpg" class="img-fluid rounded mb-2" style="width: 160px; height: 160px; object-fit: cover" />
-                  <p class="fw-semibold mb-1">Lorem ipsum dolor</p>
-                  <p class="text-muted small mb-0">Autore</p>
-                </div>
-                <div class="carousel-card me-3 text-white">
-                  <img src="./assets/imgs/main/image-8.jpg" class="img-fluid rounded mb-2" style="width: 160px; height: 160px; object-fit: cover" />
-                  <p class="fw-semibold mb-1">Lorem ipsum dolor</p>
-                  <p class="text-muted small mb-0">Autore</p>
-                </div>
-                <button class="arrow right">&gt;</button>
               </div>
             </div>
           </div>
-        </section>
-        <aside class="col-2 border border-1 border-danger"></aside>
+        </aside>
       </div>
     </main>
     <!-- FOOTER -->
-    <footer>
+    <footer class="position-fixed bottom-0 start-0 end-0">
       <div class="container-fluid">
         <div class="row py-3 gx-0 mx-2">
           <div class="col-6 col-sm-3 col-md-4 d-flex justify-content-start align-items-center">
@@ -385,13 +406,15 @@
                     display: inline-flex;
                     align-items: center;
                     justify-content: center;
+                    padding: 0;
                   "
                   class="d-none d-sm-inline"
                 >
-                  <svg role="img" aria-hidden="true" viewBox="0 0 16 16" style="width: 22px; height: 22px; fill: rgb(20, 18, 18)">
+                  <svg role="img" aria-hidden="true" viewBox="0 0 16 16" style="width: 16px; height: 16px; fill: rgb(20, 18, 18); transform: translateY(-1px)">
                     <path d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"></path>
                   </svg>
                 </button>
+
                 <button style="border-radius: 50%; background-color: black; border: none; margin-inline: 5px">
                   <span aria-hidden="true" class="d-none d-sm-inline" style="display: inline-flex; align-items: center; justify-content: center">
                     <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" style="width: 16px; height: 16px; fill: white">
@@ -429,7 +452,7 @@
             </div>
           </div>
           <div class="col-6 col-sm-3 col-md-4 d-flex justify-content-center justify-content-md-end align-items-center">
-            <button style="border-radius: 50%; background-color: black; border: none; margin-inline: 3px" class="d-flex align-items-center">
+            <button style="border-radius: 50%; background-color: black; border: none; margin-inline: 3px" class="d-none d-md-flex align-items-center">
               <span aria-hidden="true" style="display: inline-flex; align-items: center; justify-content: center">
                 <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" style="width: 16px; height: 16px; fill: white">
                   <path d="M11.196 8 6 5v6l5.196-3z"></path>
@@ -439,7 +462,7 @@
                 </svg>
               </span>
             </button>
-            <button style="border-radius: 50%; background-color: black; border: none; margin-inline: 3px" class="d-flex align-items-center">
+            <button style="border-radius: 50%; background-color: black; border: none; margin-inline: 3px" class="d-none d-md-flex align-items-center">
               <span aria-hidden="true" style="display: inline-flex; align-items: center; justify-content: center">
                 <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" style="width: 16px; height: 16px; fill: white">
                   <path
@@ -548,5 +571,6 @@
       integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
       crossorigin="anonymous"
     ></script>
+    <script src="./assets/js/index.js"></script>
   </body>
 </html>
