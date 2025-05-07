@@ -34,13 +34,13 @@
 
         <div class="collapse navbar-collapse" id="navbarNav">
           <div class="d-flex justify-content-center align-items-center flex-grow-1 my-2 my-lg-0">
-            <button id="navButton" class="btn btn-outline-none rounded-circle me-2 d-none d-md-inline" type="submit">
+            <a id="navButton" href="./index.html" class="btn btn-outline-none rounded-circle me-2 d-none d-md-inline pt-1">
               <svg data-encore-id="icon" role="img" aria-hidden="true" class="e-9890-icon e-9890-baseline" viewBox="0 0 24 24">
                 <path
                   d="M13.5 1.515a3 3 0 0 0-3 0L3 5.845a2 2 0 0 0-1 1.732V21a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6h4v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V7.577a2 2 0 0 0-1-1.732l-7.5-4.33z"
                 ></path>
               </svg>
-            </button>
+            </a>
 
             <form class="d-flex" role="search" id="searchbarQuery">
               <div class="input-group my-2 my-lg-0">
@@ -53,7 +53,7 @@
                   aria-label="text"
                   aria-describedby="basic-addon1"
                 />
-                <button type="button" href="#" class="navbarSearch input-group-text rounded-end-pill" id="basic-addon1">
+                <a type="button" href="./searchPage.html" class="navbarSearch input-group-text rounded-end-pill" id="basic-addon1">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" role="img" aria-hidden="true">
                     <path d="M15 15.5c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2z"></path>
                     <path
@@ -61,7 +61,7 @@
                       fill="currentColor"
                     />
                   </svg>
-                </button>
+                </a>
               </div>
             </form>
           </div>
@@ -262,16 +262,16 @@
           </div>
         </aside>
 
-        <section class="col-7">
-          <div class="container mt-3">
+        <section class="col-12 col-md-7 col-lg-8 col-xxl-7" id="section">
+          <!-- <div class="container mt-3">
             <div>
               <button type="button" class="searchPageBtn rounded-pill ms-2 ">Tutto</button>
-              <button type="button" class="searchPageBtn rounded-pill ms-2 ">Artisti</button>
-              <button type="button" class="searchPageBtn rounded-pill ms-2 ">Brani</button>
-              <button type="button" class="searchPageBtn rounded-pill ms-2 ">Album</button>
+              <button type="button" class="searchPageBtn rounded-pill ms-2  d-none d-md-inline">Artisti</button>
+              <button type="button" class="searchPageBtn rounded-pill ms-2">Brani</button>
+              <button type="button" class="searchPageBtn rounded-pill ms-2 d-none d-lg-inline">Album</button>
             </div>
             <div class="row mt-5">
-              <div class="col-5">
+              <div class="d-none d-md-block col-5">
                 <h4 class="fw-bold">Risultato più rilevante</h4>
                 <div class="container py-3 rounded-3" id="risultatoRilevante">
                   <div id="rilevantImg" class="mb-3">
@@ -285,7 +285,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-7">
+              <div class="col-12 col-md-7">
                 <h4 class="fw-bold">Brani</h4>
                 <div class="d-flex justify-content-between align-items-center p-2" id="braniCercati">
                   <div id="braniImg" class=" d-flex justify-content-start align-items-center gap-2">
@@ -301,12 +301,12 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
 
 
-          <div class="container mt-5 d-none">
+          <div class="container mt-5" id="searchGrid">
             <h5 class="fw-bold mb-3">Sfoglia tutto</h5>
-            <div class="row gy-4" id="searchGrid">
+            <div class="row gy-4" >
               <div class="col-3">
                 <div class="card overflow-hidden border-0" style="background-color: #dc148c; max-height: 130px">
                   <div class="card-body">

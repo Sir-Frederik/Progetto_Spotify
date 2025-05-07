@@ -33,7 +33,6 @@ button.searchPageBtn:hover {
 
 #brano::after {
   content: "•";
-  vertical-align: middle;
 }
 
 #risultatoRilevante {
@@ -51,4 +50,15 @@ button.searchPageBtn:hover {
 #braniImg {
   max-width: 50px;
   max-height: 50px;
+}
+
+#braniImg img {
+  max-width: 60px;
+  max-height: 60px;
+  flex-shrink: 0;
+}
+
+#braniImg > div {
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
