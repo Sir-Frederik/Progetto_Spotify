@@ -1,5 +1,6 @@
 html,
 body {
+  box-sizing: border-box;
   height: 100%;
   margin: 0;
   overflow: hidden;
@@ -174,6 +175,7 @@ aside {
 }
 
 main {
+  background-color: #121212;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -233,4 +235,21 @@ aside.col-2 {
 
 .bg-gray {
   background-color: #1f1f1f;
+}
+
+/* SEARCH PAGE */
+
+.rotatedImg {
+  max-height: 100px;
+  max-width: 100px;
+  transform: rotate(25deg) translate(0px, -38px);
+}
+.searchSocial {
+  color: white;
+  background-color: #212529;
+}
+
+.information {
+  color: #c2c2c2;
+  margin-bottom: 0.5rem;
 }
