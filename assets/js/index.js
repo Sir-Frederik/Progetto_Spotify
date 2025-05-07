@@ -1,8 +1,10 @@
-const URL = "https://deezerdevs-deezer.p.rapidapi.com/search?q=queen";
-let query = "queen";
+const UrlPlaylist = "https://deezerdevs-deezer.p.rapidapi.com/playlist/125";
+let query = "125";
+const rowPlaylist = document.querySelector(".rowPlaylist ");
 
-const searchAuthor = () => {
-  fetch(`${URL} ${query}`, {
+const searchPlaylist = () => {
+  fetch(UrlPlaylist, {
+    //   fetch(`${UrlPlaylist} ${query}`, {
     headers: {
       "x-rapidapi-key": token,
       "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
@@ -19,9 +21,24 @@ const searchAuthor = () => {
       }
       return resp.json();
     })
-    .then((author) => {
-      console.log(author);
+    .then((playlist) => {
+      rowPlaylist.innerHTML = "";
+
+      playlist.forEach((onePlaylist) => {
+        const col = document.createElement("div");
+        col.className = "col-3";
+        col.innerHTML = `<div class="rapidAccess d-flex align-items-center">
+                  <div class="me-3 flex-shrink-0">
+                    <img class="img-fluid rounded-3" src= ${onePlaylist.picture_small} style="width: 80px; height: 80px; object-fit: cover" />
+                  </div>
+                  <div class="flex-grow-1">
+                    <p class="fw-bold mb-1 fs-4">${onePlaylist.title}</p>
+                  </div>
+`;
+        rowPlaylist.appendChild(col);
+      });
     })
+
     .catch((error) => {
       console.log(error);
       alert(error.message);
@@ -29,5 +46,5 @@ const searchAuthor = () => {
 };
 
 window.onload = function () {
-  searchAuthor();
+  searchPlaylist();
 };
