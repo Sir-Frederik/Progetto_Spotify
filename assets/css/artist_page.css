@@ -1,8 +1,10 @@
 .imageHad {
-  height: 20rem;
-  background-image: url("../imgs/main/eminem2.jpeg");
+  height: 30rem;
+  /* background-image: url("../imgs/main/eminem2.jpeg"); */
   background-size: cover;
   position: relative;
+  width: 100%;
+  background-position: 100% 20%;
 }
 .titleInf {
   position: absolute;

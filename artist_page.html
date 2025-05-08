@@ -260,7 +260,7 @@
           <div class="container-fluid">
             <div class="row">
               <div class="col-12">
-                <div class="imageHad">
+                <div id="titleInf" class="imageHad">
                   <!-- <div class="titleInf">
                     <h6>
                       <span
@@ -295,10 +295,10 @@
                   </div> -->
 
                   <div class="titleInf">
-                    <h6>
-                      <span><i class="bi bi-bullseye"></i></span> Artista verificato
-                    </h6>
-                    <h1 class="fs-1 fw-bold">Artista</h1>
+                    <span>
+                      <h6><i class="bi bi-bullseye"></i> Artista verificato</h6>
+                    </span>
+                    <h1 id="nomeArtista" class="fs-1 fw-bold">Artista</h1>
                     <h5>68.206.811 ascoltatori mensili</h5>
                   </div>
                 </div>
@@ -329,17 +329,17 @@
                 <i class="bi bi-three-dots"></i>
               </div>
               <h3 class="my-3 fw-bold">Popolari</h3>
-              <div class="row align-items-center">
+              <div id="contenitore" class="row align-items-center">
                 <div id="track" class="col-xxl-1 col-lg-1 col-md-1 col-1 text-center">1</div>
-                <div id="album" class="col-xxl-1 col-lg-2 col-md-3 col-2">
-                  <img src="./assets/imgs/main/image-1.jpg" alt="photo" style="width: 80px; height: 80px; object-fit: cover" />
+                <div class="col-xxl-1 col-lg-2 col-md-3 col-2">
+                  <img src="./assets/imgs/main/image-1.jpg" alt="photo" id="album" style="width: 80px; height: 80px; object-fit: cover" />
                 </div>
-                <div class="col-xxl-4 col-lg-3 col-md-3 col-3 align-middle">Canzone</div>
+                <div id="song" class="col-xxl-4 col-lg-3 col-md-3 col-3 align-middle">Canzone</div>
                 <div id="ascolti" class="col-xxl-4 col-lg-3 col-md-3 col-3">numeri ascolti</div>
                 <div id="timeSong" class="col-xxl-2 col-lg-3 col-md-2 col-3">durata</div>
               </div>
 
-              <div class="row align-items-center">
+              <!-- <div class="row align-items-center">
                 <div id="track" class="col-xxl-1 col-lg-1 col-md-1 col-1 text-center">2</div>
                 <div id="album" class="col-xxl-1 col-lg-2 col-md-3 col-2">
                   <img src="./assets/imgs/main/image-1.jpg" alt="photo" style="width: 80px; height: 80px; object-fit: cover" />
@@ -387,7 +387,7 @@
                 <div class="col-xxl-4 col-lg-3 col-md-3 col-3 align-middle">Canzone</div>
                 <div id="ascolti" class="col-xxl-4 col-lg-3 col-md-3 col-3">numeri ascolti</div>
                 <div id="timeSong" class="col-xxl-2 col-lg-3 col-md-2 col-3">durata</div>
-              </div>
+              </div> -->
             </div>
           </div>
           <button class="text-white border border-0 rounded-pill bg-transparent my-3">Mostra altro</button>
@@ -398,14 +398,21 @@
               <li class="list-group-item border-0 p-2 ps-0">
                 <div class="d-flex align-items-center">
                   <div class="me-3 flex-shrink-0">
-                    <img class="img-fluid rounded-3" src="./assets/imgs/main/image-1.jpg" style="width: 80px; height: 80px; object-fit: cover" />
+                    <img
+                      class="img-fluid rounded-3"
+                      src="./assets/imgs/main/image-1.jpg"
+                      id="imgSelection"
+                      style="width: 80px; height: 80px; object-fit: cover"
+                    />
                   </div>
                   <div class="flex-grow-1">
-                    <div class="d-flex">
-                      <img src="./assets/imgs/main/image-1.jpg" style="width: 20px; height: 20px; object-fit: cover" alt="" />
+                    <!-- <div class="d-flex">
+                      <img src="./assets/imgs/main/image-1.jpg" id="imgSelectionSmall" style="width: 20px; height: 20px; object-fit: cover"  />
                       <p class="mb-1 text-secondary">Publicato da artista</p>
+                    </div> -->
+                    <div class="text-white small fw-bold">
+                      <h6 id="nameBestof"></h6>
                     </div>
-                    <div class="text-white small fw-bold">BEST OF EMINEM</div>
                     <p class="mb-1 text-secondary">Playlist</p>
                   </div>
                 </div>
@@ -437,28 +444,7 @@
             </div>
           </div>
           <div class="container-fluid my-5">
-            <div class="row overflow-auto gy-4">
-              <div class="col-xxl-3 col-lg-3 col-md-6 col-6">
-                <div id="cardDisco" class="card me-3 text-white">
-                  <img src="./assets/imgs/main/image-3.jpg" class="img-fluid rounded mb-2" style="width: 230px; height: 160px; object-fit: cover" />
-                  <p class="fw-semibold mb-1">Lorem ipsum dolor</p>
-                  <p class="text-muted small mb-0">ANNO • Album</p>
-                </div>
-              </div>
-              <div class="col-xxl-3 col-lg-3 col-md-6 col-6">
-                <div id="cardDisco" class="card me-3 text-white">
-                  <img src="./assets/imgs/main/image-3.jpg" class="img-fluid rounded mb-2" style="width: 230px; height: 160px; object-fit: cover" />
-                  <p class="fw-semibold mb-1">Lorem ipsum dolor</p>
-                  <p class="text-muted small mb-0">ANNO • Album</p>
-                </div>
-              </div>
-              <div class="col-xxl-3 col-lg-3 col-md-6 col-6">
-                <div id="cardDisco" class="card me-3 text-white">
-                  <img src="./assets/imgs/main/image-3.jpg" class="img-fluid rounded mb-2" style="width: 230px; height: 160px; object-fit: cover" />
-                  <p class="fw-semibold mb-1">Lorem ipsum dolor</p>
-                  <p class="text-muted small mb-0">ANNO • Album</p>
-                </div>
-              </div>
+            <div id="contenitoreAlbum" class="row overflow-auto gy-4">
               <div class="col-xxl-3 col-lg-3 col-md-6 col-6">
                 <div id="cardDisco" class="card me-3 text-white">
                   <img src="./assets/imgs/main/image-3.jpg" class="img-fluid rounded mb-2" style="width: 230px; height: 160px; object-fit: cover" />
@@ -784,5 +770,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="./assets/js/index.js"></script>
+    <script src="./assets/js/artist_page.js"></script>
   </body>
 </html>
