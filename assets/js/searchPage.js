@@ -242,87 +242,86 @@ window.onload = function () {
         container.appendChild(row);
         container.appendChild(glide);
 
-        const infoZone = document.createElement("div");
-        infoZone.className = "container mt-2";
-        infoZone.innerHTML = `<div class="row mt-5 border-bottom border-dark-subtle pb-5">
-                <div class="col-10">
-                  <div class="row">
-                    <div class="col-3">
-                      <p class="fw-bold mb-2">Azienda</p>
-                      <p class="information">Chi siamo</p>
-                      <p class="information">Opportunità</p>
-                      <p class="information">For the Record</p>
-                    </div>
-                    <div class="col-3">
-                      <p class="fw-bold mb-2">Community</p>
-                      <p class="information">Per artisti</p>
-                      <p class="information">Sviluppatori</p>
-                      <p class="information">Pubblicità</p>
-                      <p class="information">Investitori</p>
-                      <p class="information">Venditori</p>
-                    </div>
-                    <div class="col-3">
-                      <p class="fw-bold mb-2">Link utili</p>
-                      <p class="information">Assistenza</p>
-                      <p class="information">App per cellulare gratuita</p>
-                      <p class="information">Diritti del consumatore</p>
-                    </div>
-                    <div class="col-3">
-                      <p class="fw-bold mb-2">Piani Spotify</pclass></p>
-                      <p class="information">Premium Individual</p>
-                      <p class="information">Premium Duo</p>
-                      <p class="information">Premium Family</p>
-                      <p class="information">Premium Student</p>
-                      <p class="information">Spotify Free</p>
-                      
-                    </div>
-                  </div>
-                </div>
-                <div class="col-2 d-flex justify-content-around align-items-start">
-                  <a href="https://www.instagram.it" class="rounded-circle p-2 d-flex justify-content-center align-items-center searchSocial"
-                    ><i class="bi bi-instagram"></i
-                  ></a>
-                  <a href="https://www.twitter.it" class="rounded-circle p-2 d-flex justify-content-center align-items-center searchSocial"
-                    ><i class="bi bi-twitter-x"></i
-                  ></a>
-                  <a href="https://www.facebook.it" class="rounded-circle p-2 d-flex justify-content-center align-items-center searchSocial"
-                    ><i class="bi bi-facebook"></i
-                  ></a>
-                </div>
-              </div>
-              <div class="d-flex justify-content-between align-items-center mt-5">
-                <p class="roles">Informazioni legali</p>
-                <p class="roles">Sicurezza e Centro sulla privacy</p>
-                <p class="roles">Informativa sulla privacy</p>
-                <p class="roles">Impostazioni cookie</p>
-                <p class="roles">Info annunci</p>
-                <p class="roles">Accessibilità</p>
-                <p class="roles"><i class="bi bi-c-circle"></i> 2025 Spotify AB</p>
-              </div>`;
+        // const infoZone = document.createElement("div");
+        // infoZone.className = "container mt-2";
+        // infoZone.innerHTML = `<div class="row mt-5 border-bottom border-dark-subtle pb-5">
+        //         <div class="col-10">
+        //           <div class="row">
+        //             <div class="col-3">
+        //               <p class="fw-bold mb-2">Azienda</p>
+        //               <p class="information">Chi siamo</p>
+        //               <p class="information">Opportunità</p>
+        //               <p class="information">For the Record</p>
+        //             </div>
+        //             <div class="col-3">
+        //               <p class="fw-bold mb-2">Community</p>
+        //               <p class="information">Per artisti</p>
+        //               <p class="information">Sviluppatori</p>
+        //               <p class="information">Pubblicità</p>
+        //               <p class="information">Investitori</p>
+        //               <p class="information">Venditori</p>
+        //             </div>
+        //             <div class="col-3">
+        //               <p class="fw-bold mb-2">Link utili</p>
+        //               <p class="information">Assistenza</p>
+        //               <p class="information">App per cellulare gratuita</p>
+        //               <p class="information">Diritti del consumatore</p>
+        //             </div>
+        //             <div class="col-3">
+        //               <p class="fw-bold mb-2">Piani Spotify</pclass></p>
+        //               <p class="information">Premium Individual</p>
+        //               <p class="information">Premium Duo</p>
+        //               <p class="information">Premium Family</p>
+        //               <p class="information">Premium Student</p>
+        //               <p class="information">Spotify Free</p>
+
+        //             </div>
+        //           </div>
+        //         </div>
+        //         <div class="col-2 d-flex justify-content-around align-items-start">
+        //           <a href="https://www.instagram.it" class="rounded-circle p-2 d-flex justify-content-center align-items-center searchSocial"
+        //             ><i class="bi bi-instagram"></i
+        //           ></a>
+        //           <a href="https://www.twitter.it" class="rounded-circle p-2 d-flex justify-content-center align-items-center searchSocial"
+        //             ><i class="bi bi-twitter-x"></i
+        //           ></a>
+        //           <a href="https://www.facebook.it" class="rounded-circle p-2 d-flex justify-content-center align-items-center searchSocial"
+        //             ><i class="bi bi-facebook"></i
+        //           ></a>
+        //         </div>
+        //       </div>
+        //       <div class="d-flex justify-content-between align-items-center mt-5">
+        //         <p class="roles">Informazioni legali</p>
+        //         <p class="roles">Sicurezza e Centro sulla privacy</p>
+        //         <p class="roles">Informativa sulla privacy</p>
+        //         <p class="roles">Impostazioni cookie</p>
+        //         <p class="roles">Info annunci</p>
+        //         <p class="roles">Accessibilità</p>
+        //         <p class="roles"><i class="bi bi-c-circle"></i> 2025 Spotify AB</p>
+        //       </div>`;
 
         section.appendChild(container);
-        section.appendChild(infoZone);
+        // section.appendChild(infoZone);
 
-        addEventListener("DOMContentLoaded", event => {
-          new Glide(document.querySelector(".glide"), {
-            type: "carousel",
-            perView: 6,
-            breakpoints: {
-              1200: {
-                perView: 4,
-              },
-              992: {
-                perView: 3,
-              },
-              768: {
-                perView: 2,
-              },
-              480: {
-                perView: 1,
-              },
+        console.log("ciao");
+        new Glide(document.querySelector(".glide"), {
+          type: "carousel",
+          perView: 6,
+          breakpoints: {
+            1200: {
+              perView: 4,
             },
-          }).mount();
-        });
+            992: {
+              perView: 3,
+            },
+            768: {
+              perView: 2,
+            },
+            480: {
+              perView: 1,
+            },
+          },
+        }).mount();
 
         form.reset();
       })
