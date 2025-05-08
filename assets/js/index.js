@@ -7,6 +7,8 @@ const arrayIdPlaylist = [98, 118, 125, 55, 123, 13, 86, 45];
 const arrayIdAlbum = [];
 const rowPlaylist = document.querySelector(".rowPlaylist ");
 const carousel1 = document.querySelector(".carousel1 ");
+const carousel2 = document.querySelector(".carousel1 ");
+let randomIndices = [];
 
 const searchAndShowPlaylist = () => {
   arrayIdPlaylist.forEach((id) => {
@@ -77,22 +79,24 @@ const searchAndShowAlbum = () => {
       return resp.json();
     })
     .then((data) => {
-      let arrayLength = data.albums.length;
-      for (let i = 0; i < arrayLength; i++) {
-        arrayIdAlbum.push(i);
-      }
-      console.log("indici array totali =" + arrayIdAlbum);
-      let randomIndices = [];
+      const createRandomId = function () {
+        let arrayLength = data.albums.length;
+        for (let i = 0; i < arrayLength; i++) {
+          arrayIdAlbum.push(i);
+        }
+        console.log("indici array totali =" + arrayIdAlbum);
 
-      for (let i = 0; i < 10; i++) {
-        const index = Math.floor(Math.random() * arrayIdAlbum.length);
-        randomIndices.push(index);
-        console.log("indice Scelto= " + index);
-        arrayIdAlbum.splice(index, 1);
-        console.log("indici array rimasti =" + arrayIdAlbum);
-      }
-      console.log("indici random= " + randomIndices);
-
+        for (let i = 0; i < 10; i++) {
+          const index = Math.floor(Math.random() * arrayIdAlbum.length);
+          randomIndices.push(index);
+          console.log("indice Scelto= " + index);
+          arrayIdAlbum.splice(index, 1);
+          console.log("indici array rimasti =" + arrayIdAlbum);
+        }
+        console.log("indici random= " + randomIndices);
+      };
+      createRandomId();
+      carousel1.innerHTML = "";
       randomIndices.forEach((index) => {
         console.log("indice da stampare: " + index);
         const card = document.createElement("div");
@@ -102,6 +106,19 @@ const searchAndShowAlbum = () => {
                   <p class="text-muted small mb-0">${data.albums[index].tracks.data[0].artist.name || "Artista sconosciuto"}</p>
                                                     `;
         carousel1.appendChild(card);
+      });
+      console.log("carosello 1 fatto, PROCEDO CON CAROSELLO 2");
+      createRandomId();
+      carousel2.innerHTML = "";
+      randomIndices.forEach((index) => {
+        console.log("indice da stampare carosello 2: " + index);
+        const card = document.createElement("div");
+        card.className = "carousel-card me-3 text-white";
+        card.innerHTML = `<img src="${data.albums[index].tracks.data[0].album.cover_medium}" class="img-fluid rounded mb-2"  />
+                  <p class="fw-semibold mb-1">${data.albums[index].tracks.data[0].album.title}</p>
+                  <p class="text-muted small mb-0">${data.albums[index].tracks.data[0].artist.name || "Artista sconosciuto"}</p>
+                                                    `;
+        carousel2.appendChild(card);
       });
     })
 
@@ -113,7 +130,7 @@ const searchAndShowAlbum = () => {
 
 window.onload = function () {
   rowPlaylist.innerHTML = "";
-  carousel1.innerHTML = "";
+
   searchAndShowPlaylist();
   searchAndShowAlbum();
 };
