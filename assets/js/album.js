@@ -12,7 +12,7 @@ slider.addEventListener("input", function () {
   this.style.background = `linear-gradient(to right, #28a745 ${value}%, #ccc ${value}%)`;
 });
 
-const albumId = 76311092;
+const albumId = new URLSearchParams(window.location.search).get("albumID");
 const url = `https://deezerdevs-deezer.p.rapidapi.com/album/${albumId}`;
 const options = {
   method: "GET",
