@@ -1,0 +1,19 @@
+.imageHad {
+  height: 30rem;
+  /* background-image: url("../imgs/main/eminem2.jpeg"); */
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  background-position: 100% 20%;
+}
+.titleInf {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem;
+}
+.albumBtn {
+  background-image: url("../imgs/main/image-10.jpg");
+  background-size: cover;
+}
