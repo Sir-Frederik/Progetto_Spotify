@@ -77,17 +77,29 @@ const searchAndShowAlbum = () => {
       return resp.json();
     })
     .then((data) => {
-      console.log("Ciao sono entrato nel then");
       let arrayLength = data.albums.length;
-      console.log("lunghezza array" + arrayLength);
+      for (let i = 0; i < arrayLength; i++) {
+        arrayIdAlbum.push(i);
+      }
+      console.log("indici array totali =" + arrayIdAlbum);
+      let randomIndices = [];
 
-      // const card = document.createElement("div");
-      // card.className = "carousel-card me-3 text-white";
-      // card.innerHTML = `<img src="${album.cover_medium}" class="img-fluid rounded mb-2"  />
-      //             <p class="fw-semibold mb-1">${album.title}</p>
-      //             <p class="text-muted small mb-0">${album.artist?.name || "Artista sconosciuto"}</p>
-      //                                               `;
-      // carousel1.appendChild(card);
+      for (let i = 0; i < 10; i++) {
+        const index = Math.floor(Math.random() * arrayIdAlbum.length);
+        randomIndices.push(index);
+        console.log("indice Scelto= " + index);
+        arrayIdAlbum.splice(index, 1);
+        console.log("indici array rimasti =" + arrayIdAlbum);
+      }
+      console.log("indici random= " + randomIndices);
+
+      /*       const card = document.createElement("div");
+      card.className = "carousel-card me-3 text-white";
+      card.innerHTML = `<img src="${album.cover_medium}" class="img-fluid rounded mb-2"  />
+                  <p class="fw-semibold mb-1">${album.title}</p>
+                  <p class="text-muted small mb-0">${album.artist?.name || "Artista sconosciuto"}</p>
+                                                    `;
+      carousel1.appendChild(card); */
     })
 
     .catch((error) => {
