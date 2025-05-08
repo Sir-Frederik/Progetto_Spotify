@@ -123,7 +123,7 @@ window.onload = function () {
         div2.appendChild(div3);
 
         const div7 = document.createElement("div");
-        div7.className = "col-12 col-md-7";
+        div7.className = "col-12 col-xl-7";
 
         const secondh4 = document.createElement("h4");
         secondh4.className = "fw-bold";
