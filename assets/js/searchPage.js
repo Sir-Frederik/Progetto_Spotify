@@ -189,6 +189,18 @@ window.onload = function () {
           glideImg.src = `${song.album.cover}`;
           glideImg.alt = "photo";
 
+          glideImg.addEventListener("click", function () {
+            window.location.href = `./album.html?albumID=${song.album.id}`;
+          });
+
+          paraArtist.addEventListener("click", function () {
+            window.location.href = `./artist_page.html?artistID=${song.artist.id}`;
+          });
+
+          span2.addEventListener("click", function () {
+            window.location.href = `./artist_page.html?artistID=${song.artist.id}`;
+          });
+
           const albumTitle = document.createElement("h6");
           albumTitle.innerText = `${song.album.title}`;
           albumTitle.className = "mt-2";
