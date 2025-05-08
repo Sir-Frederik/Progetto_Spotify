@@ -1,8 +1,9 @@
-const URL = `https://deezerdevs-deezer.p.rapidapi.com/search?q=`;
+const URL = `https://deezerdevs-deezer.p.rapidapi.com/search?limit=8&q=`;
 
 const form = document.getElementById("searchbarQuery");
 const grid = document.getElementById("searchGrid");
 const section = document.getElementById("section");
+const carousel = document.querySelector(".glide");
 
 function formatTime(seconds) {
   const mins = Math.floor(seconds / 60);
@@ -36,7 +37,6 @@ form.addEventListener("submit", function (e) {
     .then(Object => {
       const arrOfSongs = Object.data;
       console.log(arrOfSongs);
-      console.log(arrOfSongs[0].album.cover);
 
       section.innerHTML = "";
 
@@ -105,8 +105,7 @@ form.addEventListener("submit", function (e) {
       const nameArtist = document.createElement("p");
       const span1 = document.createElement("span");
       span1.innerText = "Brano ";
-      span1.setAttribute("id", "brano");
-      span1.className = "roles ";
+      span1.className = "roles brano";
       const span2 = document.createElement("span");
       span2.innerText = ` ${arrOfSongs[0].artist.name}`;
       span2.className = "fw-bold roles";
@@ -129,15 +128,28 @@ form.addEventListener("submit", function (e) {
       secondh4.innerText = "Brani";
       div7.appendChild(secondh4);
 
+      const glide = document.createElement("div");
+      glide.className = "glide";
+
+      const album = document.createElement("h4");
+      album.innerText = "Album";
+
+      const glideTrack = document.createElement("div");
+      glideTrack.className = "glide__track";
+      glideTrack.dataGlideEl = "track";
+
+      const glideUl = document.createElement("ul");
+      glideUl.className = "glide__slides";
+
       //   FOR EACH PER I BRANI
       arrOfSongs.forEach(song => {
         const div8 = document.createElement("div");
-        div8.className = "d-flex justify-content-between align-items-center p-2";
-        div8.setAttribute("id", "braniCercati");
+        div8.className = "d-flex justify-content-between align-items-center my-2 pt-2 braniCercati";
+        // div8.setAttribute("id", "braniCercati");
 
         const div9 = document.createElement("div");
-        div9.className = "d-flex justify-content-start align-items-center gap-2";
-        div9.setAttribute("id", "braniImg");
+        div9.className = "d-flex justify-content-start align-items-center gap-2 braniImg";
+        // div9.setAttribute("id", "braniImg");
 
         const secondImg = document.createElement("img");
         secondImg.src = `${song.album.cover}`;
@@ -167,54 +179,87 @@ form.addEventListener("submit", function (e) {
         div8.appendChild(div9);
         div8.appendChild(div11);
         div7.appendChild(div8);
+
+        const glideLi = document.createElement("li");
+        glideLi.className = "glide__slide";
+        const glideImg = document.createElement("img");
+        glideImg.className = "rounded-3";
+        glideImg.src = `${song.album.cover}`;
+        glideImg.alt = "photo";
+
+        const albumTitle = document.createElement("h6");
+        albumTitle.innerText = `${song.album.title}`;
+        albumTitle.className = "mt-2";
+        const albumInfo = document.createElement("p");
+        const albumYear = document.createElement("span");
+        albumInfo.innerText = `${song.artist.name}`;
+        albumInfo.className = "roles";
+        albumYear.innerText = "Album";
+        albumYear.className = "brano";
+
+        albumInfo.appendChild(albumYear);
+        glideLi.appendChild(glideImg);
+        glideLi.appendChild(albumTitle);
+        glideLi.appendChild(albumInfo);
+
+        glideUl.appendChild(glideLi);
       });
 
-      //   const div8 = document.createElement("div");
-      //   div8.className = "d-flex justify-content-between align-items-center p-2";
-      //   div8.setAttribute("id", "braniCercati");
+      glideTrack.appendChild(glideUl);
+      glide.appendChild(album);
+      glide.appendChild(glideTrack);
 
-      //   const div9 = document.createElement("div");
-      //   div9.className = "d-flex justify-content-start align-items-center gap-2";
-      //   div9.setAttribute("id", "braniImg");
+      // FRECCE DEL CAROSELLO
 
-      //   const secondImg = document.createElement("img");
-      //   secondImg.src = "./assets/imgs/main/image-1.jpg";
-      //   secondImg.alt = "photo";
-      //   secondImg.className = "img-fluid rounded-3";
+      const arrowCont = document.createElement("div");
+      arrowCont.className = "glide__arrows";
+      arrowCont.setAttribute("id", "bothArrows");
+      arrowCont.setAttribute("data-glide-dir", "controls");
 
-      //   const div10 = document.createElement("div");
-      //   const h5 = document.createElement("h5");
-      //   h5.innerText = "Title";
-      //   h5.className = "fw-bold mb-0";
-      //   const paraArtist = document.createElement("p");
-      //   paraArtist.innerText = "Artist";
-      //   paraArtist.className = "roles mb-0";
+      const leftArrow = document.createElement("button");
+      leftArrow.setAttribute("id", "leftArrow");
+      leftArrow.className = "glide__arrow glide__arrow--left";
+      leftArrow.setAttribute("data-glide-dir", "<");
+      leftArrow.innerText = "<";
 
-      //   div10.appendChild(h5);
-      //   div10.appendChild(paraArtist);
+      const rightArrow = document.createElement("button");
+      rightArrow.setAttribute("id", "rightArrow");
+      rightArrow.className = "glide__arrow glide__arrow--right";
+      rightArrow.setAttribute("data-glide-dir", ">");
+      rightArrow.innerText = ">";
 
-      //   div9.appendChild(secondImg);
-      //   div9.appendChild(div10);
+      arrowCont.appendChild(leftArrow);
+      arrowCont.appendChild(rightArrow);
 
-      //   const div11 = document.createElement("div");
-      //   const paraMin = document.createElement("p");
-      //   paraMin.innerText = "3:48";
-      //   paraMin.className = "roles mb-0";
-      //   div11.appendChild(paraMin);
-
-      //   div8.appendChild(div9);
-      //   div8.appendChild(div11);
-
-      //   div7.appendChild(secondh4);
-      //   div7.appendChild(div8);
+      glide.appendChild(arrowCont);
 
       row.appendChild(div2);
       row.appendChild(div7);
 
       container.appendChild(div1);
       container.appendChild(row);
+      container.appendChild(glide);
 
       section.appendChild(container);
+
+      new Glide(document.querySelector(".glide"), {
+        type: "carousel",
+        perView: 6,
+        breakpoints: {
+          1200: {
+            perView: 4,
+          },
+          992: {
+            perView: 3,
+          },
+          768: {
+            perView: 2,
+          },
+          480: {
+            perView: 1,
+          },
+        },
+      }).mount();
 
       form.reset();
     })
