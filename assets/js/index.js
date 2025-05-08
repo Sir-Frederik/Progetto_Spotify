@@ -62,7 +62,7 @@ const searchAndShowAlbum = () => {
     console.log(query);
     console.log(UrlAlbum + query);
  */
-  fetch("../json/albums.json", {
+  fetch(" /assets/json/albums.json", {
     method: "GET",
   })
     .then((resp) => {
