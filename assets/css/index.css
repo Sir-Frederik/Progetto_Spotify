@@ -1,5 +1,6 @@
 html,
 body {
+  box-sizing: border-box;
   height: 100%;
   margin: 0;
   overflow-x: hidden;
@@ -175,6 +176,7 @@ aside {
 }
 
 main {
+  background-color: #121212;
   flex: 1;
   display: flex;
   flex-direction: column;
