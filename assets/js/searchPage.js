@@ -1,4 +1,4 @@
-const URL = `https://deezerdevs-deezer.p.rapidapi.com/search?limit=6&q=`;
+const URL = `https://deezerdevs-deezer.p.rapidapi.com/search?limit=9&q=`;
 
 const form = document.getElementById("searchbarQuery");
 const grid = document.getElementById("searchGrid");
@@ -138,7 +138,7 @@ window.onload = function () {
 
         const glideTrack = document.createElement("div");
         glideTrack.className = "glide__track";
-        glideTrack.dataGlideEl = "track";
+        glideTrack.setAttribute("data-glide-el", "track");
 
         const glideUl = document.createElement("ul");
         glideUl.className = "glide__slides";
@@ -211,12 +211,12 @@ window.onload = function () {
         glide.appendChild(album);
         glide.appendChild(glideTrack);
 
-        // FRECCE DEL CAROSELLO
+        // // FRECCE DEL CAROSELLO
 
         const arrowCont = document.createElement("div");
         arrowCont.className = "glide__arrows";
         arrowCont.setAttribute("id", "bothArrows");
-        arrowCont.setAttribute("data-glide-dir", "controls");
+        arrowCont.setAttribute("data-glide-el", "controls");
 
         const leftArrow = document.createElement("button");
         leftArrow.setAttribute("id", "leftArrow");
@@ -303,24 +303,26 @@ window.onload = function () {
         section.appendChild(container);
         section.appendChild(infoZone);
 
-        new Glide(document.querySelector(".glide"), {
-          type: "carousel",
-          perView: 6,
-          breakpoints: {
-            1200: {
-              perView: 4,
+        addEventListener("DOMContentLoaded", event => {
+          new Glide(document.querySelector(".glide"), {
+            type: "carousel",
+            perView: 6,
+            breakpoints: {
+              1200: {
+                perView: 4,
+              },
+              992: {
+                perView: 3,
+              },
+              768: {
+                perView: 2,
+              },
+              480: {
+                perView: 1,
+              },
             },
-            992: {
-              perView: 3,
-            },
-            768: {
-              perView: 2,
-            },
-            480: {
-              perView: 1,
-            },
-          },
-        }).mount();
+          }).mount();
+        });
 
         form.reset();
       })

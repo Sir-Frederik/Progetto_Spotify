@@ -9,14 +9,15 @@
       rel="stylesheet"
       integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
       crossorigin="anonymous"
-      />
+    />
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css" />
     <link rel="stylesheet" href="./assets/css/circular-font.css" />
     <link rel="stylesheet" href="./assets/css/index.css" />
-    <link rel="stylesheet" href="./assets/css/searchPage.css">
+    <link rel="stylesheet" href="./assets/css/searchPage.css" />
+    <link rel="stylesheet" href="./assets/css/album.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css" />
-
   </head>
   <body data-bs-theme="dark">
     <nav class="navbar navbar-expand-lg sticky-top">
@@ -49,6 +50,7 @@
               <div class="input-group my-2 my-lg-0">
                 <span class="navbarSearch input-group-text rounded-start-pill" id="basic-addon1"><i class="bi bi-search"></i></span>
                 <input
+                  autocomplete="off"
                   id="userQuery"
                   type="text"
                   class="form-control border-start-0 navbarSearch border-end-0"
@@ -92,7 +94,7 @@
       <div class="row">
         <!-- aside di sinistra -->
 
-        <aside class="col-12 col-md-5 col-lg-4 col-xxl-3 overflow-auto rounded-3 d-md-block">
+        <aside class="col-12 col-md-5 col-lg-4 col-xxl-2 overflow-auto rounded-3 d-md-block">
           <!-- intestazione libreria -->
           <div class="container-fluid">
             <div class="row justify-content-between align-items-center gx-0 mt-3">
@@ -132,7 +134,7 @@
 
           <!-- Carrellata di immagini -->
           <div class="container py-3">
-            <ul class="list-group">
+            <ul id="playlist-list" class="list-group">
               <li class="list-group-item border-0 p-2 ps-0">
                 <div class="d-flex align-items-center">
                   <div class="me-3 flex-shrink-0">
@@ -254,11 +256,10 @@
           </div>
         </aside>
 
-        <section class="col-12 col-md-7 col-lg-8 col-xxl-7" id="section">
-
-          <div class="container mt-5 " id="searchGrid">
+        <section class="col-12 col-md-7 col-lg-8 col-xxl-8" id="section">
+          <div class="container mt-5" id="searchGrid">
             <h5 class="fw-bold mb-3">Sfoglia tutto</h5>
-            <div class="row gy-4" >
+            <div class="row gy-4">
               <div class="col-6 col-lg-4 col-xl-3">
                 <div class="card overflow-hidden border-0" style="background-color: #dc148c; max-height: 130px">
                   <div class="card-body">
@@ -280,7 +281,7 @@
                 </div>
               </div>
               <div class="col-6 col-lg-4 col-xl-3">
-                <div class="card overflow-hidden border-0" style="background-color: #8400E7; max-height: 130px">
+                <div class="card overflow-hidden border-0" style="background-color: #8400e7; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Pollen</h5>
                   </div>
@@ -290,7 +291,7 @@
                 </div>
               </div>
               <div class="col-6 col-lg-4 col-xl-3">
-                <div class="card overflow-hidden border-0" style="background-color: #1E3264; max-height: 130px">
+                <div class="card overflow-hidden border-0" style="background-color: #1e3264; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Mint</h5>
                   </div>
@@ -310,7 +311,7 @@
                 </div>
               </div>
               <div class="col-6 col-lg-4 col-xl-3">
-                <div class="card overflow-hidden border-0" style="background-color: #477D95; max-height: 130px">
+                <div class="card overflow-hidden border-0" style="background-color: #477d95; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Are & Be</h5>
                   </div>
@@ -320,7 +321,7 @@
                 </div>
               </div>
               <div class="col-6 col-lg-4 col-xl-3">
-                <div class="card overflow-hidden border-0" style="background-color: #0D73EC; max-height: 130px">
+                <div class="card overflow-hidden border-0" style="background-color: #0d73ec; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Rock</h5>
                   </div>
@@ -330,7 +331,7 @@
                 </div>
               </div>
               <div class="col-6 col-lg-4 col-xl-3">
-                <div class="card overflow-hidden border-0" style="background-color: #477D95; max-height: 130px">
+                <div class="card overflow-hidden border-0" style="background-color: #477d95; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Beast Mode</h5>
                   </div>
@@ -340,7 +341,7 @@
                 </div>
               </div>
               <div class="col-6 col-lg-4 col-xl-3">
-                <div class="card overflow-hidden border-0" style="background-color: #477D95; max-height: 130px">
+                <div class="card overflow-hidden border-0" style="background-color: #477d95; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Nija</h5>
                   </div>
@@ -350,7 +351,7 @@
                 </div>
               </div>
               <div class="col-6 col-lg-4 col-xl-3">
-                <div class="card overflow-hidden border-0" style="background-color: #0D73EC; max-height: 130px">
+                <div class="card overflow-hidden border-0" style="background-color: #0d73ec; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Lo-fi Beats</h5>
                   </div>
@@ -360,7 +361,7 @@
                 </div>
               </div>
               <div class="col-6 col-lg-4 col-xl-3">
-                <div class="card overflow-hidden border-0" style="background-color: #8E66AC; max-height: 130px">
+                <div class="card overflow-hidden border-0" style="background-color: #8e66ac; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Car Song</h5>
                   </div>
@@ -380,7 +381,7 @@
                 </div>
               </div>
               <div class="col-6 col-lg-4 col-xl-3">
-                <div class="card overflow-hidden border-0" style="background-color: #8D67AB; max-height: 130px">
+                <div class="card overflow-hidden border-0" style="background-color: #8d67ab; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Summer Rewind</h5>
                   </div>
@@ -390,9 +391,9 @@
                 </div>
               </div>
               <div class="col-6 col-lg-4 col-xl-3">
-                <div class="card overflow-hidden border-0" style="background-color: #0D73EC; max-height: 130px">
+                <div class="card overflow-hidden border-0" style="background-color: #0d73ec; max-height: 130px">
                   <div class="card-body">
-                    <h5 class="card-title fw-bold">Top Global <br>Songs</h5>
+                    <h5 class="card-title fw-bold">Top Global <br />Songs</h5>
                   </div>
                   <div class="d-flex justify-content-end">
                     <img class="rotatedImg" src="./assets/imgs/search/image-14.jpg" alt="discoverWeekly" />
@@ -410,7 +411,7 @@
                 </div>
               </div>
               <div class="col-6 col-lg-4 col-xl-3">
-                <div class="card overflow-hidden border-0" style="background-color: #E91429; max-height: 130px">
+                <div class="card overflow-hidden border-0" style="background-color: #e91429; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Soul Lounge</h5>
                   </div>
@@ -420,7 +421,7 @@
                 </div>
               </div>
               <div class="col-6 col-lg-4 col-xl-3">
-                <div class="card overflow-hidden border-0" style="background-color: #8D67AB; max-height: 130px">
+                <div class="card overflow-hidden border-0" style="background-color: #8d67ab; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Stress Relief</h5>
                   </div>
@@ -440,7 +441,7 @@
                 </div>
               </div>
               <div class="col-6 col-lg-4 col-xl-3">
-                <div class="card overflow-hidden border-0" style="background-color: #2D46B9; max-height: 130px">
+                <div class="card overflow-hidden border-0" style="background-color: #2d46b9; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Island Pop</h5>
                   </div>
@@ -450,7 +451,7 @@
                 </div>
               </div>
               <div class="col-6 col-lg-4 col-xl-3">
-                <div class="card overflow-hidden border-0" style="background-color: #B02897; max-height: 130px">
+                <div class="card overflow-hidden border-0" style="background-color: #b02897; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Jazz</h5>
                   </div>
@@ -460,7 +461,7 @@
                 </div>
               </div>
               <div class="col-6 col-lg-4 col-xl-3">
-                <div class="card overflow-hidden border-0" style="background-color: #148A08; max-height: 130px">
+                <div class="card overflow-hidden border-0" style="background-color: #148a08; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Indigo</h5>
                   </div>
@@ -470,7 +471,7 @@
                 </div>
               </div>
               <div class="col-6 col-lg-4 col-xl-3">
-                <div class="card overflow-hidden border-0" style="background-color: #A56752; max-height: 130px">
+                <div class="card overflow-hidden border-0" style="background-color: #a56752; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Deep Focus</h5>
                   </div>
@@ -490,7 +491,7 @@
                 </div>
               </div>
               <div class="col-6 col-lg-4 col-xl-3">
-                <div class="card overflow-hidden border-0" style="background-color: #8D67AB; max-height: 130px">
+                <div class="card overflow-hidden border-0" style="background-color: #8d67ab; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Out Now</h5>
                   </div>
@@ -499,7 +500,6 @@
                   </div>
                 </div>
               </div>
-
             </div>
 
             <div class="row mt-5 border-bottom border-dark-subtle pb-5">
@@ -526,13 +526,12 @@
                     <p class="information">Diritti del consumatore</p>
                   </div>
                   <div class="col-3">
-                    <p class="fw-bold mb-2">Piani Spotify</pclass></p>
+                    <p class="fw-bold mb-2">Piani Spotify</p>
                     <p class="information">Premium Individual</p>
                     <p class="information">Premium Duo</p>
                     <p class="information">Premium Family</p>
                     <p class="information">Premium Student</p>
                     <p class="information">Spotify Free</p>
-                    
                   </div>
                 </div>
               </div>
@@ -873,5 +872,6 @@
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
     <script src="./assets/js/searchPage.js"></script>
+    <script src="./assets/js/asideSinistra.js"></script>
   </body>
 </html>
