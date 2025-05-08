@@ -88,52 +88,49 @@
     </nav>
 
     <!-- main -->
-    <main class="container-fluid">
+    <main class="container-fluid px-4" id="libreria">
       <div class="row">
         <!-- aside di sinistra -->
 
-        <aside class="col-3 overflow-auto">
+        <aside class="col-12 col-md-5 col-lg-4 col-xxl-3 overflow-auto rounded-3 d-md-block">
           <!-- intestazione libreria -->
-          <!-- to do: trasformare in col bottstrap, 
-           mettere ricerca in div con hamburger -->
           <div class="container-fluid">
             <div class="row justify-content-between align-items-center gx-0 mt-3">
-              <div class="col-7 d-flex justify-content-start">
+              <div class="col-8 d-flex justify-content-start">
                 <h3 class="fs-6">La tua libreria</h3>
               </div>
-              <div class="col-5 d-flex justify-content-end">
-                <button class="titleCrea text-white border border-0 rounded-pill fs-6 px-2 d-flex align-items-center">
+              <div class="col-4 d-flex justify-content-end">
+                <button class="titleCrea text-white border-0 rounded-pill fs-6 px-3 d-flex align-items-center me-2">
                   <i class="bi bi-plus-lg fs-6"></i> Crea
                 </button>
-                <button class="text-white border border-0 bg-transparent"><i class="bi bi-arrows-angle-expand fs-6"></i></button>
+                <button class="text-white border-0 bg-transparent"><i class="bi bi-arrows-angle-expand fs-6"></i></button>
               </div>
             </div>
 
-            <div class="row justify-content-start align-items-center gx-0 mt-3">
-              <div class="col-3">
-                <button class="titleCrea text-white border border-0 rounded-pill px-3 ms-0 me-2">Playlist</button>
+            <div class="row justify-content-evenly align-items-center gx-0 mt-3">
+              <div class="col-4 col-md-3">
+                <button class="titleCrea text-white border-0 rounded-pill px-3 w-100">Playlist</button>
               </div>
-              <div class="col-3">
-                <button class="titleCrea text-white border border-0 rounded-pill px-3 me-2">Artisti</button>
+              <div class="col-4 col-md-3">
+                <button class="titleCrea text-white border-0 rounded-pill px-3 w-100">Artisti</button>
               </div>
-              <div class="col-3">
-                <button class="titleCrea text-white border border-0 rounded-pill px-3">Album</button>
+              <div class="col-4 col-md-3">
+                <button class="titleCrea text-white border-0 rounded-pill px-3 w-100">Album</button>
               </div>
-              <div class="col-3"></div>
             </div>
 
-            <div class="row justify-content-between align-items-center gx-0">
+            <div class="row justify-content-between align-items-center gx-0 mt-3">
               <div class="col-7 d-flex justify-content-start">
-                <button class="text-secondary border border-0 bg-transparent"><i class="bi bi-search"></i></button>
+                <button class="text-secondary border-0 bg-transparent"><i class="bi bi-search"></i></button>
               </div>
-              <div class="col-5 d-flex justify-content-end align-items-center mt-3">
-                <span class="text-secondary border border-0 bg-transparent">Recenti</span>
-                <button class="text-secondary border border-0 bg-transparent fs-3"><i class="bi bi-list"></i></button>
+              <div class="col-5 d-flex justify-content-end align-items-center">
+                <span class="text-secondary">Recenti</span>
+                <button class="text-secondary border-0 bg-transparent fs-3"><i class="bi bi-list"></i></button>
               </div>
             </div>
           </div>
 
-          <!-- carrelata di immagini -->
+          <!-- Carrellata di immagini -->
           <div class="container py-3">
             <ul class="list-group">
               <li class="list-group-item border-0 p-2 ps-0">
@@ -148,6 +145,64 @@
                 </div>
               </li>
 
+              <!-- Altri elementi della lista -->
+              <li class="list-group-item border-0 p-2 ps-0">
+                <div class="d-flex align-items-center">
+                  <div class="me-3 flex-shrink-0">
+                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-1.jpeg" style="width: 80px; height: 80px; object-fit: cover" />
+                  </div>
+                  <div class="flex-grow-1">
+                    <p class="fw-bold mb-1">Titolo</p>
+                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="list-group-item border-0 p-2 ps-0">
+                <div class="d-flex align-items-center">
+                  <div class="me-3 flex-shrink-0">
+                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-1.jpeg" style="width: 80px; height: 80px; object-fit: cover" />
+                  </div>
+                  <div class="flex-grow-1">
+                    <p class="fw-bold mb-1">Titolo</p>
+                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="list-group-item border-0 p-2 ps-0">
+                <div class="d-flex align-items-center">
+                  <div class="me-3 flex-shrink-0">
+                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-1.jpeg" style="width: 80px; height: 80px; object-fit: cover" />
+                  </div>
+                  <div class="flex-grow-1">
+                    <p class="fw-bold mb-1">Titolo</p>
+                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item border-0 p-2 ps-0">
+                <div class="d-flex align-items-center">
+                  <div class="me-3 flex-shrink-0">
+                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-1.jpeg" style="width: 80px; height: 80px; object-fit: cover" />
+                  </div>
+                  <div class="flex-grow-1">
+                    <p class="fw-bold mb-1">Titolo</p>
+                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item border-0 p-2 ps-0">
+                <div class="d-flex align-items-center">
+                  <div class="me-3 flex-shrink-0">
+                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-1.jpeg" style="width: 80px; height: 80px; object-fit: cover" />
+                  </div>
+                  <div class="flex-grow-1">
+                    <p class="fw-bold mb-1">Titolo</p>
+                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
+                  </div>
+                </div>
+              </li>
               <li class="list-group-item border-0 p-2 ps-0">
                 <div class="d-flex align-items-center">
                   <div class="me-3 flex-shrink-0">
@@ -194,83 +249,17 @@
                 </div>
               </li>
 
-              <li class="list-group-item border-0 p-2 ps-0">
-                <div class="d-flex align-items-center">
-                  <div class="me-3 flex-shrink-0">
-                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-1.jpeg" style="width: 80px; height: 80px; object-fit: cover" />
-                  </div>
-                  <div class="flex-grow-1">
-                    <p class="fw-bold mb-1">Titolo</p>
-                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
-                  </div>
-                </div>
-              </li>
-
-              <li class="list-group-item border-0 p-2 ps-0">
-                <div class="d-flex align-items-center">
-                  <div class="me-3 flex-shrink-0">
-                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-4.jpg" style="width: 80px; height: 80px; object-fit: cover" />
-                  </div>
-                  <div class="flex-grow-1">
-                    <p class="fw-bold mb-1">Titolo</p>
-                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
-                  </div>
-                </div>
-              </li>
-              <li class="list-group-item border-0 p-2 ps-0">
-                <div class="d-flex align-items-center">
-                  <div class="me-3 flex-shrink-0">
-                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-4.jpg" style="width: 80px; height: 80px; object-fit: cover" />
-                  </div>
-                  <div class="flex-grow-1">
-                    <p class="fw-bold mb-1">Titolo</p>
-                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
-                  </div>
-                </div>
-              </li>
-              <li class="list-group-item border-0 p-2 ps-0">
-                <div class="d-flex align-items-center">
-                  <div class="me-3 flex-shrink-0">
-                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-4.jpg" style="width: 80px; height: 80px; object-fit: cover" />
-                  </div>
-                  <div class="flex-grow-1">
-                    <p class="fw-bold mb-1">Titolo</p>
-                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
-                  </div>
-                </div>
-              </li>
-              <li class="list-group-item border-0 p-2 ps-0">
-                <div class="d-flex align-items-center">
-                  <div class="me-3 flex-shrink-0">
-                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-4.jpg" style="width: 80px; height: 80px; object-fit: cover" />
-                  </div>
-                  <div class="flex-grow-1">
-                    <p class="fw-bold mb-1">Titolo</p>
-                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
-                  </div>
-                </div>
-              </li>
-              <li class="list-group-item border-0 p-2 ps-0">
-                <div class="d-flex align-items-center">
-                  <div class="me-3 flex-shrink-0">
-                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-4.jpg" style="width: 80px; height: 80px; object-fit: cover" />
-                  </div>
-                  <div class="flex-grow-1">
-                    <p class="fw-bold mb-1">Titolo</p>
-                    <div class="text-muted small"><i class="bi bi-pin me-1"></i>Nome Playlist</div>
-                  </div>
-                </div>
-              </li>
+              <!-- Continuare con gli altri elementi della lista -->
             </ul>
           </div>
         </aside>
 
         <section class="col-12 col-md-7 col-lg-8 col-xxl-7" id="section">
 
-          <div class="container mt-5" id="searchGrid">
+          <div class="container mt-5 " id="searchGrid">
             <h5 class="fw-bold mb-3">Sfoglia tutto</h5>
             <div class="row gy-4" >
-              <div class="col-3">
+              <div class="col-6 col-lg-4 col-xl-3">
                 <div class="card overflow-hidden border-0" style="background-color: #dc148c; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Musica</h5>
@@ -280,7 +269,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-6 col-lg-4 col-xl-3">
                 <div class="card overflow-hidden border-0" style="background-color: #006450; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Dissection</h5>
@@ -290,7 +279,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-6 col-lg-4 col-xl-3">
                 <div class="card overflow-hidden border-0" style="background-color: #8400E7; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Pollen</h5>
@@ -300,7 +289,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-6 col-lg-4 col-xl-3">
                 <div class="card overflow-hidden border-0" style="background-color: #1E3264; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Mint</h5>
@@ -310,7 +299,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-6 col-lg-4 col-xl-3">
                 <div class="card overflow-hidden border-0" style="background-color: #608108; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Latino</h5>
@@ -320,7 +309,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-6 col-lg-4 col-xl-3">
                 <div class="card overflow-hidden border-0" style="background-color: #477D95; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Are & Be</h5>
@@ -330,7 +319,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-6 col-lg-4 col-xl-3">
                 <div class="card overflow-hidden border-0" style="background-color: #0D73EC; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Rock</h5>
@@ -340,7 +329,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-6 col-lg-4 col-xl-3">
                 <div class="card overflow-hidden border-0" style="background-color: #477D95; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Beast Mode</h5>
@@ -350,7 +339,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-6 col-lg-4 col-xl-3">
                 <div class="card overflow-hidden border-0" style="background-color: #477D95; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Nija</h5>
@@ -360,7 +349,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-6 col-lg-4 col-xl-3">
                 <div class="card overflow-hidden border-0" style="background-color: #0D73EC; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Lo-fi Beats</h5>
@@ -370,7 +359,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-6 col-lg-4 col-xl-3">
                 <div class="card overflow-hidden border-0" style="background-color: #8E66AC; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Car Song</h5>
@@ -380,7 +369,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-6 col-lg-4 col-xl-3">
                 <div class="card overflow-hidden border-0" style="background-color: #608108; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">All-out</h5>
@@ -390,7 +379,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-6 col-lg-4 col-xl-3">
                 <div class="card overflow-hidden border-0" style="background-color: #8D67AB; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Summer Rewind</h5>
@@ -400,7 +389,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-6 col-lg-4 col-xl-3">
                 <div class="card overflow-hidden border-0" style="background-color: #0D73EC; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Top Global <br>Songs</h5>
@@ -410,7 +399,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-6 col-lg-4 col-xl-3">
                 <div class="card overflow-hidden border-0" style="background-color: #006450; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Podcast</h5>
@@ -420,7 +409,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-6 col-lg-4 col-xl-3">
                 <div class="card overflow-hidden border-0" style="background-color: #E91429; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Soul Lounge</h5>
@@ -430,7 +419,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-6 col-lg-4 col-xl-3">
                 <div class="card overflow-hidden border-0" style="background-color: #8D67AB; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Stress Relief</h5>
@@ -440,7 +429,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-6 col-lg-4 col-xl-3">
                 <div class="card overflow-hidden border-0" style="background-color: #dc148c; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Sleep</h5>
@@ -450,7 +439,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-6 col-lg-4 col-xl-3">
                 <div class="card overflow-hidden border-0" style="background-color: #2D46B9; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Island Pop</h5>
@@ -460,7 +449,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-6 col-lg-4 col-xl-3">
                 <div class="card overflow-hidden border-0" style="background-color: #B02897; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Jazz</h5>
@@ -470,7 +459,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-6 col-lg-4 col-xl-3">
                 <div class="card overflow-hidden border-0" style="background-color: #148A08; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Indigo</h5>
@@ -480,7 +469,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-6 col-lg-4 col-xl-3">
                 <div class="card overflow-hidden border-0" style="background-color: #A56752; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Deep Focus</h5>
@@ -490,7 +479,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-6 col-lg-4 col-xl-3">
                 <div class="card overflow-hidden border-0" style="background-color: #777777; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Peaceful Guitar</h5>
@@ -500,7 +489,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-6 col-lg-4 col-xl-3">
                 <div class="card overflow-hidden border-0" style="background-color: #8D67AB; max-height: 130px">
                   <div class="card-body">
                     <h5 class="card-title fw-bold">Out Now</h5>
@@ -512,6 +501,7 @@
               </div>
 
             </div>
+
             <div class="row mt-5 border-bottom border-dark-subtle pb-5">
               <div class="col-10">
                 <div class="row">
@@ -563,7 +553,7 @@
               <p class="roles">Sicurezza e Centro sulla privacy</p>
               <p class="roles">Informativa sulla privacy</p>
               <p class="roles">Impostazioni cookie</p>
-              <p class="roles">info annunci</p>
+              <p class="roles">Info annunci</p>
               <p class="roles">Accessibilità</p>
               <p class="roles"><i class="bi bi-c-circle"></i> 2025 Spotify AB</p>
             </div>
@@ -571,11 +561,11 @@
         </section>
 
         <!-- aside di destra -->
-        <aside class="col-2 pb-2">
+        <aside class="col-12 col-xxl-2 pb-2 rounded-3 d-block d-md-none d-xxl-block">
           <div class="container">
             <div class="row">
               <div class="col-12 d-flex align-items-center justify-content-between my-3">
-                <p class="mb-0 fw-bold">Not Like Us</p>
+                <p class="mb-0 fw-bold text-center text-md-start">Not Like Us</p>
                 <div>
                   <i class="bi bi-three-dots"></i>
                   <i class="bi bi-arrows-angle-expand ms-3"></i>
@@ -590,8 +580,8 @@
               </div>
               <div class="col-12 d-flex justify-content-between align-items-center my-3">
                 <div>
-                  <p class="mb-0 fw-bold fs-4">Not Like Us</p>
-                  <p class="mb-0">Kendrick Lamar</p>
+                  <p class="mb-0 fw-bold fs-5 text-center text-md-start">Not Like Us</p>
+                  <p class="mb-0 text-center text-md-start">Kendrick Lamar</p>
                 </div>
                 <div>
                   <i class="bi bi-box-arrow-up fs-5"></i>

@@ -116,3 +116,7 @@ button.searchPageBtn:hover {
   max-width: 150px;
   overflow: unset;
 }
+
+.glide__track {
+  /* overflow: unset; */
+}
