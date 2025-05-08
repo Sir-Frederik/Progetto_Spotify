@@ -4,7 +4,7 @@ const UrlAlbum = "https://deezerdevs-deezer.p.rapidapi.com/playlist/";
 let query = "";
 
 const arrayIdPlaylist = [98, 118, 125, 55, 123, 13, 86, 45];
-const arrayIdAlbum = [];
+let arrayIdAlbum = [];
 const rowPlaylist = document.querySelector(".rowPlaylist ");
 const carousel1 = document.querySelector(".carousel1 ");
 const carousel2 = document.querySelector(".carousel1 ");
@@ -55,20 +55,10 @@ const searchAndShowPlaylist = () => {
   });
 };
 const searchAndShowAlbum = () => {
-  /*   for (let i = 0; i < 10; i++) {
-    const number = Math.floor(Math.random() * 9000) + 1000;
-    arrayIdAlbum.push(number);
-  // }
-  arrayIdAlbum.forEach((id) => {
-    query = id;
-    console.log(query);
-    console.log(UrlAlbum + query);
- */
   fetch(" /assets/json/albums.json", {
     method: "GET",
   })
     .then((resp) => {
-      console.log("ciaoooo" + resp);
       if (!resp.ok) {
         if (resp.status >= 500) {
           throw new Error("Errore lato server");
@@ -79,47 +69,44 @@ const searchAndShowAlbum = () => {
       return resp.json();
     })
     .then((data) => {
-      const createRandomId = function () {
-        let arrayLength = data.albums.length;
-        for (let i = 0; i < arrayLength; i++) {
-          arrayIdAlbum.push(i);
-        }
-        console.log("indici array totali =" + arrayIdAlbum);
+      const createCarousel = function (carouselElement) {
+        arrayIdAlbum = [];
+        randomIndices = [];
 
-        for (let i = 0; i < 10; i++) {
-          const index = Math.floor(Math.random() * arrayIdAlbum.length);
-          randomIndices.push(index);
-          console.log("indice Scelto= " + index);
-          arrayIdAlbum.splice(index, 1);
-          console.log("indici array rimasti =" + arrayIdAlbum);
-        }
-        console.log("indici random= " + randomIndices);
+        const createRandomId = function () {
+          let arrayLength = data.albums.length;
+          for (let i = 0; i < arrayLength; i++) {
+            arrayIdAlbum.push(i);
+          }
+          console.log("indici array totali =" + arrayIdAlbum);
+
+          for (let i = 0; i < 10; i++) {
+            const index = Math.floor(Math.random() * arrayIdAlbum.length);
+            randomIndices.push(index);
+            console.log("indice Scelto= " + index);
+            arrayIdAlbum.splice(index, 1);
+            console.log("indici array rimasti =" + arrayIdAlbum);
+          }
+          console.log("indici random= " + randomIndices);
+        };
+
+        createRandomId();
+        carouselElement.innerHTML = "";
+        randomIndices.forEach((index) => {
+          console.log("indice da stampare: " + index);
+          const card = document.createElement("div");
+          card.className = "carousel-card me-3 text-white";
+          card.innerHTML = `<img src="${data.albums[index].tracks.data[0].album.cover_medium}" class="img-fluid rounded mb-2"  />
+                  <p class="fw-semibold mb-1">${data.albums[index].tracks.data[0].album.title}</p>
+                  <p class="text-muted small mb-0">${data.albums[index].tracks.data[0].artist.name || "Artista sconosciuto"}</p>
+                                                    `;
+          carouselElement.appendChild(card);
+        });
       };
-      createRandomId();
-      carousel1.innerHTML = "";
-      randomIndices.forEach((index) => {
-        console.log("indice da stampare: " + index);
-        const card = document.createElement("div");
-        card.className = "carousel-card me-3 text-white";
-        card.innerHTML = `<img src="${data.albums[index].tracks.data[0].album.cover_medium}" class="img-fluid rounded mb-2"  />
-                  <p class="fw-semibold mb-1">${data.albums[index].tracks.data[0].album.title}</p>
-                  <p class="text-muted small mb-0">${data.albums[index].tracks.data[0].artist.name || "Artista sconosciuto"}</p>
-                                                    `;
-        carousel1.appendChild(card);
-      });
-      console.log("carosello 1 fatto, PROCEDO CON CAROSELLO 2");
-      createRandomId();
-      carousel2.innerHTML = "";
-      randomIndices.forEach((index) => {
-        console.log("indice da stampare carosello 2: " + index);
-        const card = document.createElement("div");
-        card.className = "carousel-card me-3 text-white";
-        card.innerHTML = `<img src="${data.albums[index].tracks.data[0].album.cover_medium}" class="img-fluid rounded mb-2"  />
-                  <p class="fw-semibold mb-1">${data.albums[index].tracks.data[0].album.title}</p>
-                  <p class="text-muted small mb-0">${data.albums[index].tracks.data[0].artist.name || "Artista sconosciuto"}</p>
-                                                    `;
-        carousel2.appendChild(card);
-      });
+      console.log("Creo carosello 1");
+      createCarousel(carousel1);
+      console.log("PROCEDO CON CAROSELLO 2");
+      createCarousel(carousel2);
     })
 
     .catch((error) => {
