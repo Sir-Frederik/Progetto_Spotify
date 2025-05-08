@@ -1,0 +1,380 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+}
+
+body {
+  min-height: 100vh;
+}
+
+nav,
+footer {
+  height: 89px;
+  background-color: black;
+  color: white;
+}
+
+footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+}
+
+.navbar {
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+}
+
+#navButton {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background-color: #292929;
+}
+
+#navButton svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: currentColor;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.dropdown-toggle {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+.dropdown-img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.dropdown-menu {
+  background-color: #292929;
+}
+
+.input-group:focus-within {
+  border: 0.125rem solid white;
+  border-radius: 2rem;
+}
+
+.form-control,
+.navbarSearch,
+.input-group-text {
+  background-color: #333;
+  border: none;
+  color: #fff;
+  border-radius: 0.5rem;
+}
+
+.form-control:focus,
+.navbarSearch:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.input-group-text svg,
+.navbarSearch {
+  color: white;
+}
+
+#premiumButton {
+  color: black;
+  background-color: white;
+  transition: all 0.3s ease;
+  font-size: 0.8rem;
+  padding: 0.3rem 1rem;
+}
+
+#premiumButton:hover {
+  transform: scale(1.1);
+}
+
+#installAppLink,
+#bell {
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+#installAppLink:hover {
+  color: #ccc;
+}
+
+#toggleLibreriaBtn {
+  background-color: transparent;
+  border: solid rgba(255, 255, 255, 0.292) 1px;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 89px;
+}
+
+main.container-fluid {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+main > .row,
+.row {
+  flex-grow: 1;
+  display: flex;
+  align-items: stretch;
+}
+
+.row.h-100 {
+  height: 100%;
+}
+
+aside.col-3,
+section.col-7,
+aside.col-2 {
+  height: 100vh;
+  overflow-y: auto;
+}
+
+aside {
+  background-color: #121212;
+}
+
+section,
+aside {
+  max-height: 83vh;
+  overflow-y: auto;
+}
+
+.list-group-item {
+  border: 0;
+  padding: 0;
+  background-color: #121212;
+}
+
+.menuPlaylist {
+  font-size: 14px;
+}
+
+.menuAlbumImage {
+  border-radius: 5px;
+}
+
+.titleCrea {
+  background-color: #1e1e1e;
+}
+
+.roles {
+  font-size: 13px;
+  color: rgba(245, 245, 245, 0.774);
+}
+
+.bg-gray {
+  background-color: #1f1f1f;
+}
+
+#songName {
+  font-size: 15px;
+}
+
+#songArtist {
+  font-size: 12px;
+}
+
+.songTime {
+  font-size: 11px;
+}
+
+#lastDivRightAside {
+  padding-bottom: 5rem;
+}
+
+#customRange2 {
+  -webkit-appearance: none;
+  width: 20%;
+  height: 3px;
+  border-radius: 4px;
+  background: linear-gradient(to right, #28a745 0%, #ccc 0%);
+  outline: none;
+  transition: background 450ms ease-in;
+}
+
+#customRange2::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 0px;
+  height: 0px;
+  background: transparent;
+  cursor: pointer;
+}
+
+#customRange2::-moz-range-thumb {
+  width: 0px;
+  height: 0px;
+  background: transparent;
+  cursor: pointer;
+}
+
+#customRange2::-ms-thumb {
+  width: 0px;
+  height: 0px;
+  background: transparent;
+  cursor: pointer;
+}
+
+html::-webkit-scrollbar,
+aside::-webkit-scrollbar,
+section::-webkit-scrollbar {
+  width: 4px;
+}
+
+html::-webkit-scrollbar-thumb,
+aside::-webkit-scrollbar-thumb,
+section::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+html::-webkit-scrollbar-thumb:hover,
+aside::-webkit-scrollbar-thumb:hover,
+section::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+#albumSection img {
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+#albumSection h1,
+#albumSection h4 {
+  margin-bottom: 0.5rem;
+}
+
+.track-item {
+  background-color: #1e1e1e;
+  border: none;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  transition: background-color 0.2s ease;
+  border-radius: 6px;
+}
+
+.track-item:hover {
+  background-color: #333;
+}
+
+audio {
+  width: 100%;
+  max-width: 200px;
+}
+
+@media (max-width: 768px) {
+  #navButton {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  #navButton svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .dropdown-img {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  #premiumButton {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.8rem;
+  }
+
+  #installAppLink {
+    font-size: 0.7rem;
+  }
+}
+
+@media (min-width: 415px) and (max-width: 768px) {
+  #divPulsantiDaImpazzire {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .album-layout {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .album-cover {
+    flex-shrink: 0;
+    max-width: 300px;
+  }
+
+  .album-info {
+    flex-grow: 1;
+  }
+}
+
+.bi-pin {
+  color: #1ed760;
+}
+
+.play-button {
+  background-color: #3be477;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.play-button:hover {
+  background-color: #26974e;
+}
+
+.button-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-icon {
+  fill: rgb(0, 0, 0);
+  width: 20px;
+  height: 20px;
+}
