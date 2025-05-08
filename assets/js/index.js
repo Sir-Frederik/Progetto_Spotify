@@ -26,7 +26,7 @@ const searchAndShowPlaylist = () => {
           if (resp.status >= 500) {
             throw new Error("Errore lato server");
           } else {
-            throw new Error("Errore nella fetch");
+            throw new Error("Errore nella ciaooo");
           }
         }
         return resp.json();
@@ -53,47 +53,47 @@ const searchAndShowPlaylist = () => {
   });
 };
 const searchAndShowAlbum = () => {
-  for (let i = 0; i < 10; i++) {
+  /*   for (let i = 0; i < 10; i++) {
     const number = Math.floor(Math.random() * 9000) + 1000;
     arrayIdAlbum.push(number);
-  }
+  // }
   arrayIdAlbum.forEach((id) => {
     query = id;
     console.log(query);
     console.log(UrlAlbum + query);
-
-    fetch(UrlAlbum + query, {
-      headers: {
-        "x-rapidapi-key": token,
-        "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-      },
-    })
-      .then((resp) => {
-        console.log(resp);
-        if (!resp.ok) {
-          if (resp.status >= 500) {
-            throw new Error("Errore lato server");
-          } else {
-            throw new Error("Errore nella fetch");
-          }
+ */
+  fetch("../json/albums.json", {
+    method: "GET",
+  })
+    .then((resp) => {
+      console.log("ciaoooo" + resp);
+      if (!resp.ok) {
+        if (resp.status >= 500) {
+          throw new Error("Errore lato server");
+        } else {
+          throw new Error("Errore nella fetch");
         }
-        return resp.json();
-      })
-      .then((album) => {
-        const card = document.createElement("div");
-        card.className = "carousel-card me-3 text-white";
-        card.innerHTML = `<img src="${album.cover_medium}" class="img-fluid rounded mb-2"  />
-                  <p class="fw-semibold mb-1">${album.title}</p>
-                  <p class="text-muted small mb-0">${album.artist?.name || "Artista sconosciuto"}</p>
-                                                    `;
-        carousel1.appendChild(card);
-      })
+      }
+      return resp.json();
+    })
+    .then((data) => {
+      console.log("Ciao sono entrato nel then");
+      let arrayLength = data.albums.length;
+      console.log("lunghezza array" + arrayLength);
 
-      .catch((error) => {
-        console.log(error);
-        alert(error.message);
-      });
-  });
+      // const card = document.createElement("div");
+      // card.className = "carousel-card me-3 text-white";
+      // card.innerHTML = `<img src="${album.cover_medium}" class="img-fluid rounded mb-2"  />
+      //             <p class="fw-semibold mb-1">${album.title}</p>
+      //             <p class="text-muted small mb-0">${album.artist?.name || "Artista sconosciuto"}</p>
+      //                                               `;
+      // carousel1.appendChild(card);
+    })
+
+    .catch((error) => {
+      console.log(error);
+      alert(error.message);
+    });
 };
 
 window.onload = function () {
