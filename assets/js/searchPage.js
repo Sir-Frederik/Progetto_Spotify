@@ -1,10 +1,10 @@
 const URL = `https://deezerdevs-deezer.p.rapidapi.com/search?limit=9&q=`;
 
-const form = document.getElementById("searchbarQuery");
 const grid = document.getElementById("searchGrid");
 const section = document.getElementById("section");
 const carousel = document.getElementById("carosello");
 
+const query = new URLSearchParams(window.location.search).get("q");
 function formatTime(seconds) {
   const mins = Math.floor(seconds / 60);
   const secs = seconds % 60;
@@ -12,11 +12,7 @@ function formatTime(seconds) {
 }
 
 window.onload = function () {
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const query = document.getElementById("userQuery").value;
-
+  if (query) {
     fetch(URL + query, {
       headers: {
         "Content-Type": "application/json",
@@ -24,7 +20,7 @@ window.onload = function () {
         "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
       },
     })
-      .then(resp => {
+      .then((resp) => {
         if (!resp.ok) {
           if (resp.status === 400) {
             throw new Error("Risorsa non trovata.");
@@ -35,7 +31,7 @@ window.onload = function () {
         }
         return resp.json();
       })
-      .then(Object => {
+      .then((Object) => {
         const arrOfSongs = Object.data;
         console.log(arrOfSongs);
 
@@ -144,7 +140,7 @@ window.onload = function () {
         glideUl.className = "glide__slides";
 
         //   FOR EACH PER I BRANI
-        arrOfSongs.forEach(song => {
+        arrOfSongs.forEach((song) => {
           const div8 = document.createElement("div");
           div8.className = "d-flex justify-content-between align-items-center my-2 pt-2 braniCercati";
           // div8.setAttribute("id", "braniCercati");
@@ -337,6 +333,6 @@ window.onload = function () {
 
         form.reset();
       })
-      .catch(err => console.log(err));
-  });
+      .catch((err) => console.log(err));
+  }
 };
