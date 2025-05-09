@@ -1,0 +1,54 @@
+.imageHad {
+  height: 30rem;
+  /* background-image: url("../imgs/main/eminem2.jpeg"); */
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  background-position: 100% 20%;
+}
+.titleInf {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem;
+}
+.albumBtn {
+  background-image: url("../imgs/main/image-10.jpg");
+  background-size: cover;
+}
+.play-button {
+  background-color: #3be477;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.play-button:hover {
+  background-color: #26974e;
+}
+
+.button-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-icon {
+  fill: rgb(0, 0, 0);
+  width: 20px;
+  height: 20px;
+}
