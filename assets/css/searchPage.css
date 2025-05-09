@@ -80,6 +80,7 @@ button.searchPageBtn:hover {
   max-height: 150px;
   object-fit: cover;
   transition: transform 0.3s;
+  cursor: pointer;
 }
 
 .glide__slide img:hover {

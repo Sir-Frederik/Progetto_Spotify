@@ -126,6 +126,7 @@ window.onload = function () {
         secondh4.innerText = "Brani";
         div7.appendChild(secondh4);
 
+        //  questi sono gli elmenti del carosello:
         const glide = document.createElement("div");
         glide.className = "glide";
 
@@ -179,6 +180,7 @@ window.onload = function () {
           div8.appendChild(div11);
           div7.appendChild(div8);
 
+          //ciclo per ul  del glid
           const glideLi = document.createElement("li");
           glideLi.className = "glide__slide";
           const glideImg = document.createElement("img");
@@ -328,7 +330,7 @@ window.onload = function () {
         section.appendChild(container);
         // section.appendChild(infoZone);
 
-        console.log("ciao");
+        // funzione per carosello da copiare tal quale in fondo
         new Glide(document.querySelector(".glide"), {
           type: "carousel",
           perView: 6,
