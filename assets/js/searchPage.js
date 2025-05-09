@@ -20,7 +20,7 @@ window.onload = function () {
         "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
       },
     })
-      .then((resp) => {
+      .then(resp => {
         if (!resp.ok) {
           if (resp.status === 400) {
             throw new Error("Risorsa non trovata.");
@@ -31,7 +31,7 @@ window.onload = function () {
         }
         return resp.json();
       })
-      .then((Object) => {
+      .then(Object => {
         const arrOfSongs = Object.data;
         console.log(arrOfSongs);
 
@@ -95,7 +95,7 @@ window.onload = function () {
 
         const div5 = document.createElement("div");
         const h2 = document.createElement("h2");
-        h2.className = "mb-1 fw-bold fs-5 text-truncate";
+        h2.className = "mb-1 fw-bold fs-5 text-truncate brano";
         h2.innerText = `${arrOfSongs[0].title}`;
         div5.appendChild(h2);
 
@@ -103,10 +103,10 @@ window.onload = function () {
         const nameArtist = document.createElement("p");
         const span1 = document.createElement("span");
         span1.innerText = "Brano ";
-        span1.className = "roles brano";
+        span1.className = "roles";
         const span2 = document.createElement("span");
         span2.innerText = ` ${arrOfSongs[0].artist.name}`;
-        span2.className = "fw-bold roles";
+        span2.className = "fw-bold roles brano";
         nameArtist.appendChild(span1);
         nameArtist.appendChild(span2);
         div6.appendChild(nameArtist);
@@ -131,6 +131,7 @@ window.onload = function () {
 
         const album = document.createElement("h4");
         album.innerText = "Album";
+        album.className = "mt-3";
 
         const glideTrack = document.createElement("div");
         glideTrack.className = "glide__track";
@@ -140,7 +141,7 @@ window.onload = function () {
         glideUl.className = "glide__slides";
 
         //   FOR EACH PER I BRANI
-        arrOfSongs.forEach((song) => {
+        arrOfSongs.forEach(song => {
           const div8 = document.createElement("div");
           div8.className = "d-flex justify-content-between align-items-center my-2 pt-2 braniCercati";
           // div8.setAttribute("id", "braniCercati");
@@ -157,10 +158,10 @@ window.onload = function () {
           const div10 = document.createElement("div");
           const h5 = document.createElement("h5");
           h5.innerText = `${song.title}`;
-          h5.className = "fw-bold mb-0 roles";
+          h5.className = "fw-bold mb-0 roles brano";
           const paraArtist = document.createElement("p");
           paraArtist.innerText = `${song.artist.name}`;
-          paraArtist.className = "roles mb-0";
+          paraArtist.className = "brano roles mb-0";
 
           div10.appendChild(h5);
           div10.appendChild(paraArtist);
@@ -199,15 +200,31 @@ window.onload = function () {
 
           const albumTitle = document.createElement("h6");
           albumTitle.innerText = `${song.album.title}`;
-          albumTitle.className = "mt-2";
+          albumTitle.className = "brano mt-2";
           const albumInfo = document.createElement("p");
-          const albumYear = document.createElement("span");
-          albumInfo.innerText = `${song.artist.name}`;
+          const albumArtist = document.createElement("span");
+          albumInfo.innerText = "Album ";
           albumInfo.className = "roles";
-          albumYear.innerText = "Album";
-          albumYear.className = "brano";
+          albumArtist.innerText = ` ${song.artist.name}`;
+          albumArtist.className = "brano point";
 
-          albumInfo.appendChild(albumYear);
+          albumArtist.addEventListener("click", function () {
+            window.location.href = `./artist_page.html?artistID=${song.artist.id}`;
+          });
+
+          albumTitle.addEventListener("click", function () {
+            window.location.href = `./album.html?albumID=${song.album.id}`;
+          });
+
+          h5.addEventListener("click", function () {
+            window.location.href = `./album.html?albumID=${song.album.id}`;
+          });
+
+          h2.addEventListener("click", function () {
+            window.location.href = `./album.html?albumID=${song.album.id}`;
+          });
+
+          albumInfo.appendChild(albumArtist);
           glideLi.appendChild(glideImg);
           glideLi.appendChild(albumTitle);
           glideLi.appendChild(albumInfo);
@@ -333,6 +350,6 @@ window.onload = function () {
 
         form.reset();
       })
-      .catch((err) => console.log(err));
+      .catch(err => console.log(err));
   }
 };
