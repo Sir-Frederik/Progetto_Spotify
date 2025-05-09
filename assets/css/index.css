@@ -81,6 +81,13 @@ footer {
   font-size: 0.9rem;
   padding: 0.3rem 0.8rem;
 }
+.blackButton {
+  color: white;
+  background-color: black;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  padding: 0.3rem 0.8rem;
+}
 
 #premiumButton:hover {
   transform: scale(1.1);

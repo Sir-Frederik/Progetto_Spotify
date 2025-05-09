@@ -32,7 +32,7 @@ const searchAndShowLittleAlbum = () => {
       })
       .then((data) => {
         const col = document.createElement("div");
-        col.className = "col-3 littleCard";
+        col.className = "col-12 col-sm-6 col-xxl-3 littleCard";
         let littleAlbum = data.albums[i].tracks.data[0].album;
         col.innerHTML = `<div class="rapidAccess d-flex align-items-center">
                   <div class="me-3 flex-shrink-0">
@@ -197,13 +197,14 @@ const searchAndShowAlbum = () => {
           type: "carousel",
           perView: 6,
           breakpoints: {
-            1200: {
+            1500: {
               perView: 4,
             },
-            992: {
+
+            1050: {
               perView: 3,
             },
-            768: {
+            970: {
               perView: 2,
             },
             480: {
