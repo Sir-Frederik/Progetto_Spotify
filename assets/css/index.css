@@ -366,3 +366,33 @@ aside.col-2 {
     gap: 1rem;
   }
 }
+
+#leftArrowIndex {
+  position: absolute;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 30px;
+  left: -35px;
+  top: 27%;
+}
+
+#rightArrowIndex {
+  position: absolute;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 30px;
+  right: -35px;
+  top: 27%;
+}
+
+.littleCard {
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+.littleCard:hover {
+  transform: scale(1.05);
+}

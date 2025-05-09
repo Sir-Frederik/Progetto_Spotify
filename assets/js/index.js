@@ -36,7 +36,7 @@ const searchAndShowPlaylist = () => {
       })
       .then((playlist) => {
         const col = document.createElement("div");
-        col.className = "col-3";
+        col.className = "col-3 littleCard";
         col.innerHTML = `<div class="rapidAccess d-flex align-items-center">
                   <div class="me-3 flex-shrink-0">
                     <img class="img-fluid rounded-3" src= ${playlist.picture_small} style="width: 80px; height: 80px; object-fit: cover" />
@@ -160,19 +160,20 @@ const searchAndShowAlbum = () => {
         glide.appendChild(glideTrack);
         carouselElement.appendChild(glide);
         console.log(`Inserito tutto nel carousel  ${carouselElement}  `);
+
         const arrowCont = document.createElement("div");
         arrowCont.className = "glide__arrows";
         arrowCont.setAttribute("id", "bothArrows");
         arrowCont.setAttribute("data-glide-el", "controls");
 
         const leftArrow = document.createElement("button");
-        leftArrow.setAttribute("id", "leftArrow");
+        leftArrow.setAttribute("id", "leftArrowIndex");
         leftArrow.className = "glide__arrow glide__arrow--left";
         leftArrow.setAttribute("data-glide-dir", "<");
         leftArrow.innerText = "<";
 
         const rightArrow = document.createElement("button");
-        rightArrow.setAttribute("id", "rightArrow");
+        rightArrow.setAttribute("id", "rightArrowIndex");
         rightArrow.className = "glide__arrow glide__arrow--right";
         rightArrow.setAttribute("data-glide-dir", ">");
         rightArrow.innerText = ">";
