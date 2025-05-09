@@ -43,10 +43,12 @@
               </svg>
             </button>
 
-            <form class="d-flex" role="search">
+            <form id="searchbarQuery" class="d-flex" role="search">
               <div class="input-group my-2 my-lg-0">
                 <span class="navbarSearch input-group-text rounded-start-pill" id="basic-addon1"><i class="bi bi-search"></i></span>
                 <input
+                  autocomplete="off"
+                  id="userQuery"
                   type="text"
                   class="form-control border-start-0 navbarSearch border-end-0"
                   placeholder="Cosa vuoi ascoltare?"
@@ -89,7 +91,7 @@
     <main class="container-fluid px-4" id="libreria">
       <div class="row">
         <!-- Bottone per mostrare/nascondere la libreria -->
-        <button id="toggleLibreriaBtn" style="max-height: 2.5rem; max-width: 4rem" class="btn d-block d-md-none">
+        <button id="toggleLibreriaBtn" style="max-height: 2.5rem; max-width: 4rem" class="mb-3 btn d-block d-md-none">
           <i class="bi bi-collection"></i>
         </button>
 
@@ -134,7 +136,7 @@
 
           <!-- Carrellata di immagini -->
           <div class="container py-3">
-            <ul class="list-group">
+            <ul id="playlist-list" class="list-group">
               <li class="list-group-item border-0 p-2 ps-0">
                 <div class="d-flex align-items-center">
                   <div class="me-3 flex-shrink-0">
@@ -296,7 +298,33 @@
 
                   <div class="titleInf">
                     <span>
-                      <h6><i class="bi bi-bullseye"></i> Artista verificato</h6>
+                      <h6>
+                        <span
+                          ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true">
+                            <!-- Fondo: badge -->
+                            <path
+                              fill="#4cb3ff"
+                              d="M10.814.5a1.658 1.658 0 0 1 2.372 0l2.512 2.572 
+                                3.595-.043a1.658 1.658 0 0 1 1.678 1.678l-.043 3.595 
+                                2.572 2.512c.667.65.667 1.722 0 2.372l-2.572 2.512 
+                                .043 3.595a1.658 1.658 0 0 1-1.678 1.678l-3.595-.043 
+                                -2.512 2.572a1.658 1.658 0 0 1-2.372 0l-2.512-2.572 
+                                -3.595.043a1.658 1.658 0 0 1-1.678-1.678l.043-3.595 
+                                L.5 13.186a1.658 1.658 0 0 1 0-2.372l2.572-2.512 
+                                -.043-3.595a1.658 1.658 0 0 1 1.678-1.678l3.595.043 
+                                L10.814.5z"
+                            />
+                            <!-- Spunta: check -->
+                            <path
+                              fill="white"
+                              d="M17.398 9.62a1 1 0 0 0-1.414-1.413l-6.011 6.01
+                                -1.894-1.893a1 1 0 0 0-1.414 1.414l3.308 3.308 
+                                7.425-7.425z"
+                            />
+                          </svg>
+                        </span>
+                        Artista verificato
+                      </h6>
                     </span>
                     <h1 id="nomeArtista" class="fs-1 fw-bold">Artista</h1>
                     <h5>68.206.811 ascoltatori mensili</h5>
@@ -338,56 +366,6 @@
                 <div id="ascolti" class="col-xxl-4 col-lg-3 col-md-3 col-3">numeri ascolti</div>
                 <div id="timeSong" class="col-xxl-2 col-lg-3 col-md-2 col-3">durata</div>
               </div>
-
-              <!-- <div class="row align-items-center">
-                <div id="track" class="col-xxl-1 col-lg-1 col-md-1 col-1 text-center">2</div>
-                <div id="album" class="col-xxl-1 col-lg-2 col-md-3 col-2">
-                  <img src="./assets/imgs/main/image-1.jpg" alt="photo" style="width: 80px; height: 80px; object-fit: cover" />
-                </div>
-                <div class="col-xxl-4 col-lg-3 col-md-3 col-3 align-middle">Canzone</div>
-                <div id="ascolti" class="col-xxl-4 col-lg-3 col-md-3 col-3">numeri ascolti</div>
-                <div id="timeSong" class="col-xxl-2 col-lg-3 col-md-2 col-3">durata</div>
-              </div>
-
-              <div class="row align-items-center">
-                <div id="track" class="col-xxl-1 col-lg-1 col-md-1 col-1 text-center">3</div>
-                <div id="album" class="col-xxl-1 col-lg-2 col-md-3 col-2">
-                  <img src="./assets/imgs/main/image-1.jpg" alt="photo" style="width: 80px; height: 80px; object-fit: cover" />
-                </div>
-                <div class="col-xxl-4 col-lg-3 col-md-3 col-3 align-middle">Canzone</div>
-                <div id="ascolti" class="col-xxl-4 col-lg-3 col-md-3 col-3">numeri ascolti</div>
-                <div id="timeSong" class="col-xxl-2 col-lg-3 col-md-2 col-3">durata</div>
-              </div>
-
-              <div class="row align-items-center">
-                <div id="track" class="col-xxl-1 col-lg-1 col-md-1 col-1 text-center">4</div>
-                <div id="album" class="col-xxl-1 col-lg-2 col-md-3 col-2">
-                  <img src="./assets/imgs/main/image-1.jpg" alt="photo" style="width: 80px; height: 80px; object-fit: cover" />
-                </div>
-                <div class="col-xxl-4 col-lg-3 col-md-3 col-3 align-middle">Canzone</div>
-                <div id="ascolti" class="col-xxl-4 col-lg-3 col-md-3 col-3">numeri ascolti</div>
-                <div id="timeSong" class="col-xxl-2 col-lg-3 col-md-2 col-3">durata</div>
-              </div>
-
-              <div class="row align-items-center">
-                <div id="track" class="col-xxl-1 col-lg-1 col-md-1 col-1 text-center">5</div>
-                <div id="album" class="col-xxl-1 col-lg-2 col-md-3 col-2">
-                  <img src="./assets/imgs/main/image-1.jpg" alt="photo" style="width: 80px; height: 80px; object-fit: cover" />
-                </div>
-                <div class="col-xxl-4 col-lg-3 col-md-3 col-3 align-middle">Canzone</div>
-                <div id="ascolti" class="col-xxl-4 col-lg-3 col-md-3 col-3">numeri ascolti</div>
-                <div id="timeSong" class="col-xxl-2 col-lg-3 col-md-2 col-3">durata</div>
-              </div>
-
-              <div class="row align-items-center">
-                <div id="track" class="col-xxl-1 col-lg-1 col-md-1 col-1 text-center">6</div>
-                <div id="album" class="col-xxl-1 col-lg-2 col-md-3 col-2">
-                  <img src="./assets/imgs/main/image-1.jpg" alt="photo" style="width: 80px; height: 80px; object-fit: cover" />
-                </div>
-                <div class="col-xxl-4 col-lg-3 col-md-3 col-3 align-middle">Canzone</div>
-                <div id="ascolti" class="col-xxl-4 col-lg-3 col-md-3 col-3">numeri ascolti</div>
-                <div id="timeSong" class="col-xxl-2 col-lg-3 col-md-2 col-3">durata</div>
-              </div> -->
             </div>
           </div>
           <button class="text-white border border-0 rounded-pill bg-transparent my-3">Mostra altro</button>
@@ -446,10 +424,10 @@
           <div class="container-fluid my-5">
             <div id="contenitoreAlbum" class="row overflow-auto gy-4">
               <div class="col-xxl-3 col-lg-3 col-md-6 col-6">
-                <div id="cardDisco" class="card me-3 text-white">
-                  <img src="./assets/imgs/main/image-3.jpg" class="img-fluid rounded mb-2" style="width: 230px; height: 160px; object-fit: cover" />
-                  <p class="fw-semibold mb-1">Lorem ipsum dolor</p>
-                  <p class="text-muted small mb-0">ANNO • Album</p>
+                <div id="cardDisco" style="max-width: 230px" class="card me-3 text-white">
+                  <img src="./assets/imgs/main/image-3.jpg" class="img-fluid rounded mb-2" style="object-fit: cover" />
+                  <p class="fw-semibold mb-1 ps-3">Lorem ipsum dolor</p>
+                  <p class="text-muted small mb-2 ps-3">ANNO • Album</p>
                 </div>
               </div>
             </div>
@@ -761,5 +739,7 @@
     ></script>
     <script src="./assets/js/index.js"></script>
     <script src="./assets/js/artist_page.js"></script>
+    <script src="./assets/js/asideSinistra.js"></script>
+    <script src="./assets/js/searchBar.js"></script>
   </body>
 </html>

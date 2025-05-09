@@ -190,11 +190,11 @@ window.onload = function () {
           });
 
           paraArtist.addEventListener("click", function () {
-            window.location.href = `./artist_page.html?artistID=${song.artist.id}`;
+            window.location.href = `./artist_page.html?artistID=${song.artist.name}`;
           });
 
           span2.addEventListener("click", function () {
-            window.location.href = `./artist_page.html?artistID=${song.artist.id}`;
+            window.location.href = `./artist_page.html?artistID=${song.artist.name}`;
           });
 
           const albumTitle = document.createElement("h6");
