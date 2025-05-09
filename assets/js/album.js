@@ -1,6 +1,10 @@
 const toggleLibreriaBtn = document.getElementById("toggleLibreriaBtn");
 const libreriaAside = document.querySelector("aside");
 
+const footerImg = document.getElementById("imgSotto");
+const songName = document.getElementById("songName");
+const songArtist = document.getElementById("songArtist");
+
 toggleLibreriaBtn.addEventListener("click", () => {
   libreriaAside.classList.toggle("d-none");
 });
@@ -23,11 +27,11 @@ const options = {
 };
 
 fetch(url, options)
-  .then((response) => {
+  .then(response => {
     if (!response.ok) throw new Error("Errore HTTP: " + response.status);
     return response.json();
   })
-  .then((data) => {
+  .then(data => {
     const section = document.getElementById("albumSection");
 
     const artistImage = new Image();
@@ -141,7 +145,7 @@ fetch(url, options)
       playButton.appendChild(spanButtonInner);
       leftControls.appendChild(playButton);
 
-      ["plus-circle", "three-dots"].forEach((iconName) => {
+      ["plus-circle", "three-dots"].forEach(iconName => {
         const icon = document.createElement("i");
         icon.className = `bi bi-${iconName} ms-3`;
         leftControls.appendChild(icon);
@@ -200,6 +204,12 @@ fetch(url, options)
         li.appendChild(span);
 
         trackList.appendChild(li);
+
+        // li.addEventListener("click", function () {
+        //   footerImg.src = track.album.cover;
+        //   songName.innerText = track.title;
+        //   songArtist.innerText = track.artist.name;
+        // });
       });
       container.appendChild(trackList);
 
@@ -210,7 +220,7 @@ fetch(url, options)
 
       const leftFooter = document.createElement("div");
       leftFooter.className = "col-12 col-md-8 d-flex justify-content-start mb-5 mb-md-0";
-      ["Informazioni legali", "Impostazioni cookie", "Accessibilità"].forEach((text) => {
+      ["Informazioni legali", "Impostazioni cookie", "Accessibilità"].forEach(text => {
         const a = document.createElement("a");
         a.className = "me-3";
         a.style.fontSize = "0.8rem";
@@ -240,7 +250,7 @@ fetch(url, options)
       });
     };
   })
-  .catch((error) => {
+  .catch(error => {
     console.error("Errore nel caricamento dell'album:", error);
     document.getElementById("albumSection").innerHTML = `
       <div class="container alert alert-danger" role="alert">
