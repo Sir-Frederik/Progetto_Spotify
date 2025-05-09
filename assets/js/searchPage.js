@@ -3,6 +3,10 @@ const URL = `https://deezerdevs-deezer.p.rapidapi.com/search?limit=9&q=`;
 const grid = document.getElementById("searchGrid");
 const section = document.getElementById("section");
 const carousel = document.getElementById("carosello");
+const footerImg = document.getElementById("imgSotto");
+const songName = document.getElementById("songName");
+const songArtist = document.getElementById("songArtist");
+const durata = document.getElementById("durata");
 
 const query = new URLSearchParams(window.location.search).get("q");
 function formatTime(seconds) {
@@ -224,6 +228,13 @@ window.onload = function () {
 
           h2.addEventListener("click", function () {
             window.location.href = `./album.html?albumID=${song.album.id}`;
+          });
+
+          div8.addEventListener("click", function () {
+            footerImg.src = song.album.cover;
+            songName.innerText = song.title;
+            songArtist.innerText = song.artist.name;
+            durata.innerText = formatTime(song.duration);
           });
 
           albumInfo.appendChild(albumArtist);
