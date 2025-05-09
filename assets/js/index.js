@@ -13,7 +13,7 @@ let globalAlbumData;
 let randomIndices = [];
 
 const searchAndShowLittleAlbum = () => {
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < 11; i++) {
     fetch("/assets/json/albums.json", {
       /*   headers: {
         "x-rapidapi-key": token,
