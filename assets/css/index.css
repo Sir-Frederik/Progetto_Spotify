@@ -1,11 +1,10 @@
 html,
 body {
+  box-sizing: border-box;
   height: 100%;
   margin: 0;
-
   overflow-x: hidden;
   overflow-y: auto;
-
   display: flex;
   flex-direction: column;
 }
@@ -215,11 +214,37 @@ aside {
 .carousel::-webkit-scrollbar {
   display: none;
 
-  main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
+.rapidAccess {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.carousel {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 10px;
+}
+
+.carousel-card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+.carousel-card:hover {
+  filter: brightness(2.5);
+  /* background-color: inherit; */
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+
+main {
+  background-color: #121212;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
 
   .row {
     flex-grow: 1;
@@ -314,7 +339,7 @@ aside {
     background-color: transparent;
     border: solid rgba(255, 255, 255, 0.292) 1px;
   }
-}
+
 
 .carousel-card img {
   width: 160px;
@@ -325,4 +350,90 @@ aside {
 .carousel-card {
   width: 160px;
   height: 160px;
+}
+
+#customRange2 {
+  -webkit-appearance: none;
+  width: 20%;
+  height: 3px;
+  border-radius: 4px;
+  background: linear-gradient(to right, #28a745 0%, #ccc 0%);
+  outline: none;
+  transition: background 450ms ease-in;
+}
+
+#customRange2::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 0px;
+  height: 0px;
+  background: transparent;
+  cursor: pointer;
+}
+
+#customRange2::-moz-range-thumb {
+  width: 0px;
+  height: 0px;
+  background: transparent;
+  cursor: pointer;
+}
+
+#customRange2::-ms-thumb {
+  width: 0px;
+  height: 0px;
+  background: transparent;
+  cursor: pointer;
+}
+@media (min-width: 415px) and (max-width: 768px) {
+  #divPulsantiDaImpazzire {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+
+#customRange2 {
+  -webkit-appearance: none;
+  width: 20%;
+  height: 3px;
+  border-radius: 4px;
+  background: linear-gradient(to right, #28a745 0%, #ccc 0%);
+  outline: none;
+  transition: background 450ms ease-in;
+}
+
+#customRange2::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 0px;
+  height: 0px;
+  background: transparent;
+  cursor: pointer;
+}
+
+#customRange2::-moz-range-thumb {
+  width: 0px;
+  height: 0px;
+  background: transparent;
+  cursor: pointer;
+}
+
+#customRange2::-ms-thumb {
+  width: 0px;
+  height: 0px;
+  background: transparent;
+  cursor: pointer;
+}
+@media (min-width: 415px) and (max-width: 768px) {
+  #divPulsantiDaImpazzire {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
 }

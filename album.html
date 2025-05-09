@@ -12,8 +12,8 @@
     />
     <link rel="stylesheet" href="./assets/css/circular-font.css" />
     <link rel="stylesheet" href="./assets/css/index.css" />
+    <link rel="stylesheet" href="./assets/css/album.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css" />
-    <!-- <link rel="stylesheet" href="./assets/css/album.css" /> -->
   </head>
   <body data-bs-theme="dark">
     <!-- nav -->
@@ -47,8 +47,8 @@
               <div class="input-group my-2 my-lg-0">
                 <span class="navbarSearch input-group-text rounded-start-pill" id="basic-addon1"><i class="bi bi-search"></i></span>
                 <input
-                  id="userQuery"
                   type="text"
+                  id="userQuery"
                   class="form-control border-start-0 navbarSearch border-end-0"
                   placeholder="Cosa vuoi ascoltare?"
                   aria-label="text"
@@ -257,211 +257,10 @@
           </div>
         </aside>
 
-        <!-- sezione principale -->
-        <section class="col-12 col-md-7 col-lg-8 col-xxl-8">
-          <div class="container-fluid mt-4">
-            <div class="row">
-              <div class="col-12">
-                <button class="btn btn-outline-light rounded-pill me-4 fw-semibold whiteButton">Tutto</button>
-                <button class="btn btn-outline-light rounded-pill me-4 fw-semibold blackButton">Musica</button>
-                <button class="btn btn-outline-light rounded-pill me-4 fw-semibold blackButton">Podcast</button>
-              </div>
-            </div>
-            <div class="row mt-4 gy-3 rowPlaylist">
-              <div class="col-3">
-                <div class="rapidAccess d-flex align-items-center">
-                  <div class="me-3 flex-shrink-0">
-                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-6.jpg" style="width: 80px; height: 80px; object-fit: cover" />
-                  </div>
-                  <div class="flex-grow-1">
-                    <p class="fw-bold mb-1 fs-4">Titolo</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="rapidAccess d-flex align-items-center">
-                  <div class="me-3 flex-shrink-0">
-                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-7.jpg" style="width: 80px; height: 80px; object-fit: cover" />
-                  </div>
-                  <div class="flex-grow-1">
-                    <p class="fw-bold mb-1 fs-4">Titolo</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="rapidAccess d-flex align-items-center">
-                  <div class="me-3 flex-shrink-0">
-                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-8.jpg" style="width: 80px; height: 80px; object-fit: cover" />
-                  </div>
-                  <div class="flex-grow-1">
-                    <p class="fw-bold mb-1 fs-4">Titolo</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="rapidAccess d-flex align-items-center">
-                  <div class="me-3 flex-shrink-0">
-                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-9.jpg" style="width: 80px; height: 80px; object-fit: cover" />
-                  </div>
-                  <div class="flex-grow-1">
-                    <p class="fw-bold mb-1 fs-4">Titolo</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="rapidAccess d-flex align-items-center">
-                  <div class="me-3 flex-shrink-0">
-                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-10.jpg" style="width: 80px; height: 80px; object-fit: cover" />
-                  </div>
-                  <div class="flex-grow-1">
-                    <p class="fw-bold mb-1 fs-4">Titolo</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="rapidAccess d-flex align-items-center">
-                  <div class="me-3 flex-shrink-0">
-                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-11.jpg" style="width: 80px; height: 80px; object-fit: cover" />
-                  </div>
-                  <div class="flex-grow-1">
-                    <p class="fw-bold mb-1 fs-4">Titolo</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="rapidAccess d-flex align-items-center">
-                  <div class="me-3 flex-shrink-0">
-                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-12.jpg" style="width: 80px; height: 80px; object-fit: cover" />
-                  </div>
-                  <div class="flex-grow-1">
-                    <p class="fw-bold mb-1 fs-4">Titolo</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="rapidAccess d-flex align-items-center">
-                  <div class="me-3 flex-shrink-0">
-                    <img class="img-fluid rounded-3" src="./assets/imgs/search/image-13.jpeg" style="width: 80px; height: 80px; object-fit: cover" />
-                  </div>
-                  <div class="flex-grow-1">
-                    <p class="fw-bold mb-1 fs-4">Titolo</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- carosello 1 -->
-
-            <div class="container mt-5">
-              <h4 class="text-white fw-bold mb-3">I tuoi show</h4>
-
-              <div class="carousel d-flex overflow-auto carousel1">
-                <!-- <button class="arrow left">&lt;</button> -->
-
-                <div class="carousel-card me-3 text-white">
-                  <img src="./assets/imgs/main/image-1.jpg" class="img-fluid rounded mb-2" style="width: 160px; height: 160px; object-fit: cover" />
-                  <p class="fw-semibold mb-1">Lorem ipsum dolor</p>
-                  <p class="text-muted small mb-0">Autore</p>
-                </div>
-
-                <div class="carousel-card me-3 text-white">
-                  <img src="./assets/imgs/main/image-2.jpg" class="img-fluid rounded mb-2" style="width: 160px; height: 160px; object-fit: cover" />
-                  <p class="fw-semibold mb-1">Lorem ipsum dolor</p>
-                  <p class="text-muted small mb-0">Autore</p>
-                </div>
-
-                <div class="carousel-card me-3 text-white">
-                  <img src="./assets/imgs/main/image-3.jpg" class="img-fluid rounded mb-2" style="width: 160px; height: 160px; object-fit: cover" />
-                  <p class="fw-semibold mb-1">Lorem ipsum dolor</p>
-                  <p class="text-muted small mb-0">Autore</p>
-                </div>
-                <div class="carousel-card me-3 text-white">
-                  <img src="./assets/imgs/main/image-4.jpg" class="img-fluid rounded mb-2" style="width: 160px; height: 160px; object-fit: cover" />
-                  <p class="fw-semibold mb-1">Lorem ipsum dolor</p>
-                  <p class="text-muted small mb-0">Autore</p>
-                </div>
-                <div class="carousel-card me-3 text-white">
-                  <img src="./assets/imgs/main/image-5.jpg" class="img-fluid rounded mb-2" style="width: 160px; height: 160px; object-fit: cover" />
-                  <p class="fw-semibold mb-1">Lorem ipsum dolor</p>
-                  <p class="text-muted small mb-0">Autore</p>
-                </div>
-                <div class="carousel-card me-3 text-white">
-                  <img src="./assets/imgs/main/image-6.jpg" class="img-fluid rounded mb-2" style="width: 160px; height: 160px; object-fit: cover" />
-                  <p class="fw-semibold mb-1">Lorem ipsum dolor</p>
-                  <p class="text-muted small mb-0">Autore</p>
-                </div>
-                <div class="carousel-card me-3 text-white">
-                  <img src="./assets/imgs/main/image-7.jpg" class="img-fluid rounded mb-2" style="width: 160px; height: 160px; object-fit: cover" />
-                  <p class="fw-semibold mb-1">Lorem ipsum dolor</p>
-                  <p class="text-muted small mb-0">Autore</p>
-                </div>
-                <div class="carousel-card me-3 text-white">
-                  <img src="./assets/imgs/main/image-8.jpg" class="img-fluid rounded mb-2" style="width: 160px; height: 160px; object-fit: cover" />
-                  <p class="fw-semibold mb-1">Lorem ipsum dolor</p>
-                  <p class="text-muted small mb-0">Autore</p>
-                </div>
-                <button class="arrow right">&gt;</button>
-              </div>
-            </div>
-
-            <!-- carosello 2 -->
-
-            <div class="container mt-5">
-              <h4 class="text-white fw-bold mb-3">Ascoltati di Recente</h4>
-
-              <div class="carousel d-flex overflow-auto carousel2">
-                <!-- <button class="arrow left">&lt;</button> -->
-
-                <div class="carousel-card me-3 text-white">
-                  <img src="./assets/imgs/main/image-1.jpg" class="img-fluid rounded mb-2" style="width: 160px; height: 160px; object-fit: cover" />
-                  <p class="fw-semibold mb-1">Lorem ipsum dolor</p>
-                  <p class="text-muted small mb-0">Autore</p>
-                </div>
-
-                <div class="carousel-card me-3 text-white">
-                  <img src="./assets/imgs/main/image-2.jpg" class="img-fluid rounded mb-2" style="width: 160px; height: 160px; object-fit: cover" />
-                  <p class="fw-semibold mb-1">Lorem ipsum dolor</p>
-                  <p class="text-muted small mb-0">Autore</p>
-                </div>
-
-                <div class="carousel-card me-3 text-white">
-                  <img src="./assets/imgs/main/image-3.jpg" class="img-fluid rounded mb-2" style="width: 160px; height: 160px; object-fit: cover" />
-                  <p class="fw-semibold mb-1">Lorem ipsum dolor</p>
-                  <p class="text-muted small mb-0">Autore</p>
-                </div>
-                <div class="carousel-card me-3 text-white">
-                  <img src="./assets/imgs/main/image-4.jpg" class="img-fluid rounded mb-2" style="width: 160px; height: 160px; object-fit: cover" />
-                  <p class="fw-semibold mb-1">Lorem ipsum dolor</p>
-                  <p class="text-muted small mb-0">Autore</p>
-                </div>
-                <div class="carousel-card me-3 text-white">
-                  <img src="./assets/imgs/main/image-5.jpg" class="img-fluid rounded mb-2" style="width: 160px; height: 160px; object-fit: cover" />
-                  <p class="fw-semibold mb-1">Lorem ipsum dolor</p>
-                  <p class="text-muted small mb-0">Autore</p>
-                </div>
-                <div class="carousel-card me-3 text-white">
-                  <img src="./assets/imgs/main/image-6.jpg" class="img-fluid rounded mb-2" style="width: 160px; height: 160px; object-fit: cover" />
-                  <p class="fw-semibold mb-1">Lorem ipsum dolor</p>
-                  <p class="text-muted small mb-0">Autore</p>
-                </div>
-                <div class="carousel-card me-3 text-white">
-                  <img src="./assets/imgs/main/image-7.jpg" class="img-fluid rounded mb-2" style="width: 160px; height: 160px; object-fit: cover" />
-                  <p class="fw-semibold mb-1">Lorem ipsum dolor</p>
-                  <p class="text-muted small mb-0">Autore</p>
-                </div>
-                <div class="carousel-card me-3 text-white">
-                  <img src="./assets/imgs/main/image-8.jpg" class="img-fluid rounded mb-2" style="width: 160px; height: 160px; object-fit: cover" />
-                  <p class="fw-semibold mb-1">Lorem ipsum dolor</p>
-                  <p class="text-muted small mb-0">Autore</p>
-                </div>
-                <button class="arrow right">&gt;</button>
-              </div>
-            </div>
-          </div>
-        </section>
+        <section id="albumSection" class="col-12 col-md-7 col-lg-8 col-xxl-8 rounded-3"></section>
 
         <!-- aside di destra -->
-        <aside class="col-12 col-xxl-2 pb-2 rounded-3 d-none d-xxl-block">
+        <aside class="col-12 col-xxl-2 pb-2 rounded-3 d-block d-md-none d-xxl-block">
           <div class="container">
             <div class="row">
               <div class="col-12 d-flex align-items-center justify-content-between my-3">
@@ -789,13 +588,12 @@
       </div>
     </footer>
     <script src="./assets/js/token.js"></script>
-    <script src="./assets/js/index.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
       crossorigin="anonymous"
     ></script>
-    <script src="./assets/js/index.js"></script>
+    <script src="./assets/js/album.js"></script>
     <script src="./assets/js/asideSinistra.js"></script>
     <script src="./assets/js/searchBar.js"></script>
   </body>
