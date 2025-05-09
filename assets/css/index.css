@@ -408,3 +408,11 @@ aside.col-2 {
 .littleCard:hover {
   transform: scale(1.05);
 }
+
+.roles {
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+.roles:hover {
+  text-decoration: underline;
+}

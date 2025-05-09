@@ -130,6 +130,10 @@ const searchAndShowAlbum = () => {
           const albumYear = document.createElement("span");
           albumInfo.innerText = `${artist.name}`;
           albumInfo.className = "roles";
+
+          albumInfo.addEventListener("click", function () {
+            window.location.href = `./artist_page.html?artistID=${artist.name}`;
+          });
           // albumYear.innerText = "Album";
           albumYear.className = "Autore";
           console.log(`Titolo + autore di ${index} di ${carouselElement} fatta`);
