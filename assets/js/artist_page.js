@@ -88,18 +88,47 @@ fetch(Url + query, {
     containersAlbum.innerHTML = "";
 
     arrayAlbum.forEach((title, index) => {
-      containersAlbum.innerHTML += ` <div class="col-xxl-3 col-lg-3 col-md-6 col-6">
-                  <div id="cardDisco" class="card me-3 text-white" style="max-width: 230px">
-                    <img
-                      id="imageCard"
-                      src="${title.album.cover_medium}"
-                      class="img-fluid rounded mb-2"
-                      style=" object-fit: cover"
-                    />
-                    <p id="nameSong" class="fw-semibold mb-1 ps-3">${title.album.title}</p>
-                    <p id="nameAlbum" class="text-muted small mb-2 ps-3">Album</p>
-                  </div>
-                </div>`;
+      // containersAlbum.innerHTML += ` <div class="col-xxl-3 col-lg-3 col-md-6 col-6">
+      //             <div id="cardDisco" class="card me-3 text-white" style="max-width: 230px">
+      //               <img
+      //                 id="imageCard"
+      //                 src="${title.album.cover_medium}"
+      //                 class="img-fluid rounded mb-2"
+      //                 style=" object-fit: cover"
+      //               />
+      //               <p id="nameSong" class="fw-semibold mb-1 ps-3">${title.album.title}</p>
+      //               <p id="nameAlbum" class="text-muted small mb-2 ps-3">Album</p>
+      //             </div>
+      //           </div>`;
+      const colDiv = document.createElement("div");
+      colDiv.className = "col-xxl-3 col-lg-3 col-md-6 col-6";
+
+      const cardDiv = document.createElement("div");
+      cardDiv.className = "card me-3 text-white";
+      cardDiv.style.maxWidth = "230px";
+
+      const img = document.createElement("img");
+      img.className = "img-fluid rounded mb-2 object-fit-cover";
+      img.src = title.album.cover_medium;
+
+      const pTitle = document.createElement("p");
+      pTitle.className = "fw-semibold mb-1 ps-3 brano";
+      pTitle.textContent = title.album.title;
+
+      const pAlbum = document.createElement("p");
+      pAlbum.className = "text-muted small mb-2 ps-3";
+      pAlbum.textContent = "Album";
+
+      cardDiv.appendChild(img);
+      cardDiv.appendChild(pTitle);
+      cardDiv.appendChild(pAlbum);
+
+      colDiv.appendChild(cardDiv);
+      containersAlbum.appendChild(colDiv);
+
+      pTitle.addEventListener("click", function () {
+        window.location.href = `./album.html?albumID=${title.album.id}`;
+      });
     });
   })
   .catch((err) => console.error("Errore nel caricamento prodotti:", err));
