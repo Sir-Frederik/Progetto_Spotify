@@ -8,6 +8,7 @@ let arrayIdAlbum = [];
 const rowPlaylist = document.querySelector(".rowPlaylist");
 const carousel1 = document.querySelector(".carousel1");
 const carousel2 = document.querySelector(".carousel2");
+let globalAlbumData;
 
 let randomIndices = [];
 
@@ -70,62 +71,53 @@ const searchAndShowAlbum = () => {
       return resp.json();
     })
     .then((data) => {
+      globalAlbumData = [...data.albums];
+
       const createCarousel = function (carouselElement) {
-        arrayIdAlbum = [];
-        randomIndices = [];
         const glide = document.createElement("div");
         glide.className = "glide";
+
         const glideTrack = document.createElement("div");
         glideTrack.className = "glide__track";
         glideTrack.setAttribute("data-glide-el", "track");
+
         const glideUl = document.createElement("ul");
         glideUl.className = "glide__slides";
-        console.log(" CREO Carosello: " + carouselElement);
 
-        const createRandomId = function () {
-          let arrayLength = data.albums.length;
-          for (let i = 0; i < arrayLength; i++) {
-            arrayIdAlbum.push(i); //pushare id estratto dall'indice
-          }
-          // console.log("indici array totali =" + arrayIdAlbum);
+        console.log("CREO Carosello: " + carouselElement);
 
-          for (let i = 0; i < 8; i++) {
-            const index = Math.floor(Math.random() * arrayIdAlbum.length);
-            randomIndices.push(index);
-            // console.log("indice Scelto= " + index);
-            arrayIdAlbum.splice(index, 1); //randomizzare un id valido tra 0  ed un a length
-            // console.log("indici array rimasti =" + arrayIdAlbum);
-          }
-          console.log("indici random= " + randomIndices);
-        };
+        // Seleziona 8 elementi casuali univoci e li rimuove da globalAlbumData
+        const selectedAlbums = [];
+        for (let i = 0; i < 8 && globalAlbumData.length > 0; i++) {
+          const randomIndex = Math.floor(Math.random() * globalAlbumData.length);
+          selectedAlbums.push(globalAlbumData.splice(randomIndex, 1)[0]);
+        }
 
-        createRandomId();
         carouselElement.innerHTML = "";
-        //da qua inizia il forEach in cui devo ciclare gli elementi li del grid
-        //FOREACH
-        console.log("Inizio ForEach");
-        randomIndices.forEach((index) => {
-          console.log("indice da stampare: " + index);
-          const album = data.albums[index].tracks.data[0].album;
-          const artist = data.albums[index].tracks.data[0].artist;
-          const glideLi = document.createElement("li");
 
+        console.log("Inizio ForEach");
+        selectedAlbums.forEach((albumData, index) => {
+          const album = albumData.tracks.data[0].album;
+          const artist = albumData.tracks.data[0].artist;
+
+          const glideLi = document.createElement("li");
           glideLi.className = "glide__slide";
           console.log(`GlideList di indice ${index} di ${carouselElement} fatta`);
+
           const glideImg = document.createElement("img");
           glideImg.className = "rounded-3";
           glideImg.src = `${album.cover_medium}`;
-          glideImg.alt = `album cover  of ${album.cover_medium}`;
+          glideImg.alt = `album cover of ${album.title}`;
 
-          // evento della lista creato, ora ci metto gli'event listener
           glideImg.addEventListener("click", function () {
-            window.location.href = `./album.html?albumID=${data.albums[index].id}`;
+            window.location.href = `./album.html?albumID=${albumData.id}`;
           });
           console.log(`Album cover + event di indice ${index} di ${carouselElement} fatta`);
-          //creo le altre  info dell'album
+
           const albumTitle = document.createElement("h6");
           albumTitle.innerText = `${album.title}`;
           albumTitle.className = "mt-2";
+
           const albumInfo = document.createElement("p");
           const albumYear = document.createElement("span");
           albumInfo.innerText = `${artist.name}`;
@@ -134,36 +126,26 @@ const searchAndShowAlbum = () => {
           albumInfo.addEventListener("click", function () {
             window.location.href = `./artist_page.html?artistID=${artist.name}`;
           });
-          // albumYear.innerText = "Album";
+
           albumYear.className = "Autore";
           console.log(`Titolo + autore di ${index} di ${carouselElement} fatta`);
 
           albumInfo.appendChild(albumYear);
-
           glideLi.appendChild(glideImg);
           glideLi.appendChild(albumTitle);
-
           glideLi.appendChild(albumInfo);
-          console.log(`Inseriti elementi Album  di  ${index} di ${carouselElement} `);
+          console.log(`Inseriti elementi Album di ${index} di ${carouselElement}`);
 
           glideUl.appendChild(glideLi);
-          console.log(`Inserita Lista  ${index} di ${carouselElement} `);
-
-          /*          const card = document.createElement("div");
-       card.className = "carousel-card me-3 text-white";
-          card.innerHTML = `<img src="${album.cover_medium}" class="img-fluid rounded mb-2"  />
-                  <p class="fw-semibold mb-1 text-truncate">${album.title}</p>
-                  <p class="text-muted small mb-0 text-truncate">${artist.name || "Artista sconosciuto"}</p>
-            
-                  `; */
+          console.log(`Inserita Lista ${index} di ${carouselElement}`);
         });
 
         glideTrack.appendChild(glideUl);
-        console.log(`Ciclo finito,   creata UL di  ${carouselElement}  `);
-        // glide.appendChild(album);  qui inserire nome album
+        console.log(`Ciclo finito, creata UL di ${carouselElement}`);
+
         glide.appendChild(glideTrack);
         carouselElement.appendChild(glide);
-        console.log(`Inserito tutto nel carousel  ${carouselElement}  `);
+        console.log(`Inserito tutto nel carousel ${carouselElement}`);
 
         const arrowCont = document.createElement("div");
         arrowCont.className = "glide__arrows";
@@ -184,12 +166,14 @@ const searchAndShowAlbum = () => {
 
         arrowCont.appendChild(leftArrow);
         arrowCont.appendChild(rightArrow);
-
         glide.appendChild(arrowCont);
+
         const row = document.createElement("div");
         row.className = "row mt-5 justify-content-start";
+
         const div2 = document.createElement("div");
         div2.className = "d-none d-xl-block col-5";
+
         const div7 = document.createElement("div");
         div7.className = "col-12 col-xl-7";
 
@@ -201,19 +185,10 @@ const searchAndShowAlbum = () => {
           type: "carousel",
           perView: 6,
           breakpoints: {
-            1500: {
-              perView: 4,
-            },
-
-            1050: {
-              perView: 3,
-            },
-            970: {
-              perView: 2,
-            },
-            480: {
-              perView: 1,
-            },
+            1500: { perView: 4 },
+            1050: { perView: 3 },
+            970: { perView: 2 },
+            480: { perView: 1 },
           },
         }).mount();
       };
