@@ -89,7 +89,7 @@ const searchAndShowAlbum = () => {
           }
           // console.log("indici array totali =" + arrayIdAlbum);
 
-          for (let i = 0; i < 10; i++) {
+          for (let i = 0; i < 8; i++) {
             const index = Math.floor(Math.random() * arrayIdAlbum.length);
             randomIndices.push(index);
             // console.log("indice Scelto= " + index);
@@ -150,7 +150,8 @@ const searchAndShowAlbum = () => {
           card.innerHTML = `<img src="${album.cover_medium}" class="img-fluid rounded mb-2"  />
                   <p class="fw-semibold mb-1 text-truncate">${album.title}</p>
                   <p class="text-muted small mb-0 text-truncate">${artist.name || "Artista sconosciuto"}</p>
-                                                    `; */
+            
+                  `; */
         });
 
         glideTrack.appendChild(glideUl);
@@ -159,8 +160,39 @@ const searchAndShowAlbum = () => {
         glide.appendChild(glideTrack);
         carouselElement.appendChild(glide);
         console.log(`Inserito tutto nel carousel  ${carouselElement}  `);
+        const arrowCont = document.createElement("div");
+        arrowCont.className = "glide__arrows";
+        arrowCont.setAttribute("id", "bothArrows");
+        arrowCont.setAttribute("data-glide-el", "controls");
 
-        new Glide(document.querySelector(".glide"), {
+        const leftArrow = document.createElement("button");
+        leftArrow.setAttribute("id", "leftArrow");
+        leftArrow.className = "glide__arrow glide__arrow--left";
+        leftArrow.setAttribute("data-glide-dir", "<");
+        leftArrow.innerText = "<";
+
+        const rightArrow = document.createElement("button");
+        rightArrow.setAttribute("id", "rightArrow");
+        rightArrow.className = "glide__arrow glide__arrow--right";
+        rightArrow.setAttribute("data-glide-dir", ">");
+        rightArrow.innerText = ">";
+
+        arrowCont.appendChild(leftArrow);
+        arrowCont.appendChild(rightArrow);
+
+        glide.appendChild(arrowCont);
+        const row = document.createElement("div");
+        row.className = "row mt-5 justify-content-start";
+        const div2 = document.createElement("div");
+        div2.className = "d-none d-xl-block col-5";
+        const div7 = document.createElement("div");
+        div7.className = "col-12 col-xl-7";
+
+        row.appendChild(div2);
+        row.appendChild(div7);
+        carouselElement.appendChild(row);
+
+        new Glide(glide, {
           type: "carousel",
           perView: 6,
           breakpoints: {
