@@ -1,9 +1,9 @@
-const UrlPlaylist = "https://deezerdevs-deezer.p.rapidapi.com/playlist/";
+// const UrlPlaylist = "https://deezerdevs-deezer.p.rapidapi.com/playlist/";
 // const UrlAlbum = "https://deezerdevs-deezer.p.rapidapi.com/playlist/";
 
-let query = "";
+// let query = "";
 
-const arrayIdPlaylist = [98, 118, 125, 55, 123, 13, 86, 45];
+// const arrayIdPlaylist = [98, 118, 125, 55, 123, 13, 86, 45];
 let arrayIdAlbum = [];
 const rowPlaylist = document.querySelector(".rowPlaylist ");
 const carousel1 = document.querySelector(".carousel1 ");
@@ -11,17 +11,13 @@ const carousel2 = document.querySelector(".carousel2 ");
 
 let randomIndices = [];
 
-const searchAndShowPlaylist = () => {
-  arrayIdPlaylist.forEach((id) => {
-    query = id;
-    console.log(query);
-    console.log(UrlPlaylist + query);
-
-    fetch(UrlPlaylist + query, {
-      headers: {
+const searchAndShowLittleAlbum = () => {
+  for (let i = 0; i < 8; i++) {
+    fetch("/assets/json/albums.json", {
+      /*   headers: {
         "x-rapidapi-key": token,
         "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-      },
+      }, */
     })
       .then((resp) => {
         console.log(resp);
@@ -29,23 +25,27 @@ const searchAndShowPlaylist = () => {
           if (resp.status >= 500) {
             throw new Error("Errore lato server");
           } else {
-            throw new Error("Errore nella ciaooo");
+            throw new Error("Errore nella fetch");
           }
         }
         return resp.json();
       })
-      .then((playlist) => {
+      .then((data) => {
         const col = document.createElement("div");
         col.className = "col-3 littleCard";
+        let littleAlbum = data.albums[i].tracks.data[0].album;
         col.innerHTML = `<div class="rapidAccess d-flex align-items-center">
                   <div class="me-3 flex-shrink-0">
-                    <img class="img-fluid rounded-3" src= ${playlist.picture_small} style="width: 80px; height: 80px; object-fit: cover" />
+                    <img class="img-fluid rounded-3" src= ${littleAlbum.cover_small} style="width: 80px; height: 80px; object-fit: cover" />
                   </div>
                   <div class="flex-grow-1">
-                    <p class="fw-bold mb-1 fs-6">${playlist.title}</p>
+                    <p class="fw-bold mb-1 fs-6">${littleAlbum.title}</p>
                   </div>
 `;
-        rowPlaylist.appendChild(col); //lavoare con la creaszione del contenuiiotre, non ogni singola card
+        col.addEventListener("click", function () {
+          window.location.href = `./album.html?albumID=${data.albums[i].id}`;
+        });
+        rowPlaylist.appendChild(col);
         //   });
       })
 
@@ -53,7 +53,7 @@ const searchAndShowPlaylist = () => {
         console.log(error);
         alert(error.message);
       });
-  });
+  }
 };
 const searchAndShowAlbum = () => {
   fetch("/assets/json/albums.json", {
@@ -227,7 +227,7 @@ const searchAndShowAlbum = () => {
 window.onload = function () {
   rowPlaylist.innerHTML = "";
 
-  searchAndShowPlaylist();
+  searchAndShowLittleAlbum();
   searchAndShowAlbum();
 };
 
