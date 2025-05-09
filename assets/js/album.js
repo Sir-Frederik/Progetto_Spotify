@@ -34,89 +34,295 @@ fetch(url, options)
     artistImage.src = data.artist.picture_big;
 
     artistImage.onload = function () {
-      section.innerHTML = `
-        <div class="mb-3 mb-md-0 container-fluid p-5 rounded" style="background-color: #121212;">
-          <div class="p-5 mb-4" style="position: relative; overflow: hidden; border-radius: 10px;">
-            <div style="background-image: url('${
-              data.artist.picture_big
-            }'); background-size: cover; background-position: center; filter: blur(8px); position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
-            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.4);"></div>
-            <div class="position-relative z-index-1 d-flex flex-column flex-md-row align-items-center text-light">
-              <img src="${data.cover_medium}" alt="${data.title}" class="me-4 rounded img-fluid" style="width: 120px; height: 120px; object-fit: cover;">
-              <div class="text-center text-md-start mt-3 mt-md-0">
-                <h1 class="fw-bold mb-1" style="font-size: 1.5rem;">${data.title}</h1>
-                <h4 class="fs-6 mb-0 d-flex align-items-center justify-content-center justify-content-md-start">
-                  <img src="${data.artist.picture}" alt="${
-        data.artist.name
-      }" class="me-2" style="width: 30px; height: 30px; object-fit: cover; border-radius: 50%;">
-                  ${data.artist.name}
-                </h4>
-              </div>
-            </div>
-          </div>
+      // section.innerHTML = `
+      //   <div class="mb-3 mb-md-0 container-fluid p-5 rounded" style="background-color: #121212;">
+      //     <div class="p-5 mb-4" style="position: relative; overflow: hidden; border-radius: 10px;">
+      //       <div style="background-image: url('${
+      //         data.artist.picture_big
+      //       }'); background-size: cover; background-position: center; filter: blur(8px); position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
+      //       <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.4);"></div>
+      //       <div class="position-relative z-index-1 d-flex flex-column flex-md-row align-items-center text-light">
+      //         <img src="${data.cover_medium}" alt="${data.title}" class="me-4 rounded img-fluid" style="width: 120px; height: 120px; object-fit: cover;">
+      //         <div class="text-center text-md-start mt-3 mt-md-0">
+      //           <h1 class="fw-bold mb-1" style="font-size: 1.5rem;">${data.title}</h1>
+      //           <h4 id="collegamentoArtista" class="fs-6 mb-0 d-flex align-items-center justify-content-center justify-content-md-start">
+      //             <img src="${data.artist.picture}" alt="${
+      //   data.artist.name
+      // }" class="me-2" style="width: 30px; height: 30px; object-fit: cover; border-radius: 50%;">
+      //             ${data.artist.name}
+      //           </h4>
+      //         </div>
+      //       </div>
+      //     </div>
 
-          <div class="row mb-5">
-            <div class="col-6 d-flex align-items-center">
-              <button data-testid="play-button" aria-label="Play" data-encore-id="buttonPrimary" data-is-icon-only="true" class="play-button">
-                <span class="button-inner">
-                  <span aria-hidden="true" class="button-icon-wrapper">
-                    <svg data-encore-id="icon" role="img" aria-hidden="true" class="play-icon" viewBox="0 0 24 24">
-                      <path d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"></path>
-                    </svg>
-                  </span>
-                </span>
-              </button>
-              <i class="bi bi-plus-circle ms-3"></i>
-              <i class="bi bi-three-dots ms-3"></i>
-            </div>
-            <div class="col-6 d-flex align-items-center justify-content-end">
-              <p class="mb-0" style="font-size: 0.8rem;">Elenco</p>
-              <i class="bi bi-list-ul ms-2" style="font-size: 1.3rem;"></i>
-            </div>
-          </div>
+      //     <div class="row mb-5">
+      //       <div class="col-6 d-flex align-items-center">
+      //         <button data-testid="play-button" aria-label="Play" data-encore-id="buttonPrimary" data-is-icon-only="true" class="play-button">
+      //           <span class="button-inner">
+      //             <span aria-hidden="true" class="button-icon-wrapper">
+      //               <svg data-encore-id="icon" role="img" aria-hidden="true" class="play-icon" viewBox="0 0 24 24">
+      //                 <path d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"></path>
+      //               </svg>
+      //             </span>
+      //           </span>
+      //         </button>
+      //         <i class="bi bi-plus-circle ms-3"></i>
+      //         <i class="bi bi-three-dots ms-3"></i>
+      //       </div>
+      //       <div class="col-6 d-flex align-items-center justify-content-end">
+      //         <p class="mb-0" style="font-size: 0.8rem;">Elenco</p>
+      //         <i class="bi bi-list-ul ms-2" style="font-size: 1.3rem;"></i>
+      //       </div>
+      //     </div>
 
-          <div class="row mb-3">
-            <div class="col-6 d-flex align-items-center">
-              <p class="mb-0"># Titolo</p>
-            </div>
-            <div class="col-6 d-flex justify-content-end align-items-center">
-              <i class="bi bi-clock ms-3"></i>
-            </div>
-          </div>
+      //     <div class="row mb-3">
+      //       <div class="col-6 d-flex align-items-center">
+      //         <p class="mb-0"># Titolo</p>
+      //       </div>
+      //       <div class="col-6 d-flex justify-content-end align-items-center">
+      //         <i class="bi bi-clock ms-3"></i>
+      //       </div>
+      //     </div>
 
-          <hr>
+      //     <hr>
 
-          <ul class="list-unstyled">
-            ${data.tracks.data
-              .map(
-                (track, index) => `
-                  <li class="track-item d-flex justify-content-between align-items-center mb-2 p-2 bg-transparent">
-                    <div>
-                      <span class="text-light">#${index + 1} - ${track.title} </br>
-                        <span style="opacity: 0.5;">${data.artist.name}</span>
-                      </span>
-                    </div>
-                  </li>
-                `
-              )
-              .join("")}
-          </ul>
+      //     <ul class="list-unstyled">
+      //       ${data.tracks.data
+      //         .map(
+      //           (track, index) => `
+      //             <li class="track-item d-flex justify-content-between align-items-center mb-2 p-2 bg-transparent">
+      //               <div>
+      //                 <span class="text-light">#${index + 1} - ${track.title} </br>
+      //                   <span style="opacity: 0.5;">${data.artist.name}</span>
+      //                 </span>
+      //               </div>
+      //             </li>
+      //           `
+      //         )
+      //         .join("")}
+      //     </ul>
 
-          <hr>
+      //     <hr>
 
-          <div class="row">
-            <div class="col-12 col-md-8 d-flex justify-content-start mb-5 mb-md-0">
-              <a class="me-3" style="font-size: 0.8rem; text-decoration: none; color: white; cursor: pointer;">Informazioni legali</a>
-              <a class="me-3" style="font-size: 0.8rem; text-decoration: none; color: white; cursor: pointer;">Impostazioni cookie</a>
-              <a class="me-3" style="font-size: 0.8rem; text-decoration: none; color: white; cursor: pointer;">Accessibilità</a>
-            </div>
-            <div class="col-12 col-md-4 d-flex justify-content-end">
-              <p style="font-size: 0.8rem;">&copy 2025 Spotify AB</p>
-            </div>
-          </div>
-        </div>
-      `;
+      //     <div class="row">
+      //       <div class="col-12 col-md-8 d-flex justify-content-start mb-5 mb-md-0">
+      //         <a class="me-3" style="font-size: 0.8rem; text-decoration: none; color: white; cursor: pointer;">Informazioni legali</a>
+      //         <a class="me-3" style="font-size: 0.8rem; text-decoration: none; color: white; cursor: pointer;">Impostazioni cookie</a>
+      //         <a class="me-3" style="font-size: 0.8rem; text-decoration: none; color: white; cursor: pointer;">Accessibilità</a>
+      //       </div>
+      //       <div class="col-12 col-md-4 d-flex justify-content-end">
+      //         <p style="font-size: 0.8rem;">&copy 2025 Spotify AB</p>
+      //       </div>
+      //     </div>
+      //   </div>
+      // `;
+      const section = document.querySelector("section");
+
+      const container = document.createElement("div");
+      container.className = "mb-3 mb-md-0 container-fluid p-5 rounded";
+
+      const header = document.createElement("div");
+      header.className = "p-5 mb-4";
+      header.style.position = "relative";
+      header.style.overflow = "hidden";
+      header.style.borderRadius = "10px";
+
+      const background = document.createElement("div");
+      background.style.backgroundImage = `url(${data.artist.picture_big})`;
+      background.style.backgroundSize = "cover";
+      background.style.backgroundPosition = "center";
+      background.style.filter = "blur(8px)";
+      background.style.position = "absolute";
+      background.style.top = "0";
+      background.style.left = "0";
+      background.style.width = "100%";
+      background.style.height = "100%";
+      header.appendChild(background);
+
+      const overlay = document.createElement("div");
+      overlay.style.position = "absolute";
+      overlay.style.top = "0";
+      overlay.style.left = "0";
+      overlay.style.width = "100%";
+      overlay.style.height = "100%";
+      overlay.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
+      header.appendChild(overlay);
+
+      const contentWrapper = document.createElement("div");
+      contentWrapper.className = "position-relative z-index-1 d-flex flex-column flex-md-row align-items-center text-light";
+
+      const imgCover = document.createElement("img");
+      imgCover.src = data.cover_medium;
+      imgCover.alt = data.title;
+      imgCover.className = "me-4 rounded img-fluid";
+      imgCover.style.width = "120px";
+      imgCover.style.height = "120px";
+      imgCover.style.objectFit = "cover";
+      contentWrapper.appendChild(imgCover);
+
+      const textWrapper = document.createElement("div");
+      textWrapper.className = "text-center text-md-start mt-3 mt-md-0";
+
+      const h1 = document.createElement("h1");
+      h1.className = "fw-bold mb-1";
+      h1.style.fontSize = "1.5rem";
+      h1.textContent = data.title;
+      textWrapper.appendChild(h1);
+
+      const h4 = document.createElement("h4");
+      h4.className = "fs-6 mb-0 d-flex align-items-center justify-content-center justify-content-md-start brano";
+      h4.id = "collegamentoArtista";
+
+      const imgArtist = document.createElement("img");
+      imgArtist.src = data.artist.picture;
+      imgArtist.alt = data.artist.name;
+      imgArtist.className = "me-2";
+      imgArtist.style.width = "30px";
+      imgArtist.style.height = "30px";
+      imgArtist.style.objectFit = "cover";
+      imgArtist.style.borderRadius = "50%";
+      h4.appendChild(imgArtist);
+
+      h4.appendChild(document.createTextNode(data.artist.name));
+      textWrapper.appendChild(h4);
+      contentWrapper.appendChild(textWrapper);
+
+      header.appendChild(contentWrapper);
+      container.appendChild(header);
+
+      const controlsRow = document.createElement("div");
+      controlsRow.className = "row mb-5";
+
+      const leftControls = document.createElement("div");
+      leftControls.className = "col-6 d-flex align-items-center";
+
+      const playButton = document.createElement("button");
+      playButton.className = "play-button";
+      playButton.setAttribute("data-testid", "play-button");
+      playButton.setAttribute("aria-label", "Play");
+      playButton.setAttribute("data-encore-id", "buttonPrimary");
+      playButton.setAttribute("data-is-icon-only", "true");
+
+      const spanButtonInner = document.createElement("span");
+      spanButtonInner.className = "button-inner";
+
+      const spanIconWrapper = document.createElement("span");
+      spanIconWrapper.className = "button-icon-wrapper";
+      spanIconWrapper.setAttribute("aria-hidden", "true");
+
+      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      svg.setAttribute("viewBox", "0 0 24 24");
+      svg.setAttribute("aria-hidden", "true");
+      svg.setAttribute("role", "img");
+      svg.classList.add("play-icon");
+
+      const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      path.setAttribute("d", "m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z");
+      svg.appendChild(path);
+      spanIconWrapper.appendChild(svg);
+      spanButtonInner.appendChild(spanIconWrapper);
+      playButton.appendChild(spanButtonInner);
+      leftControls.appendChild(playButton);
+
+      ["plus-circle", "three-dots"].forEach((iconName) => {
+        const icon = document.createElement("i");
+        icon.className = `bi bi-${iconName} ms-3`;
+        leftControls.appendChild(icon);
+      });
+
+      const rightControls = document.createElement("div");
+      rightControls.className = "col-6 d-flex align-items-center justify-content-end";
+
+      const elencoText = document.createElement("p");
+      elencoText.className = "mb-0";
+      elencoText.style.fontSize = "0.8rem";
+      elencoText.textContent = "Elenco";
+      rightControls.appendChild(elencoText);
+
+      const iconList = document.createElement("i");
+      iconList.className = "bi bi-list-ul ms-2";
+      iconList.style.fontSize = "1.3rem";
+      rightControls.appendChild(iconList);
+
+      controlsRow.appendChild(leftControls);
+      controlsRow.appendChild(rightControls);
+      container.appendChild(controlsRow);
+
+      const trackHeader = document.createElement("div");
+      trackHeader.className = "row mb-3";
+
+      const leftHeader = document.createElement("div");
+      leftHeader.className = "col-6 d-flex align-items-center";
+      const pTitle = document.createElement("p");
+      pTitle.className = "mb-0";
+      pTitle.textContent = "# Titolo";
+      leftHeader.appendChild(pTitle);
+
+      const rightHeader = document.createElement("div");
+      rightHeader.className = "col-6 d-flex justify-content-end align-items-center";
+      const clockIcon = document.createElement("i");
+      clockIcon.className = "bi bi-clock ms-3";
+      rightHeader.appendChild(clockIcon);
+
+      trackHeader.appendChild(leftHeader);
+      trackHeader.appendChild(rightHeader);
+      container.appendChild(trackHeader);
+
+      container.appendChild(document.createElement("hr"));
+
+      const trackList = document.createElement("ul");
+      trackList.className = "list-unstyled";
+
+      data.tracks.data.forEach((track, index) => {
+        const li = document.createElement("li");
+        li.className = "track-item d-flex justify-content-between align-items-center mb-2 p-2 bg-transparent";
+
+        const span = document.createElement("span");
+        span.className = "text-light";
+        span.innerHTML = `#${index + 1} - ${track.title} <br><span style="opacity: 0.5;">${data.artist.name}</span>`;
+        li.appendChild(span);
+
+        trackList.appendChild(li);
+      });
+      container.appendChild(trackList);
+
+      container.appendChild(document.createElement("hr"));
+
+      const footerRow = document.createElement("div");
+      footerRow.className = "row";
+
+      const leftFooter = document.createElement("div");
+      leftFooter.className = "col-12 col-md-8 d-flex justify-content-start mb-5 mb-md-0";
+      ["Informazioni legali", "Impostazioni cookie", "Accessibilità"].forEach((text) => {
+        const a = document.createElement("a");
+        a.className = "me-3";
+        a.style.fontSize = "0.8rem";
+        a.style.textDecoration = "none";
+        a.style.color = "white";
+        a.style.cursor = "pointer";
+        a.textContent = text;
+        leftFooter.appendChild(a);
+      });
+
+      const rightFooter = document.createElement("div");
+      rightFooter.className = "col-12 col-md-4 d-flex justify-content-end";
+      const copyright = document.createElement("p");
+      copyright.style.fontSize = "0.8rem";
+      copyright.innerHTML = "&copy; 2025 Spotify AB";
+      rightFooter.appendChild(copyright);
+
+      footerRow.appendChild(leftFooter);
+      footerRow.appendChild(rightFooter);
+      container.appendChild(footerRow);
+
+      section.innerHTML = "";
+      section.appendChild(container);
     };
+
+    const collArt = document.getElementById("collegamentoArtista");
+    collArt.addEventListener("click", function () {
+      window.location.href = `./artist_page?artistID=${data.artist.name}`;
+    });
   })
   .catch((error) => {
     console.error("Errore nel caricamento dell'album:", error);
