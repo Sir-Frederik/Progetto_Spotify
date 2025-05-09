@@ -321,3 +321,8 @@ aside {
   height: 160px;
   object-fit: cover;
 }
+
+.carousel-card {
+  width: 160px;
+  height: 160px;
+}

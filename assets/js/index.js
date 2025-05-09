@@ -7,7 +7,7 @@ const arrayIdPlaylist = [98, 118, 125, 55, 123, 13, 86, 45];
 let arrayIdAlbum = [];
 const rowPlaylist = document.querySelector(".rowPlaylist ");
 const carousel1 = document.querySelector(".carousel1 ");
-const carousel2 = document.querySelector(".carousel1 ");
+const carousel2 = document.querySelector(".carousel2 ");
 let randomIndices = [];
 
 const searchAndShowPlaylist = () => {
@@ -44,7 +44,7 @@ const searchAndShowPlaylist = () => {
                     <p class="fw-bold mb-1 fs-6">${playlist.title}</p>
                   </div>
 `;
-        rowPlaylist.appendChild(col);
+        rowPlaylist.appendChild(col); //lavoare con la creaszione del contenuiiotre, non ogni singola card
         //   });
       })
 
@@ -76,7 +76,7 @@ const searchAndShowAlbum = () => {
         const createRandomId = function () {
           let arrayLength = data.albums.length;
           for (let i = 0; i < arrayLength; i++) {
-            arrayIdAlbum.push(i);
+            arrayIdAlbum.push(i); //pushare id estratto dall'indice
           }
           console.log("indici array totali =" + arrayIdAlbum);
 
@@ -84,7 +84,7 @@ const searchAndShowAlbum = () => {
             const index = Math.floor(Math.random() * arrayIdAlbum.length);
             randomIndices.push(index);
             console.log("indice Scelto= " + index);
-            arrayIdAlbum.splice(index, 1);
+            arrayIdAlbum.splice(index, 1); //randomizzare un id valido tra 0  ed un a lengh
             console.log("indici array rimasti =" + arrayIdAlbum);
           }
           console.log("indici random= " + randomIndices);
