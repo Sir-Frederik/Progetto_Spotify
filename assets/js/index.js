@@ -5,9 +5,9 @@
 
 // const arrayIdPlaylist = [98, 118, 125, 55, 123, 13, 86, 45];
 let arrayIdAlbum = [];
-const rowPlaylist = document.querySelector(".rowPlaylist ");
-const carousel1 = document.querySelector(".carousel1 ");
-const carousel2 = document.querySelector(".carousel2 ");
+const rowPlaylist = document.querySelector(".rowPlaylist");
+const carousel1 = document.querySelector(".carousel1");
+const carousel2 = document.querySelector(".carousel2");
 
 let randomIndices = [];
 
@@ -226,7 +226,7 @@ const searchAndShowAlbum = () => {
 };
 
 window.onload = function () {
-  rowPlaylist.innerHTML = "";
+  // rowPlaylist.innerHTML = "";
 
   searchAndShowLittleAlbum();
   searchAndShowAlbum();
