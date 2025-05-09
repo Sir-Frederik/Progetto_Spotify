@@ -177,7 +177,7 @@ window.onload = function () {
           div8.appendChild(div9);
           div8.appendChild(div11);
           div7.appendChild(div8);
-
+          //ciclo per ul  del glid
           const glideLi = document.createElement("li");
           glideLi.className = "glide__slide";
           const glideImg = document.createElement("img");
@@ -312,6 +312,8 @@ window.onload = function () {
         // section.appendChild(infoZone);
 
         console.log("ciao");
+
+        // funzione per carosello da copiare tal quale in fondo
         new Glide(document.querySelector(".glide"), {
           type: "carousel",
           perView: 6,

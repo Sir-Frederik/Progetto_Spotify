@@ -94,11 +94,13 @@ const searchAndShowAlbum = () => {
         carouselElement.innerHTML = "";
         randomIndices.forEach((index) => {
           console.log("indice da stampare: " + index);
+          const album = data.albums[index].tracks.data[0].album;
+          const artist = data.albums[index].tracks.data[0].artist;
           const card = document.createElement("div");
           card.className = "carousel-card me-3 text-white";
-          card.innerHTML = `<img src="${data.albums[index].tracks.data[0].album.cover_medium}" class="img-fluid rounded mb-2"  />
-                  <p class="fw-semibold mb-1">${data.albums[index].tracks.data[0].album.title}</p>
-                  <p class="text-muted small mb-0">${data.albums[index].tracks.data[0].artist.name || "Artista sconosciuto"}</p>
+          card.innerHTML = `<img src="${album.cover_medium}" class="img-fluid rounded mb-2"  />
+                  <p class="fw-semibold mb-1">${album.title}</p>
+                  <p class="text-muted small mb-0">${artist.name || "Artista sconosciuto"}</p>
                                                     `;
           carouselElement.appendChild(card);
         });
