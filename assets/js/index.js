@@ -99,8 +99,8 @@ const searchAndShowAlbum = () => {
           const card = document.createElement("div");
           card.className = "carousel-card me-3 text-white";
           card.innerHTML = `<img src="${album.cover_medium}" class="img-fluid rounded mb-2"  />
-                  <p class="fw-semibold mb-1">${album.title}</p>
-                  <p class="text-muted small mb-0">${artist.name || "Artista sconosciuto"}</p>
+                  <p class="fw-semibold mb-1 text-truncate">${album.title}</p>
+                  <p class="text-muted small mb-0 text-truncate">${artist.name || "Artista sconosciuto"}</p>
                                                     `;
           carouselElement.appendChild(card);
         });
